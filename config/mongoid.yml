@@ -1,0 +1,17 @@
+development:
+  host: localhost
+  database: shop_development
+
+test:
+  host: localhost
+  database: shop_test
+
+# set these environment variables on your prod server
+production:
+  host: localhost
+  database: shop_production
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
