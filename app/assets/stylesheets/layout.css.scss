@@ -1,0 +1,54 @@
+#wrap {
+	width: 999px;
+	margin: 20px auto;
+}
+#menu {
+	width: 999px;
+	height: 36px;
+	background: #b00;
+	margin: 20px 0;
+}
+#content {
+	min-height: 560px;
+	margin: 20px 0;
+	background: #ddd;
+}
+#boxes {
+	width: 999px;
+	height: 202px;
+	background: #b00;
+	.box {
+		float: left;	
+		width:166px;
+		height: 166px;
+		background: #ddd;	
+	}
+	.box:nth-child(odd) {
+		background: #ccc;
+	}
+	.tab {
+		text-align: center;
+		display: block;
+		float: left;
+		padding: 10px;
+		width: 313px;
+		height: 16px;
+		background: #b00;
+	}
+	.tab:nth-child(odd) {
+		background: #a00;
+	}
+}
+
+#quicklinks {
+	width: 979px;
+	height:313px;
+	padding: 10px;
+	background: #ddd;
+	margin: 20px 0;
+}
+#footer {
+	width: 100%;
+	height: 36px;
+	background: #b00;
+}
