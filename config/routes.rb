@@ -1,4 +1,6 @@
 Shop::Application.routes.draw do
+  resources :product_images
+
   resources :products
 
   # The priority is based upon order of creation:

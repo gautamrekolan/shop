@@ -1,47 +1,188 @@
+/**** Mixins ****/
+
+@mixin red_button {
+	text-align:center;
+	background: #c00;
+	padding: 5px 10px;
+	border-radius: 10px;
+	box-shadow: 0px 1px 1px #000;
+	border-top: 2px solid #d00;
+	border-left: 2px solid #e00;
+	border-bottom: 2px solid #b00;
+	border-right: 2px solid #a00;
+	a{
+		color: #fff;
+		font-size: 16px;
+		text-shadow: 0px -1px 1px #000;
+	}
+	a:hover {
+		color: #ddd;
+	}	
+}
+
 #wrap {
-	width: 999px;
-	margin: 20px auto;
+	width: 960px;
+	margin: 10px auto;
 }
-#menu {
-	width: 999px;
+
+#admin {
+    position: static;
+    top: 0px;
+    background: #ddd;
+    padding: 10px 10px 6px;
+    text-align: left;
+   	.admin_link{
+		margin: 5px 5px;
+		a { 
+			color: #000;
+			font-weight: bold;
+			font-size: 12px;
+			padding: 5px;
+		}
+		a:hover {
+			color: #d00;
+		}
+		.logout{
+			float:right;
+		}
+	}
+	.admin_link.logout{
+		float:right;
+		margin-top: 0px;
+	}
+}
+
+.menu {
 	height: 36px;
-	background: #b00;
-	margin: 20px 0;
-}
-#content {
-	min-height: 560px;
-	margin: 20px 0;
-	background: #ddd;
-}
-#boxes {
-	width: 999px;
-	height: 202px;
-	background: #b00;
-	.box {
-		float: left;	
-		width:166px;
-		height: 166px;
-		background: #ddd;	
-	}
-	.box:nth-child(odd) {
-		background: #ccc;
-	}
-	.tab {
-		text-align: center;
-		display: block;
+	width: 960px;
+	.logo {
 		float: left;
-		padding: 10px;
-		width: 313px;
-		height: 16px;
-		background: #b00;
+		padding: 0px 15px 0 0px;
 	}
-	.tab:nth-child(odd) {
-		background: #a00;
+	.menu_item {
+		float: left;
+		padding: 5px 10px;
+		border-left: solid 1px #ddd;
+	}
+	.cart_link {
+		float: right;
+		@include red_button;
+	}
+}
+
+/**** Content ****/
+
+#content {
+	clear: both;
+	position: relative;
+	margin: 10px 0;	
+	.full_image {
+		position: absolute;
+		z-index: -50;
+	}
+	.tile {
+		position: relative;
+		float: left;
+		width: 320px;
+		height: 180px;
+		a {
+			color: #fff;
+		}
+		.title {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			font-weight: bold;
+			text-shadow: 0px 0px 2px #000;
+		}
+		.knob {
+			position: absolute;
+			background: #00d;
+			padding: 0px 4px 2px;
+			border-left: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+
+		}
+		.edit {
+			top:0px;
+			right: 18px;
+			background: #00d;
+		}
+		.destroy {
+			top: 0px;
+			right: 0px;
+			background: #d00;
+		}
+	}
+
+	#image-boxes {
+		float: right;
+		background: #000;
+		.more_images {
+			width: 106px;
+			height: 16px;
+			margin: 14px 10px 14px 10px;
+			@include red_button;
+		}
+		.image-box {
+			border-top: 3px solid #ddd;
+			border-left: 3px solid #ccc;
+			border-right: 3px solid #bbb;
+			border-bottom: 3px solid #aaa;
+			border-radius: 5px;
+
+			text-align: center;
+			width: 130px;
+			height: 80px;
+			margin: 10px 7px;
+		}
+	}
+	#description {
+		position: absolute;
+		top: 370px;
+		left: 10px;
+		height: 140px;
+		width: 760px;
+		padding: 10px;
+		background: #fff; 
+		opacity: 0.9;
+		.price {
+			clear: both;
+			float: right;
+		}
+	}
+	.edit_link {
+		@include red_button;
+		width: 40px;
+		float: right;
+	}
+
+}
+
+
+
+
+
+#news {
+	clear: both;
+	width: 960px;
+	height: 150px;
+	padding: 40px 0 0 0;
+	margin: 0 0 10px 0;
+	.boxes {
+		clear:both;
+	    .box {
+		    float: left;	
+		    width: 158px;
+		    height: 90px;
+		    border: 1px solid #ddd;
+		    margin-top: 0px;
+	    }
 	}
 }
 
 #quicklinks {
-	width: 979px;
+	width: 940px;
 	height:313px;
 	padding: 10px;
 	background: #ddd;
@@ -50,5 +191,14 @@
 #footer {
 	width: 100%;
 	height: 36px;
-	background: #b00;
+	background: #ddd;
+}
+
+/**** Forms ****/
+
+.field {
+	margin-top:10px;
+}
+.actions {
+	margin-top: 20px;
 }

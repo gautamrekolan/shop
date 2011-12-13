@@ -1,1 +1,11 @@
-#menu Menu
+%nav.menu 
+  .logo
+    = image_tag ('logo_32x32.png')
+  .menu_items
+    .menu_item= link_to ('Rahmen'), products_path
+    .menu_item= link_to ('Schaltwerke')
+    .menu_item= link_to ('Laufräder')
+    .menu_item= link_to ('Anbauteile')
+    .menu_item= link_to ('Zubehör')
+    .menu_item= link_to ('Mallorca')
+    .cart_link.menu_item= link_to '3 Artikel im Warenkorb'

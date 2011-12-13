@@ -1,18 +1,9 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @product.title
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Price:
-  = @product.price
-%p
-  %b Image:
-  = @product.image
-
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path
+#product
+  .full_image= image_tag @product.image(:full)
+  = render 'image-boxes'
+  %p#notice= notice
+  #description
+    .edit_link= link_to 'Edit', edit_product_path(@product)
+    %h1= @product.title
+    %p= @product.description
+    .price= @product.price

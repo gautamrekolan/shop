@@ -1,0 +1,33 @@
+body {
+	font-family: Arial, sansserif;
+}
+p {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+	font-size: 20px;
+}
+a:hover {
+	color: #222;
+}
+.menu_item {
+	a:hover, a:active{
+		border-bottom: 3px solid #c00;
+	}
+
+}
+
+
+/**** Header ****/
+
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+h1.news {
+	float: left;
+	padding: 5px 10px 5px 0;
+}

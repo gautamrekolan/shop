@@ -25,6 +25,8 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    # pre-build product_image for nested form builder
+    @product.product_images.build
 
     respond_to do |format|
       format.html # new.html.erb

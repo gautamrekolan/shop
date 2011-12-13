@@ -1,6 +1,9 @@
-#boxes
-  - 6.times do
-    .box Box
-  .tab Warenkorb
-  .tab Berner News
-  .tab Team News
+#news
+  %h1.news NEWS	
+  %nav.menu	
+    .menu_item= link_to 'Berner-Bikes.com'
+    .menu_item= link_to 'Team.BERNER-Bikes.com'
+    .menu_item= link_to 'Rent-a-Bike Mallorca'
+  .boxes  
+    - 6.times do
+      .box Box
