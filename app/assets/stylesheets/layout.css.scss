@@ -83,8 +83,10 @@
 	.tile {
 		position: relative;
 		float: left;
-		width: 320px;
-		height: 180px;
+		width: 319px;
+		height: 179px;
+		margin: 0 1px 1px 0;
+		overflow: hidden;
 		a {
 			color: #fff;
 		}
