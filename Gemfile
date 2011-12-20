@@ -13,7 +13,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'minitest'
 gem 'therubyracer'
 gem 'rake'
 gem 'jquery-rails'

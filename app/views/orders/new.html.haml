@@ -1,0 +1,9 @@
+.order_form
+  %h1 Ihre Bestellung:
+
+  = render 'items', :item_source => @cart
+
+  %h1 Bitte geben Sie Ihre Daten ein:
+  
+  = render 'form'
+

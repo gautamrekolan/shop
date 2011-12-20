@@ -1,0 +1,28 @@
+.order
+  %h1 Bestellung
+  = render 'items', :item_source => @order
+  %h1 Kundendaten
+  %table 
+    %tr
+      %td Name:
+      %td= @order.first_name + ' ' + @order.last_name
+    %tr
+      %td Adresse:
+      %td 
+        = @order.street + ' ' + @order.number
+        %br
+        = @order.zip.to_s + ' ' + @order.city
+        %br
+        = @order.country
+      %tr
+        %td Email:
+        %td= @order.email
+      %tr
+        %td Bezahlung per:
+        %td= @order.pay_type
+      %tr
+        %td Status: 
+        %td 
+          = form_for @order do |f|
+            = f.select :status, Order::STATUS_TYPES
+            = f.submit 'aktualisieren'

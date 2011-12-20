@@ -5,11 +5,17 @@ p {
 	font-size: 12px;
 }
 
+
+/**** Links ****/
+
 a {
 	color: #666;
 }
 a:hover {
 	color: #222;
+}
+#quicklinks a{
+	text-decoration: none;
 }
 .menu a {
 	font-size: 20px;
@@ -19,7 +25,14 @@ a:hover {
 	a:hover, a:active{
 		border-bottom: 3px solid #c00;
 	}
-
+}
+.tile {
+	.title {
+		a {
+			font-size: 20px;
+			text-decoration: none;
+		}
+	}
 }
 
 
@@ -29,7 +42,31 @@ h1 {
 	font-size: 20px;
 	font-weight: bold;
 }
-h1.news {
-	float: left;
-	padding: 5px 10px 5px 0;
+
+#quicklinks .category ul a{
+	font-weight: normal;
+	font-size: 16px;
+	color: #666;
+}
+
+/**** QUICKLINKS ****/
+
+#quicklinks{
+  .category{
+  	color: #222;
+    a {
+	  font-weight: normal;
+	  font-size: 16px;
+	  color: #666;
+	}
+	a:hover {
+    	color: #c00;
+	}
+	li {
+		a {
+			font-size: 12px;
+		}
+	}
+  }
+
 }

@@ -1,0 +1,31 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cart_box {
+	width: 200px;
+	table {
+		margin: 10px 0;
+		background: #b00;
+	}
+  	td {
+  		font-size: 12px;
+  		padding: 3px 3px;
+  	}
+  	.product_title{
+  		width: 120px;
+  	}
+  	.total_line td{
+  		padding: 5px 3px;
+  		background: #c00;
+  		text-align: right;
+  	}
+  	.item_total_price {
+  		text-align: right;
+  	}
+  	tr.total_line {
+  		font-weight: bold;
+  	}
+  	form {
+  		text-align: right;
+  	}
+  }

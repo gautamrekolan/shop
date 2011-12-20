@@ -1,18 +1,20 @@
-= form_for @category do |f|
-  -if @category.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-      %ul
-        - @category.errors.full_messages.each do |msg|
-          %li= msg
+.form
+  = form_for @category do |f|
+    -if @category.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+        %ul
+          - @category.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :title
-    %br
-    = f.text_field :title
-  .field
-    = f.label :description
-    %br
-    = f.text_area :description
-  .actions
-    = f.submit 'Save'
+    %table
+      %tr
+        %td= f.label :title, 'Name'
+        %td= f.text_field :title
+      %tr
+        %td= f.label :description, 'Beschreibung'
+        %td= f.text_area :description, { :rows => 4, :cols => 60 }
+      %tr
+        %td{:colspan => 2}
+          .actions
+            = f.submit 'Speichern'

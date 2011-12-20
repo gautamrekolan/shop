@@ -1,0 +1,37 @@
+= form_for @order do |f|
+  -if @order.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+  %table
+    %tr
+      %td= f.label :first_name, "Vor-, Nachname"
+      %td
+        = f.text_field :first_name, :size => 20
+        = f.text_field :last_name
+    %tr
+      %td= f.label :street, "Straße, Hausnummer"
+      %td
+        = f.text_field :street
+        = f.text_field :number, :size => 4
+    %tr
+      %td= f.label :city, "PLZ, Stadt"
+      %td
+        = f.text_field :zip, :size => 5
+        = f.text_field :city
+    %tr
+      %td= f.label :country, "Land "
+      %td= f.text_field :country
+    %tr
+      %td= f.label :email, "Email "
+      %td= f.text_field :email
+    %tr
+      %td= f.label :pay_type, "Bezahlung per "
+      %td= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => "Wähle gewünschte Bezahlmethode"
+    %tr
+      %td= f.label :accept_conditions, "AGB"
+      %td= f.check_box :accept_conditions  
+  .actions
+    = f.submit 'Bestellung absenden'

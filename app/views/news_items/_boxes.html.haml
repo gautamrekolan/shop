@@ -1,0 +1,14 @@
+#news
+  %h1
+    NEWS
+    -if can? :create, $news_item
+      .add= link_to '+', new_news_item_path
+  - if ($news_items)
+    - $news_items.each do |news_item|
+      .box
+        .image= link_to (image_tag news_item.image(:box)), news_item
+        .title= link_to (news_item.title), news_item
+        - if can? :update, news_item
+          .edit= link_to '=', edit_news_item_path(news_item)
+        - if can? :destroy, news_item  
+          .destroy= link_to 'X', news_item, :confirm => "Bist Du sicher?", :method => :delete

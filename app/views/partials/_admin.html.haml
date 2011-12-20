@@ -1,9 +1,12 @@
-#admin
-  %span.admin_link= link_to 'neues Produkt', new_product_path
-  %span.admin_link= link_to 'neue Kategorie', new_category_path
-  %span.admin_link= link_to 'Benutzer'
-  %span.admin_link= link_to 'Bilder'
-  .admin_link.logout= link_to 'ausloggen'    
+- if session[:user_id] 
+  #admin
+    %span.admin_link= link_to 'Bestellungen', orders_path
+    %span.admin_link= link_to 'Benutzer', users_path
+    %span.admin_link= link_to 'Produkte', products_path
+    %span.admin_link= link_to 'News', news_items_path
+    %span.admin_link= link_to 'Partner', partners_path
+    %span.admin_link= notice
+    .admin_link.logout= link_to 'ausloggen', logout_path    
 
 
 

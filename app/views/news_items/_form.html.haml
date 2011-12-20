@@ -1,0 +1,26 @@
+.form  
+  = form_for @news_item do |f|
+    -if @news_item.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@news_item.errors.count, "error")} prohibited this news_item from being saved:"
+        %ul
+          - @news_item.errors.full_messages.each do |msg|
+            %li= msg
+            
+    %table
+      %tr
+        %td= f.label :title, 'Überschrift'
+        %td= f.text_field :title, :size => 80
+      %tr
+        %td= f.label :content, 'Inhalt'
+        %td= f.text_area :content, :rows => 6, :cols => 60 
+      %tr
+        %td= f.label :published, 'veröffentlichen?'
+        %td= f.check_box :published
+      %tr
+        %td= f.label :image, 'Bild'
+        %td= f.file_field :image
+      %tr
+        %td{ :colspan => 2 }  
+          .actions
+            = f.submit 'Speichern'

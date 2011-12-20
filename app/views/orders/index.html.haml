@@ -1,0 +1,36 @@
+.order_index
+  %h1 Bestellungen
+
+  %table
+    %tr
+      %th Name
+      %th Adresse
+
+      %th Email
+      %th Pay type
+      %th Status
+      %th
+      %th
+      %th
+
+    - @orders.each do |order|
+      %tr
+        %td
+          = link_to (order.first_name + ' ' + order.last_name), order
+        %td
+          = order.first_name + ' ' + order.last_name
+          %br
+          = order.street + ' ' + order.number
+          %br
+          = order.zip.to_s + ' ' + order.city 
+          %br
+          %br
+          = order.country
+        %td= mail_to order.email, order.email, :subject => "Ihre Bestellung bei www.BERNER-Bikes.com"
+        %td= order.pay_type
+        %td 
+          = form_for order do |f|
+            = f.select :status, Order::STATUS_TYPES
+            = f.submit 'aktualisieren'
+        %td= link_to 'Bearbeiten', edit_order_path(order)
+        %td= link_to 'Löschen', order, :confirm => 'Are you sure?', :method => :delete

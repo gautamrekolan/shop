@@ -1,0 +1,27 @@
+.index
+  %h1 
+    Nachrichten
+    .add= link_to '+', new_news_item_path
+
+  %table
+    %tr
+      %th Title
+      %th veröfftl.
+      %th Content
+      %th Image
+      %th
+      %th
+      %th
+
+    - @news_items.each do |news_item|
+      %tr
+        %td= link_to news_item.title, news_item
+        %td
+          - if (news_item.published) 
+            Ja
+          - else 
+            Nein
+        %td= news_item.content
+        %td= image_tag news_item.image(:thumb)
+        %td= link_to 'bearbeiten', edit_news_item_path(news_item)
+        %td= link_to 'löschen', news_item, :confirm => 'Are you sure?', :method => :delete

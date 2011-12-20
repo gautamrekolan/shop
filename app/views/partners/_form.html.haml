@@ -1,0 +1,24 @@
+= form_for @partner do |f|
+  -if @partner.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@partner.errors.count, "error")} prohibited this partner from being saved:"
+      %ul
+        - @partner.errors.full_messages.each do |msg|
+          %li= msg
+  .form
+    %table
+      %tr
+        %td
+      %tr 
+        %td= f.label :title, 'Name'
+        %td= f.text_field :title
+      %tr
+        %td= f.label :image, 'Bild'
+        %td= f.file_field :image
+      %tr
+        %td= f.label :link, 'Link'
+        %td= f.text_field :link
+      %tr  
+        %td{:colspan => 2 }
+          .actions
+            = f.submit 'Save'

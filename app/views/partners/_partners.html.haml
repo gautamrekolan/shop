@@ -1,0 +1,13 @@
+#partners
+  %h1 
+    PARTNER
+    - if can? :create, $partners
+      .add= link_to '+', new_partner_path
+  .slideshow    
+    - $partners.each do |partner|
+      .partner
+        = link_to (image_tag partner.image), partner_link(partner)
+        - if can? :update, partner
+          .edit= link_to '=', edit_partner_path(partner)
+        - if can? :destroy, partner
+          .destroy= link_to 'X', partner, :confirm => 'Are you sure?', :method => :delete

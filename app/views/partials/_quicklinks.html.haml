@@ -1,1 +1,8 @@
-#quicklinks Quicklinks
+#quicklinks
+  %h1 QUICKLINKS
+  - $categories.each do |category|
+    .category
+      = link_to category.title, category
+      %ul
+        - ($products.where(:category => category.title)).each do |product|
+          %li=link_to product.title, product

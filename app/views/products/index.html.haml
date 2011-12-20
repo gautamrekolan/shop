@@ -2,6 +2,8 @@
   .tile
     = link_to (image_tag product.image(:tile)), product
     .title= link_to product.title, product
-    .knob.edit= link_to '=', edit_product_path(product)
-    .knob.destroy= link_to 'x', product, :confirm => 'Are you sure?', :method => :delete
+    - if can? :update, product
+      .edit= link_to '=', edit_product_path(product)
+    - if can? :destroy, product
+      .destroy= link_to 'X', product, :confirm => 'Are you sure?', :method => :delete
 

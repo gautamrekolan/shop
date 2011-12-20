@@ -20,6 +20,29 @@
 	}	
 }
 
+@mixin knob {
+	padding: 1px 4px;
+	position: absolute;
+	box-shadow: 0px 1px 2px #000;
+	opacity: 0.5;
+	a {
+		font-size: 16px;
+		font-weight: bold;	
+		text-shadow: 0px -1px 1px #000;
+		text-decoration: none;
+		color: #fff;
+	}
+	a:hover {
+		color: #ddd;
+	}
+	&:hover {
+		opacity: 1;
+	}
+}
+
+/**** CSS ****/
+
+
 #wrap {
 	width: 960px;
 	margin: 10px auto;
@@ -52,21 +75,40 @@
 	}
 }
 
+/**** Menu ****/
+
 .menu {
+	position: relative;
 	height: 36px;
 	width: 960px;
 	.logo {
-		float: left;
+		margin-top: 10px;
+		display: inline;
 		padding: 0px 15px 0 0px;
+		img {
+			vertical-align: middle;
+		}
+	}
+	.menu_items {
+		display: inline;
 	}
 	.menu_item {
-		float: left;
-		padding: 5px 10px;
+		display: inline;
+		vertical-align:middle;
+		padding: 8px 10px 5px;
 		border-left: solid 1px #ddd;
 	}
-	.cart_link {
-		float: right;
+
+
+	.cart_box {
+		position: absolute;
+		top: 0px;
+		right: 5px;
+		z-index:100;
 		@include red_button;
+		.cart {
+			text-align: left;
+		}
 	}
 }
 
@@ -75,10 +117,10 @@
 #content {
 	clear: both;
 	position: relative;
-	margin: 10px 0;	
+	margin: 20px 0 0;	
 	.full_image {
-		position: absolute;
 		z-index: -50;
+		height: 540px;
 	}
 	.tile {
 		position: relative;
@@ -97,103 +139,113 @@
 			font-weight: bold;
 			text-shadow: 0px 0px 2px #000;
 		}
-		.knob {
-			position: absolute;
-			background: #00d;
-			padding: 0px 4px 2px;
-			border-left: 1px solid #fff;
-			border-bottom: 1px solid #fff;
 
-		}
-		.edit {
-			top:0px;
-			right: 18px;
-			background: #00d;
-		}
-		.destroy {
-			top: 0px;
-			right: 0px;
-			background: #d00;
-		}
+
 	}
 
-	#image-boxes {
-		float: right;
-		background: #000;
-		.more_images {
-			width: 106px;
-			height: 16px;
-			margin: 14px 10px 14px 10px;
-			@include red_button;
-		}
-		.image-box {
-			border-top: 3px solid #ddd;
-			border-left: 3px solid #ccc;
-			border-right: 3px solid #bbb;
-			border-bottom: 3px solid #aaa;
-			border-radius: 5px;
-
-			text-align: center;
-			width: 130px;
-			height: 80px;
-			margin: 10px 7px;
-		}
-	}
-	#description {
+.content_box {
 		position: absolute;
 		top: 370px;
 		left: 10px;
 		height: 140px;
-		width: 760px;
+		width: 920px;
 		padding: 10px;
 		background: #fff; 
 		opacity: 0.9;
+		h1 {
+			margin-bottom: 10px;
+		}
+		p {
+			width: 700px;
+		}
 		.price {
-			clear: both;
-			float: right;
+			position: absolute;
+			right: 80px;
+			bottom: 10px;
+			color: #c00;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.add_to_cart {
+			position: absolute;
+			right:10px;
+			bottom: 10px;
 		}
 	}
-	.edit_link {
-		@include red_button;
-		width: 40px;
-		float: right;
-	}
 
 }
 
 
 
+/**** internal adds ****/
 
-
-#news {
+#internal_adds {
 	clear: both;
 	width: 960px;
-	height: 150px;
-	padding: 40px 0 0 0;
-	margin: 0 0 10px 0;
-	.boxes {
-		clear:both;
-	    .box {
-		    float: left;	
-		    width: 158px;
-		    height: 90px;
-		    border: 1px solid #ddd;
-		    margin-top: 0px;
-	    }
+	height: 100px;
+	.top_box{
+		height:40px;
+	}
+	.box {
+		float:left;
+		width: 299px;
+		height: 40px;
+		border-right: 1px solid #fff;
+		padding: 10px;
+		color: #fff;
+		text-align: center;
+		background-color: #bbb;
+
 	}
 }
 
-#quicklinks {
-	width: 940px;
-	height:313px;
-	padding: 10px;
-	background: #ddd;
-	margin: 20px 0;
+#dealers:hover {
+	background-color: #c00;
 }
+#rent:hover {
+		background-color: #a60;
+}
+#team:hover {
+	background-color: #000;
+}
+
+
+/**** QUICKLINKS ****/
+#links {
+	width: 960px;
+	clear: both;
+}
+#quicklinks {
+    display: block;
+    float: left;
+    width: 693px;
+    margin: 0px 0 40px;
+	h1 {
+		padding: 5px 10px 5px 5px; 
+		border-top: solid 1px #c00;
+		background: #eee;
+	
+	}
+	.category {
+		display: block;
+		float: left;
+		width: 210px;
+		min-height: 100px;
+		margin: 20px 0px 0 0;
+		padding: 0 10px 0 10px;
+		border-left: 1px solid #ddd;
+		overflow: hidden;
+	}
+}
+
+/**** FOOTER ****/
 #footer {
+ 	clear: both;
+ 	margin-top: 20px;
 	width: 100%;
 	height: 36px;
-	background: #ddd;
+	border-top: solid 1px #c00;
+	background: #eee;
 }
 
 /**** Forms ****/
@@ -203,4 +255,48 @@
 }
 .actions {
 	margin-top: 20px;
+}
+
+/**** ADMIN TOOLS ****/
+.form, .index{
+	table {
+		margin: 20px 0;
+		width: 960px;
+		font-size: 12px;
+		line-height: 14px;
+	}
+	th {
+	   	font-weight:bold;
+	   	border-bottom: 1px solid #666;
+	}
+	td, th {	
+		padding: 10px 10px 5px 10px;
+		text-align: left;
+ 		vertical-align: top;
+
+	}
+	tr:nth-child(odd) {
+		background: #eee;
+	}
+}
+
+.add {
+	@include knob;
+	display: inline;
+	background: #0a0;
+	padding: 0 3px;
+	margin-left: 5px;
+}
+.edit {
+	@include knob;
+	top:2px;
+	right: 22px;
+	background: #00d;
+
+}
+.destroy {
+	@include knob;
+	top: 2px;
+	right: 2px;
+	background: #d00;
 }

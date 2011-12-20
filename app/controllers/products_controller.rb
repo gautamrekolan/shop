@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
+  # authorize_resource
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-
+    @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -14,7 +15,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -23,10 +23,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   # GET /products/new.json
-  def new
-    @product = Product.new
-    @categories = Category.all
-    
+  def new  
+    @product = Product.new  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }

@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
-  
+  # authorize_resource
+
   def index
     @categories = Category.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @categories }
@@ -13,7 +13,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-
+    @products = Product.where(:category => @category.title )
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }
@@ -22,8 +23,6 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @category }
@@ -38,7 +37,6 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @category = Category.new(params[:category])
-
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
@@ -54,7 +52,6 @@ class CategoriesController < ApplicationController
   # PUT /categories/1.json
   def update
     @category = Category.find(params[:id])
-
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }

@@ -1,16 +1,35 @@
 Shop::Application.routes.draw do
-  resources :product_images
+  resources :users
+
+  resources :news_items
+
+  resources :partners
+
+  resources :orders
+
+  resources :line_items
+
+  resources :carts
 
   resources :products
 
   resources :categories
+
+  resources :sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  match 'kategorien' => 'categories#index'
 
+  match 'kategorie/:id' => 'categories#show'
+
+
+  match 'login' => 'sessions#new'
+  match 'logout' => 'sessions#destroy'
+  match 'register' => 'users#new'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
