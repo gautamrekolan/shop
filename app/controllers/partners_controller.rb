@@ -3,6 +3,7 @@ class PartnersController < ApplicationController
   # GET /partners
   # GET /partners.json
   def index
+    @title = "Alle Partner"
     @partners = Partner.all
     respond_to do |format|
       format.html # index.html.erb
@@ -23,6 +24,7 @@ class PartnersController < ApplicationController
   # GET /partners/new
   # GET /partners/new.json
   def new
+    @title = "Neuer Partner"
     @partner = Partner.new
     respond_to do |format|
       format.html # new.html.erb

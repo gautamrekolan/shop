@@ -17,9 +17,15 @@ class Order
   field :status
   field :accept_conditions, :type => Boolean
 
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :first_name, :last_name, :street, :number, :zip, :city, :country, :email, :pay_type, :accept_conditions, :presence => true
   validates :pay_type, :inclusion => PAYMENT_TYPES
-  validates :zip, :numericality => { :greater_than_or_equal_to => 10000 }
+  validates :zip, :numericality => { :greater_than => 10000 }, :length => { :is => 5 }
+  validates :email, :format=> { :with => email_regex }
+  validates :first_name, :length => { :maximum => 60 }
+  validates :last_name, :street, :city, :country, :length => { :within => 2..60 }
+  validates :status, :inclusion => STATUS_TYPES
 
   has_many :line_items, :dependent => :destroy
 

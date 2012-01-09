@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
 
   def index
+    @title = "Alle Bestellungen"
     @orders = Order.all
 
     respond_to do |format|
@@ -26,6 +27,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
+    @title = "Ihre Bestellung"
     @cart = current_cart
     if @cart.line_items.empty?
       redirect_to root_url, :notice => "Ihr Warenkorb ist leer"
@@ -49,6 +51,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    @cart = current_cart
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     

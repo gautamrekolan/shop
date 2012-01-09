@@ -1,3 +1,4 @@
+%h1= @title
 - @products.each do |product|
   .tile
     = link_to (image_tag product.image(:tile)), product

@@ -4,7 +4,7 @@ class NewsItemsController < ApplicationController
   # GET /news_items.json
   def index
     @news_items = NewsItem.all.order_by(:created_at, :desc)
-
+    @title ="Alle Nachrichten"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news_items }
@@ -25,6 +25,7 @@ class NewsItemsController < ApplicationController
   # GET /news_items/new.json
   def new
     @news_item = NewsItem.new
+    @title = "Neue Nachrichtenmeldung"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @news_item }

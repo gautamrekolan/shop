@@ -11,6 +11,7 @@ class Partner
   field :link
 
   validates :title, :presence => true
+  validates :link, :presence => true
 
   key :title
 

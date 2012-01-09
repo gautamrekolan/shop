@@ -9,7 +9,7 @@ class Notifier < ActionMailer::Base
   def order_received (order)
     @order = order
 
-    mail to: order.email, :subject => "Bestätigung Deiner Bestellung bei BERNER-Bikes.com"
+    mail to: order.email, :subject => "Bestaetigung Deiner Bestellung bei BERNER-Bikes.com"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

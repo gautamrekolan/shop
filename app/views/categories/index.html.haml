@@ -1,10 +1,14 @@
-%h1 Kategorien
-
-- @categories.each do |category|
-  .field
-    = category.title
-    %br
-    %p
-      = category.description
-      = link_to 'Edit', edit_category_path(category)
-      = link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
+#category.category
+  %h1 Alle Kategorien
+  %table
+    %tr
+      %th Titel
+      %th Beschreibung
+      %th
+      %th
+    - @categories.each do |category|
+      %tr
+        %td= link_to category.title, category
+        %td= category.description
+        %td= link_to 'Edit', edit_category_path(category)
+        %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete

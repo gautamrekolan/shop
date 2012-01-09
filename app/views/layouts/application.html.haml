@@ -1,7 +1,7 @@
 !!!
 %html
 %head
-  %title BERNER-Bikes.com
+  %title= title
   %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
   = stylesheet_link_tag    "application"
   = javascript_include_tag "application"
@@ -10,7 +10,7 @@
   = render 'partials/admin'
   #wrap
     = render 'partials/menu'
-    #content
+    %section#content
       = yield
     = render 'partials/internal_adds'
     = render 'news_items/boxes'
@@ -18,3 +18,4 @@
       = render 'partials/quicklinks'
       = render 'partners/partners'
     = render 'partials/footer'
+    = debug(params) if Rails.env.development?

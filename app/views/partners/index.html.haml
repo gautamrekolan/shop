@@ -1,21 +1,22 @@
-%h1 Listing partners
+#partner.partner_index
+  %h1= @title
 
-%table
-  %tr
-    %th Title
-    %th Image
-    %th
-    %th
-    %th
-
-  - @partners.each do |partner|
+  %table
     %tr
-      %td= partner.title
-      %td= image_tag partner.image
-      %td= link_to 'Show', partner
-      %td= link_to 'Edit', edit_partner_path(partner)
-      %td= link_to 'Destroy', partner, :confirm => 'Are you sure?', :method => :delete
+      %th Title
+      %th Image
+      %th
+      %th
+      %th
 
-%br
+    - @partners.each do |partner|
+      %tr
+        %td= partner.title
+        %td= image_tag partner.image
+        %td= link_to 'Show', partner
+        %td= link_to 'Edit', edit_partner_path(partner)
+        %td= link_to 'Destroy', partner, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Partner', new_partner_path
+  %br
+
+  = link_to 'New Partner', new_partner_path

@@ -16,5 +16,13 @@ module ApplicationHelper
     end
   end
 
+  def title
+    base_title = "BERNER-Bikes.com"
+    if @title 
+      @title + " | " + base_title
+    else
+      base_title
+    end
+  end
 
 end

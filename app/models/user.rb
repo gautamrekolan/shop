@@ -2,14 +2,22 @@ class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
 
-  attr_accessible :name, :admin, :password, :password_digest
+  ROLES = ["Admin", "Shop Admin", "Customer"]
+  attr_accessible :name, :role, :password, :password_digest
 
   field :name
-  field :admin, :type => Boolean
+  field :role
   field :password
   field :password_digest
 
   has_secure_password
-  validates_presence_of :password, :on => :create
+  validates_presence_of :name, :password, :role, :on => :create
+  
+  validates :name, :length => { :within => 4..60 }
+  validates :password, :length => { :within => 6..20 }
+
+  validates :name, :uniqueness => true
+
+  validates :role, :inclusion => ROLES
 
 end

@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   # authorize_resource
 
   def index
+    @title = "Alle Kategorien"
     @categories = Category.all
     respond_to do |format|
       format.html # index.html.erb
@@ -22,6 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @title = "Neue Kategorie"
     @category = Category.new
     respond_to do |format|
       format.html # new.html.erb

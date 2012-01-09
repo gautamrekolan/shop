@@ -9,18 +9,20 @@
 
     %table
       %tr
-        %td= f.label :name
-        %td= f.text_field :name
+        %td= f.label :name, "Name"
+        %td{ :colspan => 2 }= f.text_field :name
+
       %tr
-        %td= f.label :admin
-        %td= f.check_box :admin
+        %td= f.label :role, "Rolle"
+        %td{ :colspan => 2 }= f.select :role, User::ROLES
       %tr
-        %td= f.label :password
+        %td= f.label :password, "Passwort"
         %td= f.password_field :password
+        %td (6-20 Zeichen)
       %tr
-        %td= f.label :password_confirmation
-        %td= f.password_field :password_confirmation
+        %td= f.label :password_confirmation, "Passwort wiederholen"
+        %td{ :colspan => 2 }= f.password_field :password_confirmation
       %tr
         .actions
-          %td{ :colspan => 2 }
+          %td{ :colspan => 3 }
             = f.submit 'Speichern'
