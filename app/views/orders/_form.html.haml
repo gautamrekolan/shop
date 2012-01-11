@@ -6,6 +6,7 @@
       %ul
         - @order.errors.full_messages.each do |msg|
           %li= msg
+  = f.hidden_field :status, :value => "Steht aus"
   %table
     %tr
       %td= f.label :first_name, "Vor-, Nachname"

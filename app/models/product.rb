@@ -5,7 +5,7 @@ class Product
   include Mongoid::MultiParameterAttributes
 
 
-  attr_accessible :title, :description, :price, :image, :category, :_id
+ # attr_accessible :title, :description, :price, :image, :category, :_id
 
   field :title
   field :description
@@ -24,6 +24,9 @@ class Product
 
   has_many :line_items
   has_many :orders
+  embeds_many :options
+  accepts_nested_attributes_for :options
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   private

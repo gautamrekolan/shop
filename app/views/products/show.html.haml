@@ -8,5 +8,10 @@
       .destroy= link_to 'X', @product, :confirm => 'Are you sure?', :method => :delete
     %h1= @product.title
     %p= @product.description
+    %p
+      - @product.options.each do |option|
+        %p 
+          Option: 
+          = option.name
     .add_to_cart= button_to 'kaufen', line_items_path(:product_id => @product), :remote => true
     .price= number_to_currency(@product.price)

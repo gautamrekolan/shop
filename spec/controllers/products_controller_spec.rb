@@ -33,6 +33,14 @@ describe ProductsController do
       response.should have_selector('label', :for => "product_image")
       response.should have_selector('input', :id => "product_image")
     end
+    it "should have a label for an option" do
+      get 'new'
+      response.should have_selector('label', :content => "Option")
+    end
+    it "should have a button for producing a new option field" do
+      get 'new'
+      response.should have_selector('form', :class => "button_to")
+    end
     it "should have a label and select button for the category" do
       get 'new'
       response.should have_selector('label', :for => "product_category")
@@ -62,5 +70,35 @@ describe ProductsController do
     end
 
   end
+
+  describe "POST 'create'" do
+    describe "failure" do
+
+      before(:each) do
+        @attr = { :title => "", :description => "", :price => "", :category => "" }
+      end
+      it "should not create a product" do
+        lambda do
+          post :create, :product => @attr
+        end.should_not change(Product, :count) 
+      end
+    end
+
+    describe "success" do  
+      before(:each) do
+        @attr = { :title => "Title", :description => "Description", :price => "1", :category => "Rahmen" }
+      end
+      it "should create a product" do
+        lambda do
+          post :create, :product => @attr
+        end.should change(Product, :count).by(1)
+      end
+    end
+  end
+
+  describe "create_option" do
+    it "should create a new option"
+  end
+  
 
 end

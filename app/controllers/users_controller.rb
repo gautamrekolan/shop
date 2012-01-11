@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @title = @user.name
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
   def new
     @title = "Neuer Benutzer"
     @user = User.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -42,6 +44,7 @@ class UsersController < ApplicationController
   def create
     @title = "Neuer Benutzer"
     @user = User.new(params[:user])
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to root_url, notice: 'Benutzer ist registriert.' }

@@ -9,7 +9,7 @@ class User
   field :role
   field :password
   field :password_digest
-
+  
   has_secure_password
   validates_presence_of :name, :password, :role, :on => :create
   

@@ -1,0 +1,5 @@
+%tr
+  %td= f.label :name, "Option"
+  %td
+    = f.text_field :name, { :size => 20 }  
+    = link_to "Option löschen", :action => :destroy, :controller => :options, :remote => true

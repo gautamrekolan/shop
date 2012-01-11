@@ -7,8 +7,15 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if (user.role == "Admin")
       can :manage, :all
-    else
+    elsif (user.role == "Shop Admin")
+      can :manage, Product
+      can :manage, NewsItem
+      can :manage, Partner
+      can :manage, Order 
+      can :manage, Category
+    else    
       can :read, :all
+      can :manage, Cart
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

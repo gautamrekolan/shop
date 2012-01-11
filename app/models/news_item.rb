@@ -11,6 +11,8 @@ class NewsItem
   field :image
   field :published, :type => Boolean
   
+  key :title
+
   scope :published, where(published: true)
 
   validates :title, :length => {:maximum => 50}, :presence => true

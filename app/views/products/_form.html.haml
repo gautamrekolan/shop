@@ -17,6 +17,12 @@
       %tr
         %td= f.label :category, 'Kategorie'
         %td=f.select(:category, Category.all.collect{ |c| [c.title]})
+      
+      = f.fields_for :options do |build|
+        = render 'option_rows', :f => build
+      %tr
+        %td= link_to "neue Option hinzufügen"
+        %td
       %tr 
         %td= f.label :price, 'Preis'
         %td

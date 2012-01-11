@@ -10,6 +10,7 @@ Shop::Application.routes.draw do
   resources :categories
   resources :sessions
   resources :pages
+  resources :options
 
 
   # The priority is based upon order of creation:

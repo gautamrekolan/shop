@@ -151,5 +151,15 @@ describe Order do
     no_accept_conditions_order.should_not be_valid
   end
   
+  it "should add line_items from cart"
+  # 	product = Factory(:product)
+  # 	cart = Cart.new
+  # 	line_item = cart.add_product(product.id)
+  # 	order = Order.new(@attr)
+  #   lambda do
+  #     order.add_line_items_from_cart(cart)
+  #   end.should change(order.line_items, :count).by(1)
+  # end
+
  
 end

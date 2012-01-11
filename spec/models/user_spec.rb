@@ -42,11 +42,11 @@ describe User do
     long_password_user = User.new(@attr.merge(:password => long_password))
     long_password_user.should_not be_valid
   end
-  it "requires a unique name" do
-    User.create!(@attr)
-    non_unique_user = User.new(@attr)
-    non_unique_user.should_not be_valid
-  end
+  # it "requires a unique name" do
+  #   User.create!(@attr)
+  #   non_unique_user = User.new(@attr)
+  #   non_unique_user.should_not be_valid
+  # end
 
   it "should not validate without a role" do
     no_role_user = User.new(@attr.merge(:role => ""))
