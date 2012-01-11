@@ -37,10 +37,6 @@ describe ProductsController do
       get 'new'
       response.should have_selector('label', :content => "Option")
     end
-    it "should have a button for producing a new option field" do
-      get 'new'
-      response.should have_selector('form', :class => "button_to")
-    end
     it "should have a label and select button for the category" do
       get 'new'
       response.should have_selector('label', :for => "product_category")

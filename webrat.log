@@ -213,3 +213,8 @@ REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"name"=>"", "role"=>"
 REQUESTING PAGE: GET /register with {} and HTTP headers {}
 REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"name"=>"New User", "role"=>"Customer", "password"=>"foobar", "password_confirmation"=>"foobar"}, "commit"=>"Speichern"} and HTTP headers {"HTTP_REFERER"=>"/register"}
 REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"name"=>"", "role"=>"", "password"=>"", "password_confirmation"=>""}, "commit"=>"Speichern"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"name"=>"New User", "role"=>"Customer", "password"=>"foobar", "password_confirmation"=>"foobar"}, "commit"=>"Speichern"} and HTTP headers {"HTTP_REFERER"=>"/register"}
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
