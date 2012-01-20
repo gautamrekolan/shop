@@ -6,7 +6,7 @@ describe Product do
   end
 
   it "should be valid given the right attributes" do
-  #	Product.create!(@attr)
+  	Product.create!(@attr)
   end
 
   it "requires a title" do
@@ -32,5 +32,9 @@ describe Product do
   	zero_price_product = Product.new(@attr.merge(:price => 0))
   	zero_price_product.should_not be_valid
   end
+
+  it "requires a product image"
+
+  it "requires one product image to be tagged as title image"
 
 end

@@ -12,4 +12,7 @@ $ ->
   $('.cart_box').hover(
     -> $('.cart').slideDown('fast')
     -> $('.cart').slideUp('fast')
-  )    
+  )
+  $('.flash').click(
+    -> $('.flash').fadeOut('slow')
+  )

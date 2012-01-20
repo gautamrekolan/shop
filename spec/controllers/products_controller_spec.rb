@@ -28,19 +28,7 @@ describe ProductsController do
       response.should have_selector('label', :for => "product_description")
       response.should have_selector('textarea', :id => "product_description" )
     end
-    it "should have a label and input for the image" do
-      get 'new'
-      response.should have_selector('label', :for => "product_image")
-      response.should have_selector('input', :id => "product_image")
-    end
-    it "should have a label for an option" do
-      get 'new'
-      response.should have_selector('label', :content => "Option")
-    end
-    it "should have a button for producing a new option field" do
-      get 'new'
-      response.should have_selector('form', :class => "button_to")
-    end
+  
     it "should have a label and select button for the category" do
       get 'new'
       response.should have_selector('label', :for => "product_category")

@@ -7,11 +7,14 @@ Shop::Application.routes.draw do
   resources :line_items
   resources :carts
   resources :products
-  resources :categories
+  resources :product_images
   resources :sessions
   resources :pages
   resources :options
 
+  resources :categories do
+    get 'page/:page', :action => :show, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

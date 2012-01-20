@@ -1,14 +1,13 @@
-#category
-  %h1.categories
-    = @category.title.upcase
-    - if can? :create, @product
-      .add= link_to '+', new_product_path
-  - @products.each do |product|
-    .tile
-      = link_to (image_tag product.image(:tile)), product
-      .title= link_to product.title, product
-      - if can? :edit, product
-        .edit= link_to '=', edit_product_path(product)
-      - if can? :destroy, product  
-        .destroy= link_to 'X', product, :confirm => 'Are you sure?', :method => :delete
-
+%section#content
+  #category.inner
+    - @products.each do |product|
+      .tile
+        - product.product_images.take(1).each do |product_image|
+          = link_to (image_tag product_image.image(:tile)), product
+        .title
+          = link_to product.title, product
+        - if can? :edit, product
+          .edit= link_to '=', edit_product_path(product)
+        - if can? :destroy, product  
+          .destroy= link_to 'X', product, :confirm => 'Are you sure?', :method => :delete
+  = paginate @products, :title => @category.title

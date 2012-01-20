@@ -5,20 +5,22 @@
 .order_index, .order_form, .order {
 	table {
 		margin: 20px 0;
-		width: 960px;
+		width: 930px;
 		font-size: 12px;
 		line-height: 14px;
 	}
 	th {
 	   	font-weight:bold;
 	   	border-bottom: 1px solid #666;
+
 	}
 	td, th {	
-		padding: 10px 10px 5px 10px;
+		padding: 10px 10px 8px 10px;
 		text-align: left;
 	}
 	tr:nth-child(odd) {
-		background: #eee;
+		background: #252020;
+		opacity: 0.7;
 	}
 	.total_item_price, .item_price {
 		text-align: right;
@@ -28,7 +30,7 @@
 	}
 	.total_line {
    		font-weight: bold;
-   		border-top: 1px solid #666;
-   		border-bottom: 3px solid #666;
+   		border-top: 1px solid #222;
+   		border-bottom: 3px solid #222;
 	}
 }
