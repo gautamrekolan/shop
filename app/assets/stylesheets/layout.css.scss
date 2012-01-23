@@ -105,6 +105,7 @@
 		right: 5px;
 		z-index:100;
 		@include red_button;
+		box-shadow: 0 0 10px #000;
 		.cart {
 			text-align: left;
 		}

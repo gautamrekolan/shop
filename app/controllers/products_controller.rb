@@ -51,7 +51,10 @@ class ProductsController < ApplicationController
     @product = Product.new(params[:product])
 
     respond_to do |format|
-      if @product.save && 
+      if @product.save
+        if @product.product_images.count == 1
+          @product.product_images.where(:title_image => false).update(title_image: true)
+        end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
@@ -89,10 +92,14 @@ class ProductsController < ApplicationController
     end
   end
   
-  def show_product_image
+  def product_pop_image
     @product = Product.find(params[:id])
+
+    @pop_image = @product.product_images.find(params[:image_id])
+
     respond_to do |format|
       format.js
+      format.html
     end
   end
   
