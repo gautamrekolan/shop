@@ -1,5 +1,8 @@
 body {
+	background-color: #111;
+	background: url(back.png);
 	font-family: Arial, sansserif;
+	color: #ddd;
 }
 p {
 	font-size: 12px;
@@ -9,17 +12,18 @@ p {
 /**** Links ****/
 
 a {
-	color: #666;
+	color: #bbb;
 }
 a:hover {
-	color: #222;
+	color: #fff;
 }
 #quicklinks a{
 	text-decoration: none;
 }
 .menu a {
-	font-size: 20px;
+	font-size: 18px;
 	text-decoration: none;
+	text-shadow: 0 0 5px #000;
 }
 .menu_item {
 	a:hover, a:active{
@@ -42,7 +46,14 @@ h1 {
 	font-size: 20px;
 	font-weight: bold;
 }
-
+h1.page_title {
+	line-height: 36px;
+	margin-top: 20px;
+}
+#quicklinks h1 {
+	color: #666;
+	
+}
 #quicklinks .category ul a{
 	font-weight: normal;
 	font-size: 16px;

@@ -15,6 +15,6 @@ class Partner
 
   key :title
 
-  has_mongoid_attached_file :image, :styles => { :tile => "220x220" }
+  has_mongoid_attached_file :image, :styles => { :tile => "x40" }
 
 end

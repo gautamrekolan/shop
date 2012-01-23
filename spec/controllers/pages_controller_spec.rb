@@ -30,17 +30,13 @@ describe PagesController do
       get 'home'
       response.should have_selector('section', :id => "partners")
     end
-    it "should have a content section" do
-      get 'home'
-      response.should have_selector('section', :id => "content")
-    end
     it "should have a menu nav" do
       get 'home'
       response.should have_selector('nav', :class => "menu")
     end
     it "should have a footer" do
       get 'home'
-      response.should have_selector('footer', :content => "Footer")
+      response.should have_selector('footer', :id => "footer")
     end
   end
 

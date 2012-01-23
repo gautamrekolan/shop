@@ -1,0 +1,9 @@
+.fields
+  .label
+    = f.label :image
+  .field= f.file_field :image
+  = link_to_remove_fields "löschen", f
+  .label
+    = f.label :title_image, 'Titelbild?'
+  .field
+    = f.check_box :title_image  

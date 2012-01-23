@@ -16,8 +16,11 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @title = @product.title
+    #flash[:success] =  "hallo"
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
+      format.js 
       format.json { render json: @product }
     end
   end
@@ -27,7 +30,10 @@ class ProductsController < ApplicationController
   def new  
     @title = "Neues Produkt"
     @product = Product.new 
-    @product.options.build
+    # 3.times do
+    #   option = @product.options.build
+    #   4.times { option.values.build }
+    # end
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -37,18 +43,18 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    if (@product.options.count == 0)
-      @product.options.build
-    end
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+
     respond_to do |format|
       if @product.save
-        delete_empty_options(@product.options)
+        if @product.product_images.count == 1
+          @product.product_images.where(:title_image => false).update(title_image: true)
+        end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
@@ -62,10 +68,9 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-
+    id = @product.id
     respond_to do |format|
-      if @product.update_attributes(params[:product])
-        delete_empty_options(@product.options)
+      if (@product.update_attributes(params[:product]) && @product._id = id)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :ok }
       else
@@ -86,15 +91,16 @@ class ProductsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def product_pop_image
+    @product = Product.find(params[:id])
 
-  def create_option
-  end
+    @pop_image = @product.product_images.find(params[:image_id])
 
-  def delete_empty_options(options)
-    options.each do |option|
-      if (option.blank?)
-        option.destroy
-      end
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
+  
 end

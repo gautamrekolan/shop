@@ -7,31 +7,30 @@
           - @product.errors.full_messages.each do |msg|
             %li= msg
 
-    %table
-      %tr
-        %td= f.label :title, 'Name'
-        %td= f.text_field :title, { :size => 40 }
-      %tr
-        %td=f.label :description, 'Beschreibung'
-        %td= f.text_area :description, {:rows => 5, :cols => 60 }
-      %tr
-        %td= f.label :category, 'Kategorie'
-        %td=f.select(:category, Category.all.collect{ |c| [c.title]})
-      
-      = f.fields_for :options do |build|
-        = render 'option_rows', :f => build
-      %tr
-        %td= link_to "neue Option hinzufügen"
-        %td
-      %tr 
-        %td= f.label :price, 'Preis'
-        %td
-          = f.text_field :price, { :size => 6 }
-          €
-      %tr
-        %td= f.label :image, 'Bild'
-        %td= f.file_field :image
-      %tr
-        %td{:colspan => 2}
-          .actions
-            = f.submit 'Speichern'
+    .row
+      .label= f.label :title, 'Name'
+      .field= f.text_field :title, { :size => 40 }
+    .row
+      .label= f.label :description, 'Beschreibung'
+      .field= f.text_area :description, {:rows => 5, :cols => 60 }
+    .row
+      .label= f.label :category, 'Kategorie'
+      .field=f.select(:category, Category.all.collect{ |c| [c.title]})
+    .row
+      Optionen
+      = f.fields_for :options do |builder|
+        = render 'option_fields', :f => builder
+    .new_option=link_to_add_fields "neue Option", f, :options   
+    .row 
+      .label= f.label :price, 'Preis'
+      .field
+        = f.text_field :price, { :size => 6 }
+        €
+    .row
+      Bilder
+      = f.fields_for :product_images do |builder|
+        = render 'product_image_fields', :f => builder
+    .new_option=link_to_add_fields "neues Bild", f, :product_images  
+
+    .actions
+      = f.submit 'Speichern'

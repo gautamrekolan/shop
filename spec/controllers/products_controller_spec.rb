@@ -28,6 +28,7 @@ describe ProductsController do
       response.should have_selector('label', :for => "product_description")
       response.should have_selector('textarea', :id => "product_description" )
     end
+<<<<<<< HEAD
     it "should have a label and input for the image" do
       get 'new'
       response.should have_selector('label', :for => "product_image")
@@ -37,6 +38,9 @@ describe ProductsController do
       get 'new'
       response.should have_selector('label', :content => "Option")
     end
+=======
+  
+>>>>>>> signin-out-tests
     it "should have a label and select button for the category" do
       get 'new'
       response.should have_selector('label', :for => "product_category")

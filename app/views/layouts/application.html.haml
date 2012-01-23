@@ -10,12 +10,10 @@
   = render 'partials/admin'
   #wrap
     = render 'partials/menu'
-    %section#content
-      = yield
-    = render 'partials/internal_adds'
-    = render 'news_items/boxes'
+    = yield
     #links
+      = render 'partners/partners' 
       = render 'partials/quicklinks'
-      = render 'partners/partners'
     = render 'partials/footer'
-    = debug(params) if Rails.env.development?
+    = render 'partials/notice'
+    /= debug(params) if Rails.env.development?

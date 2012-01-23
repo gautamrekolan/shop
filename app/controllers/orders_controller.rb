@@ -51,9 +51,9 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @cart = current_cart
+    @cart = Cart.find(session[:cart_id])
     @order = Order.new(params[:order])
-    @order.add_line_items_from_cart(current_cart)
+    line_items = LineItem.where(cart_id: @cart.id).update_all(cart_id: nil, order_id: @order.id)
     
     respond_to do |format|
       if @order.save

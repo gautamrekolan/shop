@@ -1,10 +1,21 @@
-%h1= @title
-- @products.each do |product|
-  .tile
-    = link_to (image_tag product.image(:tile)), product
-    .title= link_to product.title, product
-    - if can? :update, product
-      .edit= link_to '=', edit_product_path(product)
-    - if can? :destroy, product
-      .destroy= link_to 'X', product, :confirm => 'Are you sure?', :method => :delete
-
+%section#product_list
+  %h1.page_title= @title
+  %table
+    %tr
+      %th Name
+      %th Bild
+      %th 
+      %th
+    - @products.each do |product|
+      %tr
+        %td
+          = link_to product.title, product
+        %td
+          - product.product_images.take(1).each do |product_image|
+            = link_to (image_tag product_image.image(:thumb)), product
+        %td
+          - if can? :update, product
+            = link_to 'bearbeiten', edit_product_path(product)
+        %td
+          - if can? :destroy, product
+            = link_to 'löschen', product, :confirm => 'Sicher?', :method => :delete
