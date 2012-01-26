@@ -12,36 +12,36 @@ describe NewsItemsController do
 
     it "should have the right title" do
       get 'new'
-      response.should have_selector('title', :content => "Neue Nachrichtenmeldung | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "Neue Nachrichtenmeldung | BERNER-Bikes.com")
     end
     it "should have the right form" do
       get 'new'
-      response.should have_selector('form', :class => "new_news_item")
+      page.has_selector?('form', :class => "new_news_item")
     end
     it "should have a label for the news title input" do
       get 'new'
-      response.should have_selector('label', :for => "news_item_title")
+      page.has_selector?('label', :for => "news_item_title")
     end
     it "should have a news title input" do
       get 'new'
-      response.should have_selector('input', :id => "news_item_title")
+      page.has_selector?('input', :id => "news_item_title")
     end
     it "should have a label for the news content input" do  
       get 'new'
-      response.should have_selector('label', :for => "news_item_content")
+      page.has_selector?('label', :for => "news_item_content")
     end
     it "should have an textarea for the content" do
       get 'new'
-      response.should have_selector('textarea', :id => "news_item_content" )
+      page.has_selector?('textarea', :id => "news_item_content" )
     end
     it "should have a label and input for the image input" do
       get 'new'
-      response.should have_selector('label', :for => "news_item_image")
-      response.should have_selector('input', :id => "news_item_image")
+      page.has_selector?('label', :for => "news_item_image")
+      page.has_selector?('input', :id => "news_item_image")
     end
     it "should have a submit button" do
       get 'new'
-      response.should have_selector('input', :type => "submit")
+      page.has_selector?('input', :type => "submit")
     end
 
   end
@@ -55,16 +55,16 @@ describe NewsItemsController do
 
     it "should have a table" do
       get 'index'
-      response.should have_selector('table')
+      page.has_selector?('table')
     end
 
     it "should have the right header" do
       get 'index'
-      response.should have_selector('h1', :content => "Alle Nachrichten")
+      page.has_selector?('h1', :content => "Alle Nachrichten")
     end
     it "should have the right title" do
       get 'index'
-      response.should have_selector('title', :content => "Alle Nachrichten")
+      page.has_selector?('title', :content => "Alle Nachrichten")
     end
 
   end

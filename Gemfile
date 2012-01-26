@@ -34,7 +34,8 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'webrat'
+  # gem 'webrat'
+  gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
   gem 'mongoid-rspec'

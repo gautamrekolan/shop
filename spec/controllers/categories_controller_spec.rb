@@ -12,26 +12,26 @@ describe CategoriesController do
 
     it "should have the right title" do
       get 'new'
-      response.should have_selector('title', :content => "Neue Kategorie | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "Neue Kategorie | BERNER-Bikes.com")
     end
     it "should have the right form" do
       get 'new'
-      response.should have_selector('form', :class => "new_category")
+      page.has_selector?('form', :class => "new_category")
     end
     it "should have a title input and label" do
       get 'new'
-      response.should have_selector('label', :for => "category_title")
-      response.should have_selector('input', :id => "category_title")
+      page.has_selector?('label', :for => "category_title")
+      page.has_selector?('input', :id => "category_title")
     end
     it "should have a description textarea and label" do  
       get 'new'
-      response.should have_selector('label', :for => "category_description")
-      response.should have_selector('textarea', :id => "category_description" )
+      page.has_selector?('label', :for => "category_description")
+      page.has_selector?('textarea', :id => "category_description" )
     end
   
     it "should have a submit button" do
       get 'new'
-      response.should have_selector('input', :type => "submit")
+      page.has_selector?('input', :type => "submit")
     end
 
   end
@@ -45,16 +45,16 @@ describe CategoriesController do
 
     it "should have a table" do
       get 'index'
-      response.should have_selector('table')
+      page.has_selector?('table')
     end
 
     it "should have the right header" do
       get 'index'
-      response.should have_selector('h1', :content => "Alle Kategorien")
+      page.has_selector?('h1', :content => "Alle Kategorien")
     end
     it "should have the right title" do
       get 'index'
-      response.should have_selector('title', :content => "Alle Kategorien")
+      page.has_selector?('title', :content => "Alle Kategorien")
     end
 
   end

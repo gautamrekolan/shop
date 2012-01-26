@@ -10,7 +10,7 @@ describe SessionsController do
     end
     it "should have the right title" do
       get :new
-      response.should have_selector("title", :content => "Login | BERNER-Bikes.com")
+      page.has_selector?("title", :content => "Login | BERNER-Bikes.com")
     end
   end
 
@@ -26,7 +26,7 @@ describe SessionsController do
       end
       it "should have the right title" do
         post :create, :session => @attr 
-        response.should have_selector("title", :content => "Login | BERNER-Bikes.com")
+        page.has_selector?("title", :content => "Login | BERNER-Bikes.com")
       end
     end
     describe "with valid name and password" do

@@ -11,32 +11,32 @@ describe PagesController do
 
     it "should have the right title" do
       get 'home'
-      response.should have_selector('title', :content => "Home | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "Home | BERNER-Bikes.com")
     end
 
     it "should have a quicklinks section" do
       get 'home'
-      response.should have_selector('section', :id => "quicklinks")
+      page.has_selector?('section', :id => "quicklinks")
     end
     it "should have a internal_links section" do
       get'home'
-      response.should have_selector('section', :id => "internal_adds")
+      page.has_selector?('section', :id => "internal_adds")
     end
     it "should have a news section" do
       get 'home'
-      response.should have_selector('section', :id => "news")
+      page.has_selector?('section', :id => "news")
     end
     it "should have a partners section" do
       get 'home'
-      response.should have_selector('section', :id => "partners")
+      page.has_selector?('section', :id => "partners")
     end
     it "should have a menu nav" do
       get 'home'
-      response.should have_selector('nav', :class => "menu")
+      page.has_selector?('nav', :class => "menu")
     end
     it "should have a footer" do
       get 'home'
-      response.should have_selector('footer', :id => "footer")
+      page.has_selector?('footer', :id => "footer")
     end
   end
 
@@ -48,7 +48,7 @@ describe PagesController do
 
     it "should have the right title" do
       get 'impressum'
-      response.should have_selector('title', :content => "Impressum | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "Impressum | BERNER-Bikes.com")
     end
   end
 
@@ -60,7 +60,7 @@ describe PagesController do
 
     it "should have the right title" do
       get 'agb'
-      response.should have_selector('title', :content => "AGB | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "AGB | BERNER-Bikes.com")
     end
   end
 

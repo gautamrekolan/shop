@@ -12,11 +12,11 @@ describe OrdersController do
 
     it "should have the right header" do
       get 'index'
-      response.should have_selector('h1', :content => "Alle Bestellungen")
+      page.has_selector?('h1', :content => "Alle Bestellungen")
     end
     it "should have the right title" do
       get 'index'
-      response.should have_selector('title', :content => "Alle Bestellungen | BERNER-Bikes.com")
+      page.has_selector?('title', :content => "Alle Bestellungen | BERNER-Bikes.com")
     end
   end
 
