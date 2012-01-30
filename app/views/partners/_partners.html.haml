@@ -1,4 +1,5 @@
-%section#partners  
-  - $partners.each do |partner|
-    .partner
-      = link_to (image_tag partner.image(:tile)), partner_link(partner)
+%section#partners
+  - if ($partners != nil)  
+    - $partners.each do |partner|
+      .partner
+        = link_to (image_tag partner.image(:tile)), partner_link(partner)
