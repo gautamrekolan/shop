@@ -9,17 +9,6 @@ describe Category do
   it "should create an instance given appropriate attributes" do
     Category.create!(@attr)
   end
-
-  it "should not accept long titles" do
-  	long_title = "a" * 13
-    long_title_category = Category.new(@attr.merge(:title => long_title))
-    long_title_category.should_not be_valid
-  end
-
-  it "requires a title" do
-    no_title_category = Category.new(@attr.merge(:title => ""))
-    no_title_category.should_not be_valid
-  end
-
-
+  it { should validate_presence_of(:title) }
+  it { should validate_length_of(:title).within(3..12)}
 end

@@ -6,3 +6,7 @@
       %ul
         - ($products.where(:category => category.title)).each do |product|
           %li=link_to product.title, product
+  .category
+    = link_to 'BERNER-Bikes.com'
+    %ul
+      %li= link_to 'login', login_path, :remote => true

@@ -62,7 +62,7 @@ describe UsersController do
     describe "failure" do
       
       before(:each) do
-        @attr = { :name => "", :role => "", :password => "", :password_confirmation => "" }
+        @attr = { :name => "", :email => "", :role => "", :password => "", :password_confirmation => "" }
       end
 
       it "should not create a user" do
@@ -83,7 +83,7 @@ describe UsersController do
 
     describe "success" do
       before(:each) do
-        @attr = { :name => "New User", :role => "Admin", :password => "foobar", :password_confirmation => "foobar" }
+        @attr = { :name => "New User", :email => "joe@sample.com", :role => "Admin", :password => "foobar", :password_confirmation => "foobar" }
         users = User.all
         users.each do |user|
           user.destroy

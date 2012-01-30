@@ -8,11 +8,11 @@ describe 'Users' do
         lambda do
           visit register_path
           fill_in "Name", :with => ""
+          fill_in "EMail", :with => ""
           select "", :from => "Rolle"
           fill_in "Passwort", :with => ""
           fill_in "Passwort wiederholen", :with => ""
           click_button('Speichern')
-          current_path.should == '/users'
           page.should have_css('div#error_explanation')
         end.should_not change(User, :count)
       end
@@ -27,11 +27,12 @@ describe 'Users' do
         lambda do
           visit register_path
           fill_in "Name", :with => "New User"
+          fill_in "EMail", :with => "joe@sample.com"
           select "Customer", :from => "Rolle"
           fill_in "Passwort", :with => "foobar"
           fill_in "Passwort wiederholen", :with => "foobar"
           click_button('Speichern')
-          current_path.should == root_path
+          current_path.should eq(root_path)
         end.should change(User, :count).by(1)
       end
 

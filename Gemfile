@@ -24,19 +24,24 @@ gem "mongoid", "~> 2.3"
 gem "bson_ext", "~> 1.4"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem "cancan"
-
 gem "koala"
 gem "kaminari"
 
 group :development do
   gem 'rspec-rails'
+  gem 'ruby_gntp'
 end
 
 group :test do
   gem 'rspec-rails'
-  # gem 'webrat'
   gem 'capybara'
+  gem 'launchy'
   gem 'faker'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'spork', '~> 1.0rc'
+  gem 'guard-spork'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
   gem 'factory_girl_rails'

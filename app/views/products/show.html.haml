@@ -24,6 +24,6 @@
             = option.name
             = select_tag option.name, options_from_collection_for_select(option.values, "_id", "content")
 
-      .add_to_cart= button_to 'kaufen', line_items_path(:product_id => @product), :remote => true
+      .add_to_cart= button_to 'kaufen', line_items_path(:product_id => @product), :id => 'buy', :remote => true
       .price= number_to_currency(@product.price)
   .pop_image

@@ -4,7 +4,7 @@ class Category
   field :description
   key :title
   
-  validates :title, :presence => true, :length => { :maximum => 12 }
+  validates :title, :presence => true, :length => { :within => 3..12 }
   validates :description, :presence => true
   
 

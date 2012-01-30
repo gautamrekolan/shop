@@ -8,19 +8,9 @@ describe NewsItem do
   it "should create instance given appropriate attributes" do
   	NewsItem.create!(@attr)
   end
+  
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:content) }
+  it { should validate_length_of(:title).within(5..50) }
 
-  it "should require a title" do
-    no_title_news_item = NewsItem.new(@attr.merge(:title => ""))
-    no_title_news_item.should_not be_valid
-  end
-  it "should require content" do
-  	no_content_news_item = NewsItem.new(@attr.merge(:content => ""))
-  	no_content_news_item.should_not be_valid
-  end
-
-  it "should not have a too long title" do
-  	long_title = "a" * 51
-  	long_title_news_item = NewsItem.new(@attr.merge(:title => long_title))
-  	long_title_news_item.should_not be_valid
-  end
 end

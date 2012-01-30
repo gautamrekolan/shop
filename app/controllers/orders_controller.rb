@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
       if @order.save
         current_cart.destroy
         session[:cart_id] = nil
-        #Notifier.order_received(@order).deliver
+        UserMailer.order_notifier(@order).deliver
         format.html { redirect_to(root_url, :notice => "Vielen Dank" ) }
         format.json { render json: @order, status: :created, location: @order }
       else

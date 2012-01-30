@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
 
   def new
     @title = "Login"
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def create
@@ -11,9 +15,9 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if user && user.authenticate(params[:password])
         session[:user_id] = user._id
-        format.html { redirect_to root_url, notice: 'Sie sind eingeloggt.' }
+        format.html { redirect_to root_url, notice: 'Sie sind eingeloggt!' }
       else
-        format.html { render action: "new" }
+        format.html { render action: "login" }
         flash_now_alert = "Passwort oder Name falsch!"
       end
     end
@@ -22,5 +26,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Ausgeloggt!"
+  end
+
+  def login
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 end

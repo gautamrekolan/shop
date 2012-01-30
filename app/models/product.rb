@@ -13,8 +13,8 @@ class Product
   key :title
 
   validates :title, :description, :price, :presence => true
-  validates :price, :numericality => { :greater_than_or_equal_to => 0.01 }
-  validates :title, :length => {:maximum => 22}, :uniqueness => true
+  validates :price, :numericality => { :greater_than => 0 }
+  validates :title, :length => {:within => (4..22) }, :uniqueness => true
 
   has_many :line_items
   has_many :orders

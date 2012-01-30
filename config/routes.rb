@@ -7,9 +7,9 @@ Shop::Application.routes.draw do
   resources :line_items
   resources :carts
   resources :product_images
-  resources :sessions
   resources :pages
   resources :options
+  resources :password_resets
 
   resources :categories do
     get 'page/:page', :action => :show, :on => :collection
@@ -29,12 +29,13 @@ Shop::Application.routes.draw do
 
   match '/impressum', :to => 'pages#impressum'
   match '/agb', :to => 'pages#agb'
-
-  match 'login' => 'sessions#new'
+  match 'login', :controller => 'sessions', :action => 'login'
   match 'logout' => 'sessions#destroy'
   match 'register' => 'users#new'
 
   resources :products
+  resources :sessions
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

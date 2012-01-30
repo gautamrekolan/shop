@@ -1,3 +1,39 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.pop_login {
+  position: fixed;
+  color:#000;
+  top: 10%;
+  left: 50%;
+  width: 360px;
+  margin-left: -200px;
+  padding: 20px ;
+  background: url('metal.jpg');
+  text-align:center;
+  border-radius: 10px;
+  border: solid 2px #333;
+  box-shadow: INSET 0 0 10px #000;
+  display: none;
+  a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #c00;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+.login_form {
+  table {
+    margin: 20px 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  th {
+      font-weight:bold;
+      border-bottom: 1px solid #666;
+  }
+  td, th {  
+    padding: 10px 10px 5px 10px;
+    text-align: left;
+
+  }
+}

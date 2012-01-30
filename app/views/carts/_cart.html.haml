@@ -8,4 +8,4 @@
       %td.total_price= number_to_currency(cart.total_price, :locale => :de)
         
   = button_to "Warenkorb leeren", cart, :method => :delete, :confirm => "are you sure?"
-  = button_to "Zur Kasse", new_order_path, :method => :get
+  = button_to "Zur Kasse", new_order_path, :id => "place_order", :method => :get

@@ -15,7 +15,7 @@ class NewsItem
 
   scope :published, where(published: true)
 
-  validates :title, :length => {:maximum => 50}, :presence => true
+  validates :title, :length => {:within => 5..50}, :presence => true
   validates :content, :presence => true
   has_mongoid_attached_file :image, :styles => { :full => "960x540#", :box => "160x92#", :thumb => "130x80#" }
 

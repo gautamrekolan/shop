@@ -1,4 +1,4 @@
-.form
+.login_form
   - if (session[:user_id])
     %li= link_to 'abmelden', logout_url
   - else
@@ -14,3 +14,4 @@
           %td{ :colspan => 2 }
             .actions
               = submit_tag "Anmelden"  
+= link_to "Passwort vergessen", new_password_reset_path

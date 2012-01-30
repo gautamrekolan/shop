@@ -3,7 +3,8 @@
     = link_to (image_tag ('logo_32x32_white.png')), root_url
   .menu_items  
   - $categories.each do |category| 
-    .menu_item= link_to category.title, category
+    .menu_item
+      = link_to category.title, category, :class => category.title
   - if can? :create, $categories
     .add= link_to '+', new_category_path  
   - if (your_cart.total_number == 0)

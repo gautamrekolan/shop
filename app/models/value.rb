@@ -4,5 +4,6 @@ class Value
   field :content
   embedded_in :option, :inverse_of => :value
 
+  validates :content, :presence => true
 
 end

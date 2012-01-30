@@ -12,6 +12,7 @@ class Partner
 
   validates :title, :presence => true
   validates :link, :presence => true
+  validates :image, :presence => true
 
   key :title
 
