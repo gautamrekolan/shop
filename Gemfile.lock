@@ -245,7 +245,6 @@ DEPENDENCIES
   guard-livereload
   guard-rspec
   guard-spork
-  haml
   haml-rails
   jquery-rails
   kaminari

@@ -11,10 +11,9 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier', '>= 1.0.3'
-  gem 'haml'
-  gem 'haml-rails'
 end
 
+gem 'haml-rails'
 gem 'therubyracer'
 gem 'rake'
 gem 'jquery-rails'
