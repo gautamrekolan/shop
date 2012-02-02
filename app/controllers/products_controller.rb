@@ -16,7 +16,9 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @line_item = @product.line_items.build
     @title = @product.title
+    
     #flash[:success] =  "hallo"
     respond_to do |format|
       format.html 
@@ -30,10 +32,6 @@ class ProductsController < ApplicationController
   def new  
     @title = "Neues Produkt"
     @product = Product.new 
-    # 3.times do
-    #   option = @product.options.build
-    #   4.times { option.values.build }
-    # end
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -55,7 +53,7 @@ class ProductsController < ApplicationController
         if @product.product_images.count == 1
           @product.product_images.where(:title_image => false).update(title_image: true)
         end
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: 'Neues Produkt wurde erstellt.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -71,7 +69,7 @@ class ProductsController < ApplicationController
     id = @product.id
     respond_to do |format|
       if (@product.update_attributes(params[:product]) && @product._id = id)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: 'Produkt wurde bearbeitet.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

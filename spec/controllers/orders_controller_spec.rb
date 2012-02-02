@@ -31,11 +31,6 @@ describe OrdersController do
         response.should redirect_to(root_url)
       end
     end
-    
-    describe "success" do  
-      it "should get new"
-
-    end
 
 
   end

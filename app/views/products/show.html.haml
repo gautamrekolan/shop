@@ -18,12 +18,11 @@
         .destroy= link_to 'X', @product, :confirm => 'Are you sure?', :method => :delete
       %h1= @product.title
       %p= @product.description
-      %ul
-        - @product.options.each do |option|
-          %li
-            = option.name
-            = select_tag option.name, options_from_collection_for_select(option.values, "_id", "content")
-
-      .add_to_cart= button_to 'kaufen', line_items_path(:product_id => @product), :id => 'buy', :remote => true
-      .price= number_to_currency(@product.price)
+      = form_for @line_item, :remote => true do |f| 
+        = hidden_field_tag "product_id", @product.id
+        - @product.options.each do |o|
+          .field= select_tag o.name, options_for_select(o.values.split("\r\n")), :selected => params[:pid], :prompt => o.name
+        .actions
+          = f.submit 'kaufen', id: 'buy'
+      .price= euro_price(@product.price)
   .pop_image

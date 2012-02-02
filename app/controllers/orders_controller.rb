@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
         current_cart.destroy
         session[:cart_id] = nil
         UserMailer.order_notifier(@order).deliver
-        format.html { redirect_to(root_url, :notice => "Vielen Dank" ) }
+        format.html { redirect_to(root_url, :notice => "Vielen Dank f&uuml;r Ihre Bestellung!" ) }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

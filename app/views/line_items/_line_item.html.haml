@@ -1,4 +1,5 @@
 %tr
   %td= line_item.quantity
-  %td.product_title= line_item.product.title
-  %td.item_total_price= number_to_currency(line_item.total_price)
+  %td.product_title
+    = line_item.product.title
+  %td.item_total_price= euro_price(line_item.total_price)

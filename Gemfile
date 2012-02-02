@@ -44,6 +44,7 @@ group :test do
   gem 'database_cleaner'
   gem 'mongoid-rspec'
   gem 'factory_girl_rails'
+  gem 'turn', :require => false  
 end
 
 # To use ActiveModel has_secure_password
@@ -58,8 +59,4 @@ gem 'passenger'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
 

@@ -36,6 +36,9 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
-
+  
+  def euro_price(price)
+    number_to_currency(price, :unit => "&euro;", :separator => ",", :delimiter => "", :format => "%n %u", :strip_insignificant_zeros => true)
+  end
   
 end

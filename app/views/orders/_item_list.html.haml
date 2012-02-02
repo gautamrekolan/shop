@@ -1,0 +1,23 @@
+.items
+  %table
+    %tr
+      %th Anzahl
+      %th Produkt
+      %th Optionen
+      %th.item_price Einzelpreis
+      %th.total_item_price Preis
+    - item_source.line_items.each do |item|
+      %tr
+        %td= item.quantity
+        %td= item.product.title
+        %td
+          - if (item.options != nil)
+            - item.options.each do |key, value|
+              = key + ": "
+              = value
+              %br
+        %td.item_price= euro_price(item.product.price)
+        %td.total_item_price= euro_price(item.total_price)
+    %tr.total_line
+      %td.total{:colspan => '4'} TOTAL
+      %td.total_price= euro_price(@cart.total_price)

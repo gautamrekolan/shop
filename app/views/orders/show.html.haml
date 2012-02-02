@@ -1,6 +1,6 @@
 .order
   %h1.page_title Bestellung
-  = render 'items', :item_source => @order
+  = render 'item_list', :item_source => @order
   %h1 Kundendaten
   %table 
     %tr
@@ -9,7 +9,7 @@
     %tr
       %td Adresse:
       %td 
-        = @order.street + ' ' + @order.number
+        = @order.street
         %br
         = @order.zip.to_s + ' ' + @order.city
         %br

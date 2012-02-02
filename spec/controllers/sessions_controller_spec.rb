@@ -40,10 +40,7 @@ describe SessionsController do
         response.should be_success
       end
 
-      it "should redirect to the home page"
-      #   post :create, :session => @attr
-      #   response.should redirect_to(root_url)
-      # end
+      
 
     end
 

@@ -2,10 +2,10 @@ class Option
   include Mongoid::Document
   
   field :name
+  field :values
   embedded_in :product, :inverse_of => :option
   
   validates :name, :presence => true
+  validates :values, :presence => true
 
-  embeds_many :values
-  accepts_nested_attributes_for :values, :reject_if => lambda{ |a| a[:content].blank? }, :allow_destroy => true
 end

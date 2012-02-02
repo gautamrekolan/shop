@@ -1,0 +1,18 @@
+Hallo 
+= @order.first_name
+
+vielen Dank für Deine Bestellung. Hier findest Du noch einmal eine Liste der bestellten Produkte.
+
+
+- @order.line_items.each do |item| 
+  = item.quantity.to_s + "x" + item.product.title + "|" + number_to_currency(item.total_price, :unit => "&euro;", :separator => ",", :delimiter => "", :format => "%n %u", :strip_insignificant_zeros => true)
+  
+
+TOTAL
+= number_to_currency(@order.total_price, :unit => "&euro;", :separator => ",", :delimiter => "", :format => "%n %u", :strip_insignificant_zeros => true)
+
+Sollten noch Fragen bezüglich der Bestellung oder der Bezahlung bestehen, so stehen wir Dir selbstverständlich gerne telefonisch unter 0xxx - 1500030 oder auch per email zur Verfügung.
+
+Mit freundlichen Grüßen,
+
+Dein BERNER-Bikes.com Team

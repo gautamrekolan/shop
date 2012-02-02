@@ -9,6 +9,7 @@ Factory.define :user do |user|
 end
 
 Factory.define :product do |product|
+  product.id "1"
   product.title "title"
   product.description "description"
   product.price "12"
@@ -27,3 +28,8 @@ Factory.define :order do |order|
   order.accept_conditions true
   order.status "Steht aus"
 end  
+
+Factory.define :category do |category|
+  category.title "Title"
+  category.description "description"
+end

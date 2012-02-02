@@ -7,6 +7,7 @@ class LineItem
   field :cart_id
   field :quantity, :type => Integer
   field :order_id
+  field :options, :type => Hash
 
   belongs_to :product
   belongs_to :cart

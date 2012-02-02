@@ -43,15 +43,29 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
+
+
     @line_item = @cart.add_product(product.id)
-    @line_item.order_id = 12
+    
+
+    @line_item.options = request.POST
+    @line_item.options.delete('utf8')
+    @line_item.options.delete('authenticity_token')
+    @line_item.options.delete('product_id')
+    @line_item.options.delete('commit')
+
+    @line_item.quantity = @cart.count_up_equal_items(product.id, @line_item)
+
+    # equal_item = LineItem.where(product_id: product_id).first
+    # equal_item.quantity += 1
+      
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to root_url }
         format.js
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
-        format.html { render action: "new" }
+        format.html { render controller: "products", action: "new" }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end

@@ -6,11 +6,20 @@
         - @line_item.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :product_id
-    = f.number_field :product_id
-  .field
-    = f.label :cart_id
-    = f.number_field :cart_id
+  /.field
+  /  = f.label :product_id
+  /  = f.number_field :product_id
+  /.field
+  /  = f.label :cart_id
+  /  = f.number_field :cart_id
+  = fields_for @product.options do |builder|
+    .label= builder.label :name
+
+  /  = render 'line_items/choice_fields', :f => builder
+  /   - option = @line_item.product.options.split("\r\n")
+  /   .field
+  /     .label= f.label option.name
+  /     .field= f.select choice.value, options_from_collection_for_select(option.values, "_id", "content")
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Kaufen', id: 'buy'

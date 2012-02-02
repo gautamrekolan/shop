@@ -5,7 +5,7 @@
    
     %tr.total_line
       %td{:colspan => '2'} TOTAL
-      %td.total_price= number_to_currency(cart.total_price, :locale => :de)
+      %td.total_price= euro_price(cart.total_price)
         
   = button_to "Warenkorb leeren", cart, :method => :delete, :confirm => "are you sure?"
   = button_to "Zur Kasse", new_order_path, :id => "place_order", :method => :get

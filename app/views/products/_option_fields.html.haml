@@ -1,8 +1,6 @@
 .fields
   .label= f.label :name, "Option"
-  = f.text_field :name, { :size => 20 } 
+  .field= f.text_field :name
+  .label= f.label :values, "mögliche Werte"
+  .field= f.text_area :values, {:rows => 5, :cols => 25 }
   = link_to_remove_fields "löschen", f
-  %br 
-  = f.fields_for :values do |builder|
-    = render 'value_fields', :f => builder
-  .new_value=link_to_add_fields "neuer Wert", f, :values

@@ -19,6 +19,11 @@ describe UserMailer do
 
     it "sends customer a notification about his order" do
       mail.subject.should eq("Ihre Bestellung | BERNER-Bikes.com")
+      mail.to.should eq([order.email])
+      mail.from.should eq(["info@BERNER-Bikes.com"])
+      order.line_items.each do |item|
+        mail.body.encoded.should match(item.product.title)
+      end
     end
   end
 end
