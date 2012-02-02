@@ -12,7 +12,7 @@
       .field= f.text_field :title, { :size => 40 }
     .row
       .label= f.label :description, 'Beschreibung'
-      .field= f.text_area :description, {:rows => 5, :cols => 60 }
+      .field= f.text_area :description, {:rows => 10, :cols => 60 }
     .row
       .label= f.label :category, 'Kategorie'
       .field=f.select(:category, Category.all.collect{ |c| [c.title]})
