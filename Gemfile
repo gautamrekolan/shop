@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -25,6 +25,7 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem "cancan"
 gem "koala"
 gem "kaminari"
+gem "heroku"
 
 group :development do
   gem 'rspec-rails'
@@ -50,8 +51,13 @@ end
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+  
+gem 'thin'
+
+
+
 # Use unicorn as the web server
-gem 'passenger'
+# gem 'passenger'
 
 # Deploy with Capistrano
 # gem 'capistrano'
