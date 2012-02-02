@@ -37,7 +37,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'faker'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'spork', '~> 1.0rc'
