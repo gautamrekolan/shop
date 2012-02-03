@@ -52,7 +52,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :production do  
-#  gem 'thin'
+  gem 'thin'
 end
 
 
