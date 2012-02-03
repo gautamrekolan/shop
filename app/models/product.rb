@@ -14,7 +14,7 @@ class Product
 
   validates :title, :description, :price, :presence => true
   validates :price, :numericality => { :greater_than => 0 }
-  validates :title, :length => {:within => (4..22) }, :uniqueness => true
+  validates :title, :length => {:within => (4..32) }, :uniqueness => true
 
   has_many :line_items
   has_many :orders

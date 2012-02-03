@@ -1,5 +1,6 @@
-%h1.page_title Bestellung bearbeiten
+%h1.page_title= @title
 .order_form
-  = render 'items', :item_source => @order
+  = render 'item_list', :item_source => @order
+  %h1.page_title Kundendaten
   = render 'form'
 

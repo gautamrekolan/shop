@@ -13,9 +13,11 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+
     @category = Category.find(params[:id])
     @products = Product.where(:category => @category.title ).page(params[:page]).per(6)
-    
+    @title = @category.title
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }
@@ -23,7 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @title = "Neue Kategorie"
+    @title = "Neue Kategorie erstellen"
     @category = Category.new
     respond_to do |format|
       format.html # new.html.erb
@@ -33,12 +35,14 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    @title = 'Kategorie ' + @category.title + ' bearbeiten'
   end
 
   # POST /categories
   # POST /categories.json
   def create
     @category = Category.new(params[:category])
+    @title = "Neue Kategorie erstellen"
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
@@ -54,6 +58,8 @@ class CategoriesController < ApplicationController
   # PUT /categories/1.json
   def update
     @category = Category.find(params[:id])
+    @title = 'Kategorie ' + @category.title + ' bearbeiten'
+
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }

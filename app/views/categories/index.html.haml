@@ -10,5 +10,7 @@
       %tr
         %td= link_to category.title, category
         %td= category.description
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'bearbeiten', edit_category_path(category)
+        %td= link_to 'löschen', category, :confirm => 'Are you sure?', :method => :delete
+  .actions
+    = button_to 'neue Kategorie', new_category_path, :method => :get

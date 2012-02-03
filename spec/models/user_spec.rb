@@ -3,16 +3,8 @@ require "spec_helper"
 describe User do
 
 
-  before(:each) do
-    @attr = { :name => "Namessss", :email => "joe@example.com", :password => "password", :role => "Admin" }
-    users = User.all
-    users.each do |user|
-      user.destroy
-    end
-  end
-
   it "should be valid with proper attributes" do
-    User.create!(@attr)
+    user = Factory(:user)
   end
 
   it { should validate_presence_of(:name) }

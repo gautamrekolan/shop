@@ -15,6 +15,8 @@ class NewsItemsController < ApplicationController
   # GET /news_items/1.json
   def show
     @news_item = NewsItem.find(params[:id])
+    @title = @news_item.title
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @news_item }
@@ -25,7 +27,7 @@ class NewsItemsController < ApplicationController
   # GET /news_items/new.json
   def new
     @news_item = NewsItem.new
-    @title = "Neue Nachrichtenmeldung"
+    @title = "Neue Nachrichtenmeldung erstellen"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @news_item }
@@ -35,12 +37,16 @@ class NewsItemsController < ApplicationController
   # GET /news_items/1/edit
   def edit
     @news_item = NewsItem.find(params[:id])
+    @title = "Nachrichtenmeldung bearbeiten"
+
   end
 
   # POST /news_items
   # POST /news_items.json
   def create
     @news_item = NewsItem.new(params[:news_item])
+    @title = "Neue Nachrichtenmeldung erstellen"
+
     respond_to do |format|
       if @news_item.save
         format.html { redirect_to @news_item, notice: 'News item was successfully created.' }
@@ -56,6 +62,8 @@ class NewsItemsController < ApplicationController
   # PUT /news_items/1.json
   def update
     @news_item = NewsItem.find(params[:id])
+    @title = "Nachrichtenmeldung bearbeiten"
+
     respond_to do |format|
       if @news_item.update_attributes(params[:news_item])
         format.html { redirect_to @news_item, notice: 'News item was successfully updated.' }

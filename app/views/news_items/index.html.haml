@@ -1,15 +1,11 @@
-.index
-  %h1.page_title
-    Alle Nachrichten
-    .add= link_to '+', new_news_item_path
-
+%section#news_items.index
+  %h1.page_title Alle Nachrichten
   %table
     %tr
       %th Title
       %th veröfftl.
       %th Content
       %th Image
-      %th
       %th
       %th
 
@@ -25,3 +21,5 @@
         %td= image_tag news_item.image(:thumb)
         %td= link_to 'bearbeiten', edit_news_item_path(news_item)
         %td= link_to 'löschen', news_item, :confirm => 'Are you sure?', :method => :delete
+  .actions
+    = button_to 'neue Nachricht', new_news_item_path, :method => :get

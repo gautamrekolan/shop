@@ -13,7 +13,7 @@ describe Product do
   it { should embed_many(:options) }
 
   it { should validate_presence_of(:title) }
-  it { should validate_length_of(:title).within(4..22) }
+  it { should validate_length_of(:title).within(4..32) }
   it { should validate_uniqueness_of(:title) }
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:price) }

@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @cart = current_cart
+    @title = 'Bestellung von ' + @order.first_name + ' ' + @order.last_name
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,6 +47,8 @@ class OrdersController < ApplicationController
   def edit
     @order = Order.find(params[:id])
     @cart = current_cart
+    @title = 'Bestellung von ' + @order.first_name + ' ' + @order.last_name + ' bearbeiten'
+
   end
 
   # POST /orders
@@ -73,6 +76,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1.json
   def update
     @order = Order.find(params[:id])
+    @title = 'Bestellung von ' + @order.first_name + ' ' + @order.last_name + ' bearbeiten'
 
     respond_to do |format|
       if @order.update_attributes(params[:order])

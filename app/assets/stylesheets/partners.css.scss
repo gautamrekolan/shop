@@ -16,33 +16,3 @@
 	}
 
 }
-.partner_index, .partner_form, .partner {
-	table {
-		margin: 20px 0;
-		width: 960px;
-		font-size: 12px;
-		line-height: 14px;
-	}
-	th {
-	   	font-weight:bold;
-	   	border-bottom: 1px solid #666;
-	}
-	td, th {	
-		padding: 10px 10px 5px 10px;
-		text-align: left;
-	}
-	tr:nth-child(odd) {
-		background: #eee;
-	}
-	.total_item_price, .item_price {
-		text-align: right;
-	}
-	.total_price, .total {
-		text-align:right;
-	}
-	.total_line {
-   		font-weight: bold;
-   		border-top: 1px solid #666;
-   		border-bottom: 3px solid #666;
-	}
-}

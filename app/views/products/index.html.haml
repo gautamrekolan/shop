@@ -1,4 +1,4 @@
-%section#product_list
+%section#product.index
   %h1.page_title= @title
   %table
     %tr
@@ -19,3 +19,5 @@
         %td
           - if can? :destroy, product
             = link_to 'löschen', product, :confirm => 'Sicher?', :method => :delete
+  .actions
+    = button_to 'neues Produkt', new_product_path, :method => :get

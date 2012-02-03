@@ -1,9 +1,13 @@
 .fields
-  .label
-    = f.label :image, 'Bild'
-  .field= f.file_field :image
-  = link_to_remove_fields "löschen", f
-  .label
-    = f.label :title_image, 'Titelbild?'
-  .field
-    = f.check_box :title_image  
+  %table
+    %tr{ :style => 'background: none' }
+      %td
+        .label= f.label :image, 'Bild'
+      %td
+        .field= f.file_field :image
+      %td
+        .label= f.label :title_image, 'Titelbild?'
+      %td
+        .field= f.check_box :title_image  
+      %td
+        .css_button= link_to_remove_fields "löschen", f

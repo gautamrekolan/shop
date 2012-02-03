@@ -1,6 +1,13 @@
 .fields
-  .label= f.label :name, "Option"
-  .field= f.text_field :name
-  .label= f.label :values, "mögliche Werte"
-  .field= f.text_area :values, {:rows => 5, :cols => 25 }
-  = link_to_remove_fields "löschen", f
+  %table
+    %tr{ :style => 'background: none'}
+      %td
+        .label= f.label :name, "Option"
+      %td
+        .field= f.text_field :name
+      %td
+        .label= f.label :values, "mögliche Werte"
+      %td
+        .field= f.text_area :values, {:rows => 5, :cols => 25 }
+      %td
+        .css_button= link_to_remove_fields "löschen", f

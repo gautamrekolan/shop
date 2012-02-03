@@ -1,4 +1,4 @@
-.partner_form  
+%section.partners.form  
   = form_for @partner do |f|
     -if @partner.errors.any?
       #error_explanation
@@ -6,18 +6,16 @@
         %ul
           - @partner.errors.full_messages.each do |msg|
             %li= msg
-    .form
-      %table
-        %tr 
-          %td= f.label :title, 'Name'
-          %td= f.text_field :title
-        %tr
-          %td= f.label :image, 'Bild'
-          %td= f.file_field :image
-        %tr
-          %td= f.label :link, 'Link'
-          %td= f.text_field :link
-        %tr  
-          %td{:colspan => 2 }
-            .actions
-              = f.submit 'Save'
+    %table
+      %tr 
+        %td= f.label :title, 'Name'
+        %td= f.text_field :title
+      %tr
+        %td= f.label :image, 'Bild'
+        %td= f.file_field :image
+      %tr
+        %td= f.label :link, 'Link'
+        %td= f.text_field :link
+
+    .actions
+      = f.submit 'Speichern'

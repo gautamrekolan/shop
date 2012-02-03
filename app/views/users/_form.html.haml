@@ -25,7 +25,6 @@
       %tr
         %td= f.label :password_confirmation, "Passwort wiederholen"
         %td{ :colspan => 2 }= f.password_field :password_confirmation
-      %tr
-        .actions
-          %td{ :colspan => 3 }
-            = f.submit 'Speichern'
+      
+    .actions
+      = f.submit 'Speichern'

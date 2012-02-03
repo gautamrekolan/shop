@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new  
-    @title = "Neues Produkt"
+    @title = "Neues Produkt erstellen"
     @product = Product.new 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,12 +41,14 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @title = @product.title + " bearbeiten"
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @title = "Neues Produkt erstellen"
 
     respond_to do |format|
       if @product.save
@@ -66,6 +68,8 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
+    @title = @product.title + " bearbeiten"
+
     id = @product.id
     respond_to do |format|
       if (@product.update_attributes(params[:product]) && @product._id = id)

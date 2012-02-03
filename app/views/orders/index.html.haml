@@ -1,4 +1,4 @@
-.order_index
+%section#orders.index
   %h1.page_title= @title
 
   %table
@@ -34,3 +34,4 @@
             = f.submit 'aktualisieren'
         %td= link_to 'Bearbeiten', edit_order_path(order)
         %td= link_to 'Löschen', order, :confirm => 'Are you sure?', :method => :delete
+  .actions

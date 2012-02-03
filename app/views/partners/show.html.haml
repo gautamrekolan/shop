@@ -1,12 +1,5 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @partner.title
-%p
-  %b Image:
+%section#partners.show
+  %h1.page_title= @partner.title
   = @partner.image
+  = link_to @partner.link, @partner.link
 
-= link_to 'Edit', edit_partner_path(@partner)
-\|
-= link_to 'Back', partners_path

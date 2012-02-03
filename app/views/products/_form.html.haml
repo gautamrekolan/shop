@@ -6,31 +6,40 @@
         %ul
           - @product.errors.full_messages.each do |msg|
             %li= msg
-
-    .row
-      .label= f.label :title, 'Name'
-      .field= f.text_field :title, { :size => 40 }
-    .row
-      .label= f.label :description, 'Beschreibung'
-      .field= f.text_area :description, {:rows => 10, :cols => 60 }
-    .row
-      .label= f.label :category, 'Kategorie'
-      .field=f.select(:category, Category.all.collect{ |c| [c.title]})
-    .row
-      Optionen
-      = f.fields_for :options do |builder|
-        = render 'option_fields', :f => builder
-    .new_option=link_to_add_fields "neue Option", f, :options   
-    .row 
-      .label= f.label :price, 'Preis'
-      .field
-        = f.text_field :price, { :size => 6 }
-        €
-    .row
-      Bilder
-      = f.fields_for :product_images do |builder|
-        = render 'product_image_fields', :f => builder
-    .new_option=link_to_add_fields "neues Bild", f, :product_images  
-
+    %table
+      %tr
+        %td
+          .label= f.label :title, 'Name'
+        %td
+          .field= f.text_field :title, { :size => 32 }
+      %tr
+        %td
+          .label= f.label :description, 'Beschreibung'
+        %td
+          .field= f.text_area :description, {:rows => 10, :cols => 80 }
+      %tr
+        %td
+          .label= f.label :category, 'Kategorie'
+        %td
+          .field=f.select(:category, Category.all.collect{ |c| [c.title]})
+      %tr
+        %td{ :colspan => '2' }
+          Optionen
+          = f.fields_for :options do |builder|
+            = render 'option_fields', :f => builder
+          .css_button=link_to_add_fields "neue Option", f, :options
+      %tr
+        %td{ :colspan => '2' }      
+          Bilder
+          = f.fields_for :product_images do |builder|
+            = render 'product_image_fields', :f => builder
+          .css_button=link_to_add_fields "neues Bild", f, :product_images  
+      %tr 
+        %td
+          .label= f.label :price, 'Preis'
+        %td
+          .field
+            = f.text_field :price, { :size => 6 }
+            €
     .actions
       = f.submit 'Speichern', id: 'save'
