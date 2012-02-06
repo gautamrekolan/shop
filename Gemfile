@@ -14,7 +14,6 @@ group :assets do
 end
 
 gem 'haml-rails'
-gem 'therubyracer'
 gem 'rake'
 gem 'jquery-rails'
 gem 'rmagick'
@@ -22,10 +21,13 @@ gem 'capistrano'
 gem "mongoid", "~> 2.3"
 gem "bson_ext", "~> 1.4"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem "aws-s3",            :require => "aws/s3"
+gem "aws-sdk"
 gem "cancan"
 gem "koala"
 gem "kaminari"
 gem "heroku"
+# gem "therubyracer"
 
 group :development do
   gem 'rspec-rails'
@@ -36,7 +38,6 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'faker'
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'guard-livereload'

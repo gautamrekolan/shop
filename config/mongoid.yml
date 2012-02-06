@@ -8,4 +8,7 @@ test:
 
 # set these environment variables on your prod server
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  host: localhost
+  database: shop_production
+
+  #uri: <%= ENV['MONGOHQ_URL'] %>
