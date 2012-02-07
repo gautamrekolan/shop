@@ -12,11 +12,13 @@
               - @product.product_images.where(:title_image => false).take(4).each do |product_image|
                 = link_to (image_tag product_image.image(:thumb)), { :action => "product_pop_image", :id => @product, :image_id => product_image.id }, :remote => true
     #product_show_description
-      - if can? :update, @product
-        .edit= link_to '=', edit_product_path(@product)
-      - if can? :destroy, @product
-        .destroy= link_to 'X', @product, :confirm => 'Are you sure?', :method => :delete
-      %h1= @product.title
+      %h1
+        = @product.title
+      %p
+        - if can? :update, @product
+          = link_to 'bearbeiten', edit_product_path(@product)
+        - if can? :destroy, @product
+          = link_to 'löschen', @product, :confirm => 'Are you sure?', :method => :delete
       %p= simple_format(@product.description)
       = form_for @line_item, :remote => true do |f| 
         = hidden_field_tag "product_id", @product.id

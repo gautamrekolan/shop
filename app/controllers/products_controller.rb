@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @title = "Alle Produkte"
-    @products = Product.all
+    @products = Product.asc(:list_order)
     @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
     id = @product.id
     respond_to do |format|
       if (@product.update_attributes(params[:product]) && @product._id = id)
-        format.html { redirect_to @product, notice: 'Produkt wurde bearbeitet.' }
+        format.html { redirect_to products_path, notice: 'Produkt wurde bearbeitet.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

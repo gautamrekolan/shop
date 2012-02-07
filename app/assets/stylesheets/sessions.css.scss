@@ -1,17 +1,6 @@
 .pop_login {
-  position: fixed;
-  color:#fff;
-  top: 33%;
-  left: 50%;
-  width: 360px;
-  margin-left: -200px;
-  padding: 20px ;
-  background: #000;
-  text-align:center;
-  border-radius: 10px;
-  border: solid 2px #333;
-  opacity: 0.8;
   display: none;
+  z-index: 99;
   a {
     font-size: 12px;
     text-decoration: none;

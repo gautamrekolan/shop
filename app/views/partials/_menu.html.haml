@@ -5,9 +5,7 @@
   - if ($categories != nil) 
     - $categories.each do |category| 
       .menu_item
-        = link_to category.title, category, :class => category.title
-    - if can? :create, $categories
-      .add= link_to '+', new_category_path  
+        = link_to category.title, category, :class => category.title 
     - if (your_cart.total_number == 0)
       .cart_box{ :style => "display: none"}
     -else

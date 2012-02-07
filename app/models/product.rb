@@ -2,6 +2,7 @@ class Product
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  LIST_ORDER_VALUES = [1,2,3,4,5,6,7,8,9]
 
  # attr_accessible :title, :description, :price, :image, :category, :_id
 
@@ -9,7 +10,7 @@ class Product
   field :description
   field :price, :type => Integer
   field :category
-
+  field :list_order, :type => Integer
   key :title
 
   validates :title, :description, :price, :presence => true

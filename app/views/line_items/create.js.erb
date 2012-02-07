@@ -1,7 +1,7 @@
 $('.cart_box').html("<%= escape_javascript render(your_cart) %>");
 $('.cart_box').show();
 $('.cart').hide();
-
+$('.pop_login').addClass('flash').html('Produkt wurde dem Warenkorb hinzugefügt').show().delay(2000).fadeOut('slow')
 
 
 

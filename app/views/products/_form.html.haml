@@ -21,7 +21,12 @@
         %td
           .label= f.label :category, 'Kategorie'
         %td
-          .field=f.select(:category, Category.all.collect{ |c| [c.title]})
+          .field= f.select(:category, Category.all.collect{ |c| [c.title]})
+      %tr
+        %td
+          .label= f.label :list_order, 'Reihenfolge'
+        %td
+          .field= f.select :list_order, Product::LIST_ORDER_VALUES
       %tr
         %td{ :colspan => '2' }
           Optionen

@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def show
 
     @category = Category.find(params[:id])
-    @products = Product.where(:category => @category.title ).page(params[:page]).per(6)
+    @products = Product.where(:category => @category.title ).page(params[:page]).per(6).asc(:list_order)
     @title = @category.title
 
     respond_to do |format|
