@@ -13,6 +13,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "therubyracer"
+
 gem 'haml-rails'
 gem 'rake'
 gem 'jquery-rails'
@@ -27,7 +29,6 @@ gem "cancan"
 gem "koala"
 gem "kaminari"
 gem "heroku"
-gem "therubyracer"
 
 group :development do
   gem 'rspec-rails'

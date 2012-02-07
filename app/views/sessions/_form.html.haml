@@ -6,7 +6,7 @@
       %table
         %tr
           %td= label_tag 'Name'
-          %td= text_field_tag :name, params[:name], :size => "30"
+          %td= text_field_tag :name, params[:name], :size => "30",:placeholder => "Name"
         %tr
           %td= label_tag 'Passwort'
           %td= password_field_tag :password
@@ -14,4 +14,4 @@
           %td{ :colspan => 2 }
             .actions
               = submit_tag "Anmelden", id: 'login'  
-= link_to "Passwort vergessen", new_password_reset_path
+= link_to "Passwort vergessen?", new_password_reset_path

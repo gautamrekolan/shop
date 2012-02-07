@@ -186,13 +186,15 @@ h1.page_title, .actions {
   width: 360px;
   margin-left: -200px;
   padding: 40px 20px;
-  background: url('back_light.png');
+  background: #000;
   text-align:center;
   border-radius: 10px;
   border: solid 2px #333;
 
-  opacity: 0.9;
+  opacity: 0.8;
   box-shadow: INSET 0 0 10px #252020;
+
+
 }
 
 .success.flash {
