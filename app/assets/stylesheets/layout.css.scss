@@ -314,6 +314,25 @@ h1.page_title, .actions {
 		}
 
 	}
+	.form_image {
+		position: relative;
+		display: inline;
+		width: 100px;
+		.title_image {
+			position: absolute;
+			padding: 3px;
+			bottom: 0px;
+			left: 0px;
+			background: #000;
+		}
+		.delete_image {
+			position: absolute;
+			padding: 3px;
+			bottom: 0px;
+			right: 0px;
+			background: #c00;
+		}
+	}
 }
 
 .css_button {

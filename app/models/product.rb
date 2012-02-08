@@ -23,9 +23,9 @@ class Product
   embeds_many :options, :cascade_callbacks => true
   accepts_nested_attributes_for :options, :allow_destroy => true
   
-  embeds_many :product_images, :cascade_callbacks => true #, :validate => true
+  embeds_many :product_images, :cascade_callbacks => true, :validate => true
   accepts_nested_attributes_for :product_images, :allow_destroy => true
-  # validates_associated :product_images
+  validates_associated :product_images
 
   before_destroy :ensure_not_referenced_by_any_line_item
 

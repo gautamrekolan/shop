@@ -14,7 +14,7 @@ class ProductImage
   has_mongoid_attached_file :image, 
     :path           => ':attachment/:id/:style.:extension',
     :storage        => :s3,
-    :bucket         => 'berner-images',
+    :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",
     :s3_credentials => {
       :access_key_id => 'AKIAIVEBIFJ6FQGLR35Q',
       :secret_access_key => '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'
