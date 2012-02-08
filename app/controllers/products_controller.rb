@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @title = "Alle Produkte"
-    @products = Product.asc(:list_order)
+    @category = params[:view]
+    if @category != nil
+      @products = Product.where(:category => @category).asc(:released_at, :list_order)
+    else
+      @products = Product.all.asc(:list_order)
+    end
+    @categories = Category.all
     @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb

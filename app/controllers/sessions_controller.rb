@@ -17,8 +17,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user._id
         format.html { redirect_to root_url, notice: 'Sie sind eingeloggt!' }
       else
-        format.html { render action: "login" }
-        flash_now_alert = "Passwort oder Name falsch!"
+        format.html { redirect_to root_url, notice: 'Passwort oder Name falsch!' }
       end
     end
   end

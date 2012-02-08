@@ -78,7 +78,10 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @line_item }
+        if @line_item.quantity <= 0
+          @line_item.delete
+        end
+        format.html { redirect_to new_order_path }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

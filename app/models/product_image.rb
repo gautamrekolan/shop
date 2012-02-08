@@ -20,7 +20,7 @@ class ProductImage
       :secret_access_key => 'ljZblkUIc+sWfuEDCAWnHI6Ct7+7xz17/1b6BTLQ'
     },
     :styles => { 
-      :full => "970x520#", 
+      :full => "740x550#", 
       :product => "520x520#", 
       :tile => "323x233#", 
       :thumb => "120x80#" 

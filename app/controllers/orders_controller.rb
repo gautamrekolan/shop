@@ -56,10 +56,10 @@ class OrdersController < ApplicationController
   def create
     @cart = Cart.find(session[:cart_id])
     @order = Order.new(params[:order])
-    line_items = LineItem.where(cart_id: @cart.id).update_all(cart_id: nil, order_id: @order.id)
     
     respond_to do |format|
       if @order.save
+        line_items = LineItem.where(cart_id: @cart.id).update_all(cart_id: nil, order_id: @order.id)
         current_cart.destroy
         session[:cart_id] = nil
         UserMailer.order_notifier(@order).deliver

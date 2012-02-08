@@ -1,8 +1,15 @@
 %section#product.index
   %h1.page_title= @title
+  .sub_header_links
+    Anzeigen:
+    = link_to "Alle Kategorien", products_path
+    - @categories.each do |category|
+      = link_to category.title, :view => category.title
   %table
     %tr
       %th Name
+      %th Kategorie
+      %th Preis
       %th Bild
       %th Reihenfolge
       %th 
@@ -11,6 +18,10 @@
       %tr
         %td
           = link_to product.title, product
+        %td
+          = product.category
+        %td
+          = product.price
         %td
           - product.product_images.take(1).each do |product_image|
             = link_to (image_tag product_image.image(:thumb)), product

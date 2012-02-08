@@ -258,7 +258,17 @@ h1.page_title, .actions {
 .actions {
 	margin-top: 20px;
 }
-
+.sub_header_links {
+	float: right;
+	padding: 5px 10px;
+	color: #000;
+	font-size: 12px;
+	a {
+		color: #666;
+		text-decoration:none;
+		margin-left: 10px;
+	}
+}
 .form, .index {
 	table {
 		margin: 20px 0 10px 5px;
@@ -322,6 +332,7 @@ h1.page_title, .actions {
 		color: #000;
 	}
 }
+
 
 
 .add {

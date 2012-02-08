@@ -8,7 +8,9 @@
       %th.total_item_price Preis
     - item_source.line_items.each do |item|
       %tr
-        %td= item.quantity
+        %td
+          = form_for item do |f|
+            = f.text_field :quantity, :size => 2, :onchange => 'this.form.submit();' 
         %td= item.product.title
         %td
           - if (item.options != nil)

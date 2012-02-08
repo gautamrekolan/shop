@@ -8,7 +8,10 @@
       %th.total_item_price Preis
     - if item_source.line_items.each do |item|
       %tr
-        %td= item.quantity
+        %td
+          = form_for item do |f|
+            = f.text_field :quantity
+            = f.submit "aktualisieren"
         %td= item.product.title
         %td
           - item.options.each do |key, value|
