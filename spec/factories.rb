@@ -1,7 +1,7 @@
 # By using the symbol ':user', we get Factory Girl to simulate the User model.
 
 Factory.define :user do |user|
-  user.sequence(:name) { |n| "Admin User {#n}" }
+  user.sequence(:name) { |n| "Admin User #{n}" }
   user.role "Admin"
   user.email "joe@sample.com"
   user.password "foobar"
@@ -9,8 +9,8 @@ Factory.define :user do |user|
 end
 
 Factory.define :product do |product|
-  product.sequence(:id) { |n| "{#n}" }
-  product.sequence(:title) { |n| "{#n}title" }
+  product.sequence(:id) { |n| "#{n}" }
+  product.sequence(:title) { |n| "#{n}title" }
   product.description "description"
   product.price "12"
   product.category "Rahmen"

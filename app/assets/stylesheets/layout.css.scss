@@ -20,26 +20,6 @@
 	}	
 }
 
-@mixin knob {
-	padding: 1px 4px;
-	position: absolute;
-	box-shadow: 0px 1px 2px #000;
-	opacity: 0.5;
-	a {
-		font-size: 16px;
-		font-weight: bold;	
-		text-shadow: 0px -1px 1px #000;
-		text-decoration: none;
-		color: #fff;
-	}
-	a:hover {
-		color: #ddd;
-	}
-	&:hover {
-		opacity: 1;
-	}
-}
-
 /**** CSS ****/
 
 
@@ -181,7 +161,7 @@ h1.page_title, .actions {
 .pop_up {
 	position: fixed;
 	color:#fff;
-  top: 33%;
+  top: 25%;
   left: 50%;
   width: 360px;
   margin-left: -200px;
@@ -194,6 +174,7 @@ h1.page_title, .actions {
   border-bottom: solid 2px #333;
   border-left: solid 2px #444;
   opacity: 0.8;
+  box-shadow: 10px 10px 30px #000;
 }
 
 .success.flash {
@@ -350,27 +331,4 @@ h1.page_title, .actions {
 	a:hover {
 		color: #000;
 	}
-}
-
-
-
-.add {
-	@include knob;
-	display: inline;
-	background: #0a0;
-	padding: 0 3px;
-	margin-left: 5px;
-}
-.edit {
-	@include knob;
-	top:3px;
-	right: 23px;
-	background: #00d;
-
-}
-.destroy {
-	@include knob;
-	top: 3px;
-	right: 3px;
-	background: #d00;
 }

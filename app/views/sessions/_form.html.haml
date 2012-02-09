@@ -14,5 +14,8 @@
           %td
           %td
             .actions
-              = submit_tag "Anmelden", id: 'login'  
-= link_to "Passwort vergessen?", new_password_reset_path
+              = submit_tag "Anmelden", id: 'login' 
+        %tr
+          %td
+          %td       
+            = link_to "Passwort vergessen?",new_password_reset_path, :remote => true

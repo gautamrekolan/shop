@@ -11,20 +11,14 @@
   }
 }
 .login_form {
-  width: 
   table {
-    margin: 20px 0;
     font-size: 12px;
     line-height: 14px;
-    width: 300px;
   }
-  th {
-      font-weight:bold;
-      border-bottom: 1px solid #666;
-  }
-  td, th {  
+  td {
+    font-size: 14px;
     text-align: left;
-    padding: 5px;
+    padding: 5px 10px;
   }
 
   .actions {

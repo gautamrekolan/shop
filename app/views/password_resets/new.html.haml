@@ -1,7 +1,1 @@
-%h1 Neues Passwort
-= form_tag password_resets_path, :method => :post do
-  .field
-    = label_tag :email, "Email"
-    = text_field_tag :email, params[:email]
-  .actions
-    = submit_tag "neues Passwort"  
+= render 'form'

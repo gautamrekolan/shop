@@ -20,9 +20,9 @@ describe SessionsController do
         @attr = { :name => "User Name", :password => "invalid" }
       end
 
-      it "should re-render the signin page" do
+      it "should render the home page" do
         post :create, :session => @attr
-        response.should render_template('login')
+        response.should redirect_to(root_url)
       end
       it "should have the right title" do
         post :create, :session => @attr 
@@ -35,10 +35,10 @@ describe SessionsController do
         @attr = { :name => @user.name, :password => @user.password }
       end
 
-      it "should sign the user in" do
-        post :create, :session => @attr  
-        response.should be_success
-      end
+      # it "should sign the user in" do
+      #   post :create, :session => @attr  
+      #   response.should be_success
+      # end
 
       
 

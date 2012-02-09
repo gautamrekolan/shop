@@ -1,0 +1,11 @@
+.login_form
+  = form_tag password_resets_path, :method => :post do
+    %table
+      %tr
+        %td= label_tag :email, "Email"
+        %td= text_field_tag :email, params[:email], :size => "30"
+      %tr
+        %td
+        %td  
+          .actions
+            = submit_tag "neues Passwort zusenden", :id => 'login'  

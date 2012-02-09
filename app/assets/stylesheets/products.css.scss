@@ -63,11 +63,16 @@
 
 #product_show_description {
 		color: #000;
+		
+		p {
+			font-family: vollkorn;
+		}
+		
 		position: relative;
 		float: left;
-		height: 560px;
-		width: 440px;
-		padding: 75px 65px 15px 75px;
+		height: 540px;
+		width: 400px;
+		padding: 95px 85px 15px 95px;
 		margin: -54px -200px 0 -35px;
 		background: url('page_back.png');
 		background-repeat: no-repeat;
