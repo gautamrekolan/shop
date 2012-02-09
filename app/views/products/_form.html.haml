@@ -11,12 +11,12 @@
         %td
           .label= f.label :title, 'Name'
         %td
-          .field= f.text_field :title, { :size => 32 }
+          .field= f.text_field :title, { :size => 32, :required => true }
       %tr
         %td
           .label= f.label :description, 'Beschreibung'
         %td
-          .field= f.text_area :description, {:rows => 10, :cols => 80 }
+          .field= f.text_area :description, {:rows => 10, :cols => 80, :required => true }
       %tr
         %td
           .label= f.label :category, 'Kategorie'
@@ -51,7 +51,7 @@
           .label= f.label :price, 'Preis'
         %td
           .field
-            = f.text_field :price, { :size => 6 }
+            = f.text_field :price, { :size => 6, :required => true }
             €
     .actions
       = f.submit 'Speichern', id: 'save'

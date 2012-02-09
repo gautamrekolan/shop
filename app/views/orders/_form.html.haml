@@ -11,28 +11,28 @@
       %tr
         %td= f.label :first_name, "Vor-, Nachname"
         %td
-          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => "Vorname"
-          = f.text_field :last_name, :id => "last_name", :placeholder => "Nachname"
+          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => "Vorname", :required => true
+          = f.text_field :last_name, :id => "last_name", :placeholder => "Nachname", :required => true
       %tr
         %td= f.label :street, "Straße, Hausnummer"
         %td
-          = f.text_field :street, :id => "street", :placeholder => "Straße, Hausnummer"
+          = f.text_field :street, :id => "street", :placeholder => "Straße, Hausnummer", :required => true
       %tr
         %td= f.label :city, "PLZ, Stadt"
         %td
-          = f.text_field :zip, :id => "zip", :size => 5, :placeholder => "PLZ"
-          = f.text_field :city, :id => "city", :placeholder => "Stadt"
+          = f.text_field :zip, :id => "zip", :size => 5, :placeholder => "PLZ", :required => true
+          = f.text_field :city, :id => "city", :placeholder => "Stadt", :required => true
       %tr
         %td= f.label :country, "Land "
-        %td= f.text_field :country, :id => "country", :placeholder => "Land"
+        %td= f.text_field :country, :id => "country", :placeholder => "Land", :required => true
       %tr
         %td= f.label :email, "Email "
-        %td= f.text_field :email, :id => "email", :placeholder => "Max@Mustermann.de"
+        %td= f.text_field :email, :id => "email", :placeholder => "Max@Mustermann.de", :required => true
       %tr
         %td= f.label :pay_type, "Bezahlung per "
-        %td= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => "Wähle gewünschte Bezahlmethode", :id => "pay_type"
+        %td= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => "Wähle gewünschte Bezahlmethode", :id => "pay_type", :required => true
       %tr
         %td= f.label :accept_conditions, "AGB"
-        %td= f.check_box :accept_conditions, :id => "accept_conditions"
+        %td= f.check_box :accept_conditions, :id => "accept_conditions", :required => true
     .actions
       = f.submit 'Bestellung absenden', :id => "send_order"

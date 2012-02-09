@@ -6,10 +6,10 @@
       %table
         %tr
           %td= label_tag 'Name'
-          %td= text_field_tag :name, params[:name], :size => "30",:placeholder => "Name"
+          %td= text_field_tag :name, params[:name], :size => "30",:placeholder => "Name", :autofocus => true, :required => true
         %tr
           %td= label_tag 'Passwort'
-          %td= password_field_tag :password
+          %td= password_field_tag :password, params[:password], :placeholder => "Passwort", :required => true
         %tr
           %td
           %td
