@@ -166,7 +166,7 @@ h1.page_title, .actions {
   width: 360px;
   margin-left: -200px;
   padding: 40px 20px;
-  background: #000;
+  background: #110900;
   text-align:center;
   border-radius: 10px;
   border-top: solid 2px #555;
@@ -297,21 +297,27 @@ h1.page_title, .actions {
 	}
 	.form_image {
 		position: relative;
-		display: inline;
-		width: 100px;
+		display: block;
+		float: left;
+		width: 120px;
+		height: 80px;
+		margin-right: 10px;
 		.title_image {
 			position: absolute;
-			padding: 3px;
-			bottom: 0px;
-			left: 0px;
+			bottom: 4px;
+			right: 4px;
+			padding: 2px 4px;	
 			background: #000;
+			border-radius: 4px;
 		}
-		.delete_image {
+		.image_number {
 			position: absolute;
-			padding: 3px;
-			bottom: 0px;
-			right: 0px;
-			background: #c00;
+			padding: 3px 6px;
+			left: 4px;
+			top: 4px;
+			border-radius: 20px;
+			border: 2px solid #fff;
+			background: #000;
 		}
 	}
 }
