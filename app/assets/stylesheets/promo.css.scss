@@ -1,0 +1,33 @@
+#promo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  z-index: 500;
+  text-align: right;
+  color: orange;
+  border-top-left-radius: 5px;
+  .box {
+    float: right;
+    width: 250px;
+    border-right: 2px solid #222;
+    text-align: center;
+    padding: 5px;
+    a {
+      text-decoration: none;
+    }
+    &:hover {
+      background: #222;
+    }
+    .mallorca {
+      a:hover {
+        color: orange;
+      }
+    }
+    .team {
+      a:hover {
+        color: #c00;
+      }
+    }
+  }
+}

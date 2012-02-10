@@ -1,24 +1,5 @@
 /**** Mixins ****/
 
-@mixin red_button {
-	text-align:center;
-	background: #c00;
-	padding: 5px 10px;
-	border-radius: 10px;
-	box-shadow: 0px 1px 1px #000;
-	border-top: 2px solid #d00;
-	border-left: 2px solid #e00;
-	border-bottom: 2px solid #b00;
-	border-right: 2px solid #a00;
-	a{
-		color: #fff;
-		font-size: 16px;
-		text-shadow: 0px -1px 1px #000;
-	}
-	a:hover {
-		color: #ddd;
-	}	
-}
 
 /**** CSS ****/
 
@@ -89,7 +70,23 @@
 		top: 0px;
 		right: 5px;
 		z-index:100;
-		@include red_button;
+		text-align:center;
+		background: #c00;
+		padding: 5px 10px;
+		border-radius: 5px;
+		box-shadow: 0px 1px 1px #000;
+		border-top: 2px solid #d00;
+		border-left: 2px solid #e00;
+		border-bottom: 2px solid #b00;
+		border-right: 2px solid #a00;
+		a{
+			color: #fff;
+			font-size: 16px;
+			text-shadow: 0px -1px 1px #000;
+		}
+		a:hover {
+			color: #ddd;
+		}	
 		box-shadow: 0 0 10px #000;
 		.cart {
 			text-align: left;
@@ -144,15 +141,16 @@ h1.page_title, .actions {
 			font-size: 14px;
 		}
 		.title {
-			font-weight: bold;
 			position:absolute;
 			bottom: 10px;
 			right: 10px;
 			min-width: 100px;
-			background: #000;
+			background: #252020;
 			opacity: 0.9;
 			border-radius: 5px;
-			border: solid 2px #333;
+			box-shadow: 
+				1px 1px 1px #000,
+				-1px -1px 1px #666;
 			padding: 3px 15px 4px;
 			text-align: center;
 		}
@@ -197,17 +195,6 @@ h1.page_title, .actions {
     float: left;
     width: 1000px;
     margin: 0px 0 40px;
-	h1 {
-		clear: both;
- 		margin-top: 20px;
-		width: 980px;
-		padding: 0 10px;
-		height: 36px;
-		line-height: 36px;
-		background-color: #252020;
-		border-radius:5px;
-		opacity: 0.7;
-	}
 	.category {
 		display: block;
 		float: left;
@@ -224,6 +211,7 @@ h1.page_title, .actions {
 	color: #666;
  	clear: both;
  	margin-top: 20px;
+ 	margin-bottom: 50px;
 	width: 980px;
 	padding: 0 10px;
 	height: 36px;
@@ -241,7 +229,7 @@ h1.page_title, .actions {
 }
 .sub_header_links {
 	float: right;
-	padding: 5px 10px;
+	padding: 5px 15px;
 	color: #000;
 	font-size: 12px;
 	a {
@@ -252,14 +240,13 @@ h1.page_title, .actions {
 }
 .form, .index {
 	table {
-		margin: 20px 0 10px 5px;
-		width: 990px;
+		margin: 20px 0 10px 10px;
+		width: 980px;
 		font-size: 12px;
 		line-height: 14px;
 	}
 	th {
 	   	font-weight:bold;
-	   	border-top: 3px solid #111;
 	   	border-bottom: 3px solid #111	;
 
 	}
@@ -272,6 +259,9 @@ h1.page_title, .actions {
 		background: #252020;
 	}
 	.total_item_price, .item_price {
+		text-align: right;
+	}
+	.postage_price, .postage {
 		text-align: right;
 	}
 	.total_price, .total {
@@ -319,22 +309,5 @@ h1.page_title, .actions {
 			border: 2px solid #fff;
 			background: #000;
 		}
-	}
-}
-
-.css_button {
-	padding: 5px 0 10px;
-  a{
-		background-color: #ccc;
-		border: 1px solid #111;
-		border-radius: 4px;
-		padding: 1px 10px;
-		margin: 5px;
-		text-decoration: none;
-		color: #000;
-		font-size: 12px;
-	}
-	a:hover {
-		color: #000;
 	}
 }

@@ -10,9 +10,9 @@ module ApplicationHelper
 
   def short_cart_content
     if (your_cart.total_number > 0)
-      "#{your_cart.total_number} Artikel im Warenkorb"
+      "#{your_cart.total_number} #{t(:items_in_the_cart)}"
     else
-      "Ihr Warenkorb ist leer"
+      t(:your_cart_is_empty)
     end
   end
 

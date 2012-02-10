@@ -31,8 +31,11 @@ describe OrdersController do
         response.should redirect_to(root_url)
       end
     end
-
-
+    describe "success" do
+      it "should have a porto row" do
+        get 'new'
+      end
+    end 
   end
 
 end

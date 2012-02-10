@@ -1,11 +1,11 @@
 %section#item_list.index
   %table
     %tr
-      %th Anzahl
-      %th Produkt
-      %th Optionen
-      %th.item_price Einzelpreis
-      %th.total_item_price Preis
+      %th= t(:quantity)
+      %th= t(:product)
+      %th= t(:options)
+      %th.item_price= t(:item_price)
+      %th.total_item_price= t(:total_item_price)
     - item_source.line_items.each do |item|
       %tr
         %td
@@ -20,6 +20,10 @@
               %br
         %td.item_price= euro_price(item.product.price)
         %td.total_item_price= euro_price(item.total_price)
+    %tr.postage
+      %td.postage{:colspan => '4'}= t(:postage)
+      %td.postage_price
+        = euro_price(@order.postage_price(item_source.total_price))        
     %tr.total_line
-      %td.total{:colspan => '4'} TOTAL
-      %td.total_price= euro_price(@cart.total_price)
+      %td.total{:colspan => '4'}= t(:total)
+      %td.total_price= euro_price(item_source.total_price + @order.postage_price(item_source.total_price))

@@ -7,10 +7,9 @@
             = link_to (image_tag title_image.image(:product)), { :action => "product_pop_image", :id => @product, :image_id => title_image.id }, :remote => true
       - if @product.product_images.count > 1
         .thumbs
-          .thumbs_inner
-            .image
-              - @product.product_images.where(:title_image => false).take(4).each do |product_image|
-                = link_to (image_tag product_image.image(:thumb)), { :action => "product_pop_image", :id => @product, :image_id => product_image.id }, :remote => true
+          .image
+            - @product.product_images.where(:title_image => false).take(4).each do |product_image|
+              = link_to (image_tag product_image.image(:thumb)), { :action => "product_pop_image", :id => @product, :image_id => product_image.id }, :remote => true
     #product_show_description
       %h1
         = @product.title

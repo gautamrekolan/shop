@@ -65,11 +65,10 @@ h1.page_title {
 
 #quicklinks{
   .category{
-  	color: #222;
     a {
 	  font-weight: normal;
-	  font-size: 16px;
-	  color: #666;
+	  font-size: 14px;
+	  color: #222;
 	}
 	a:hover {
     	color: #c00;
@@ -77,6 +76,7 @@ h1.page_title {
 	li {
 		a {
 			font-size: 12px;
+			color: #666
 		}
 	}
   }

@@ -17,24 +17,22 @@
 		width: 520px;
 		box-shadow: 3px 0 10px #000;
 		background-color: #222;
-		.full_image{
-		}
+
 		.thumbs {
+
 			position: absolute;
+			height: 80px;
 			bottom: 5px;
 			left: 5px;
-			border-top: solid 5px #100;
-			border-bottom: solid 5px #100;
-			box-shadow: 0 0 10px #aaa;
-			.thumbs_inner {
-				border-top: dashed 6px #100;
-				border-bottom: dashed 6px #100;
-				
-			}
+			background: #252020;
+			border: 4px solid #252020;
+      box-shadow: 
+				1px 1px 1px #000,
+				-1px -1px 1px #666;
 			.image {
-				background-color: #100;
-				border: solid 2px #100;
-			
+				display: inline;
+				height: 80px;
+				width: 120px;	
 			}
 		}
 	}
@@ -46,10 +44,10 @@
 	position: fixed;
 	top: 5%;
 	left:50%;
-	margin-left: -495px;
+	margin-left: -395px;
 	border: 10px solid #ddc;
 	box-shadow: 0 0 20px #000;	
-	z-index: 98;
+	z-index: 102;
 	display: none;
 	background-color: #ddc;
   color: #111;
@@ -67,7 +65,7 @@
 		p {
 			font-family: vollkorn;
 		}
-		
+		z-index: 0;
 		position: relative;
 		float: left;
 		height: 540px;

@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  quantity: "Quantity"
+  product: "Product"
+  options: "Options"
+  item_price: "Price/Item"
+  total_item_price: "Total Price"
+  postage: "POSTAGE"
+  total: "TOTAL"
+  items_in_the_cart: "items in the cart"
+  your_cart_is_empty: "Your cart is empty."
+  empty_cart: "clear cart"
+  place_order: "place order"

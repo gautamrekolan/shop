@@ -1,9 +1,9 @@
-.order_form
+%section#order_form
   %h1.page_title= @title
 
   = render 'item_list', :item_source => @cart
 
-  %h1.page_title Bitte geben Sie Ihre Daten ein:
+  %h1.page_title= t(:please_fill_this_form) + ':'
   
   = render 'form'
 

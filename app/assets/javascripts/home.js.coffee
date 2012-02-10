@@ -3,18 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('.slideshow').cycle({
-    fx: 'fade',
-    pause: 1,
-    delay: -100
-    })
   $('.cart').hide()
   $('.cart_box').hover(
-    -> $('.cart').slideDown('fast')
-    -> $('.cart').slideUp('fast')
+    -> $('.cart').slideDown(200)
+    -> $('.cart').slideUp(200)
   )
-  $('.flash').delay(2500).fadeOut('fast')
+  $('.flash').delay(2000).fadeOut(200)
 
   $('.pop_image').click(
-    -> $(this).fadeOut('fast')
+    -> $(this).fadeOut(200)
   )
+  $('#promo').hide().delay(3000).slideDown(2000)

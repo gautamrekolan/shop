@@ -1,14 +1,16 @@
 %section#order.index
   %h1.page_title= @title
+  
   = render 'item_list', :item_source => @order
-  %h1.page_title Kundendaten
+  
+  %h1.page_title= t(:customer_data)
   
   %table 
     %tr
-      %td Name:
+      %td= t(:name)
       %td= @order.first_name + ' ' + @order.last_name
     %tr
-      %td Adresse:
+      %td= t(:address)
       %td 
         = @order.street
         %br
@@ -16,13 +18,13 @@
         %br
         = @order.country
       %tr
-        %td Email:
+        %td= t(:email)
         %td= @order.email
       %tr
-        %td Bezahlung per:
+        %td= t(:payment_type) + ':'
         %td= @order.pay_type
   .actions
     = form_for @order do |f|
-      = f.submit 'Status aktualisieren:'
+      = f.submit t(:change_status)
       = f.select :status, Order::STATUS_TYPES
      

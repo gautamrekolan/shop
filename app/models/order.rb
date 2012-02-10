@@ -3,6 +3,8 @@ class Order
 
   PAYMENT_TYPES = ["Vorkasse", "Nachnahme"]
   STATUS_TYPES = ["Steht aus", "In Bearbeitung", "Abgeschlossen"]
+  POSTAGE = 5
+  POSTAGE_FREE = 50
 
   field :first_name
   field :last_name
@@ -27,7 +29,15 @@ class Order
 
   has_many :line_items, :dependent => :destroy
   
+  def postage_price(total_price)
+    if total_price >= POSTAGE_FREE
+      postage = 0
+    else
+      postage = POSTAGE
+    end
+  end
+
   def total_price
-    line_items.to_a.sum {|item| item.total_price}
+    line_items.to_a.sum { |item| item.total_price } 
   end
 end
