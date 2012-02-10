@@ -13,8 +13,8 @@ $ ->
     -> $('.cart').slideDown('fast')
     -> $('.cart').slideUp('fast')
   )
-  $('.flash').delay(3000).fadeOut('slow')
+  $('.flash').delay(2500).fadeOut('fast')
 
   $('.pop_image').click(
-    -> $(this).fadeOut('slow')
+    -> $(this).fadeOut('fast')
   )
