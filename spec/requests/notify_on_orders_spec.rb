@@ -6,7 +6,7 @@ describe "NotifyOnOrders" do
     visit product_path
     click_on product.title
     click_button 'buy'
-    visit cart_path
+    visit new_order_path
     click_button 'place_order' 
     fill_in "first_name", :with => "Eric"
     fill_in "last_name", :with => "Nordmeyer"

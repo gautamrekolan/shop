@@ -25,6 +25,5 @@
         %td= @order.pay_type
   .actions
     = form_for @order do |f|
-      = f.submit t(:change_status)
-      = f.select :status, Order::STATUS_TYPES
+      = f.select :status, Order::STATUS_TYPES,{}, {:onchange => 'this.form.submit();' }
      

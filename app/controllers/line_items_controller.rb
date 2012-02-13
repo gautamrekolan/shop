@@ -56,8 +56,6 @@ class LineItemsController < ApplicationController
 
     @line_item.quantity = @cart.count_up_equal_items(product.id, @line_item)
 
-    # equal_item = LineItem.where(product_id: product_id).first
-    # equal_item.quantity += 1
       
     respond_to do |format|
       if @line_item.save

@@ -59,8 +59,12 @@ class OrdersController < ApplicationController
     
     respond_to do |format|
       if @order.save
-        line_items = LineItem.where(cart_id: @cart.id).update_all(cart_id: nil, order_id: @order.id)
-        current_cart.destroy
+        line_items = LineItem.where(cart_id: @cart.id)
+        line_items.each do |item|
+          item.update_attribute(:order_id, @order.id)
+          item.unset(:cart_id)
+        end
+        @cart.destroy
         session[:cart_id] = nil
         UserMailer.order_notifier(@order).deliver
         format.html { redirect_to(root_url, :notice => "Vielen Dank f&uuml;r Ihre Bestellung!" ) }

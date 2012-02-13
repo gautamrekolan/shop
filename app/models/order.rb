@@ -1,5 +1,6 @@
 class Order
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   PAYMENT_TYPES = ["Vorkasse", "Nachnahme"]
   STATUS_TYPES = ["Steht aus", "In Bearbeitung", "Abgeschlossen"]
@@ -14,7 +15,6 @@ class Order
   field :country
   field :email
   field :pay_type
-  field :timestamps
   field :status
   field :accept_conditions, :type => Boolean
 
@@ -28,7 +28,8 @@ class Order
   validates :status, :inclusion => STATUS_TYPES
 
   has_many :line_items, :dependent => :destroy
-  
+
+
   def postage_price(total_price)
     if total_price >= POSTAGE_FREE
       postage = 0
@@ -39,5 +40,13 @@ class Order
 
   def total_price
     line_items.to_a.sum { |item| item.total_price } 
+  end
+
+  def total_line_items_number
+    quantity = 0
+    line_items.each do |item|
+      quantity += item.quantity
+    end
+    quantity
   end
 end

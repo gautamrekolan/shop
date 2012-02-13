@@ -22,7 +22,7 @@ class Cart
   #### end
 
   def count_up_equal_items(product_id, line_item)
-    equal_items = LineItem.where(product_id: product_id, options: line_item.options)
+    equal_items = LineItem.where(product_id: product_id, options: line_item.options, cart_id: line_item.cart_id)
     # line_item.quantity = equal_item.quantity + 1
     quantity = 1
     equal_items.each do |equal_item|

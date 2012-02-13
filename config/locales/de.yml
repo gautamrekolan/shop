@@ -17,3 +17,8 @@ de:
   payment_type: "Bezahlung per"
   change_status: "Status aktualisieren"
   please_fill_this_form: "Bitte geben Sie Ihre Daten ein"
+
+  mongoid:
+    errors:
+      messages:
+        document_not_found: "Dokument konnte nicht gefunden werden"
