@@ -1,19 +1,18 @@
 #promo {
   clear: both;
   position: static;
-
+  margin-left: 22px;
   text-align: left;
-
-  overflow: hidden;
   .box {
-    background: #252020;
+    background: #600;
     float: left;
     width: 240px;
     text-align: center;
     padding: 5px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-right:10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right:1px solid #252020;
+    box-shadow: 2px 2px 4px #000;
     a {
       text-decoration: none;
     }
