@@ -18,6 +18,7 @@ class Ability
       can :manage, Cart
       can :create, Order
       can :show, Category
+      can :product_pop_image, Product
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.
