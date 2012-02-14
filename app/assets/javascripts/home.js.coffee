@@ -13,4 +13,4 @@ $ ->
   $('.pop_image').click(
     -> $(this).fadeOut(200)
   )
-  $('#promo').hide().delay(3000).slideDown(2000)
+  #$('#promo').hide().delay(3000).slideDown(2000)

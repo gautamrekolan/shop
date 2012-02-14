@@ -46,12 +46,6 @@ GEM
       bson (= 1.5.2)
     builder (3.0.0)
     cancan (1.6.7)
-    capistrano (2.9.0)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -84,10 +78,6 @@ GEM
     factory_girl_rails (1.6.0)
       factory_girl (~> 2.5.0)
       railties (>= 3.0.0)
-    faraday (0.7.6)
-      addressable (~> 2.2)
-      multipart-post (~> 1.1)
-      rack (~> 1.1)
     ffi (1.0.11)
     guard (1.0.0)
       ffi (>= 0.5.0)
@@ -112,7 +102,6 @@ GEM
       rest-client (~> 1.6.1)
       rubyzip
       term-ansicolor (~> 1.0.5)
-    highline (1.6.11)
     hike (1.2.1)
     httparty (0.8.1)
       multi_json
@@ -127,12 +116,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
-    koala (1.3.0)
-      faraday (~> 0.7.0)
-      multi_json (~> 1.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
-    libv8 (3.3.10.4)
     mail (2.4.1)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -152,14 +137,6 @@ GEM
       rspec (~> 2)
     multi_json (1.0.4)
     multi_xml (0.4.1)
-    multipart-post (1.1.4)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.3.0)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
     nokogiri (1.5.0)
     paperclip (2.5.2)
       activerecord (>= 2.3.0)
@@ -227,8 +204,6 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     term-ansicolor (1.0.7)
-    therubyracer (0.9.9)
-      libv8 (~> 3.3.10)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -259,7 +234,6 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bson_ext (~> 1.4)
   cancan
-  capistrano
   capybara
   coffee-rails
   database_cleaner
@@ -271,7 +245,6 @@ DEPENDENCIES
   heroku
   jquery-rails
   kaminari
-  koala
   launchy
   mongoid (~> 2.3)
   mongoid-paperclip
@@ -284,7 +257,6 @@ DEPENDENCIES
   ruby_gntp
   sass-rails
   spork (~> 1.0rc)
-  therubyracer
   thin
   turn
   uglifier (>= 1.0.3)
