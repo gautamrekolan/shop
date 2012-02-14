@@ -49,4 +49,5 @@ class Order
     end
     quantity
   end
+
 end

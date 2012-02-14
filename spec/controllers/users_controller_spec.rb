@@ -4,7 +4,11 @@ describe UsersController do
   render_views
 
   describe "GET 'new'" do
-    
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
+
     it "should be successful" do
       get 'new'
       response.should be_success
@@ -41,6 +45,10 @@ describe UsersController do
   end
 
   describe "GET 'index'" do
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
 
     it "should be successful" do
       get 'index'
@@ -62,6 +70,8 @@ describe UsersController do
     describe "failure" do
       
       before(:each) do
+        user = Factory(:user)
+        session[:user_id] = user.id
         @attr = { :name => "", :email => "", :role => "", :password => "", :password_confirmation => "" }
       end
 
@@ -83,11 +93,14 @@ describe UsersController do
 
     describe "success" do
       before(:each) do
+
         @attr = { :name => "New User", :email => "joe@sample.com", :role => "Admin", :password => "foobar", :password_confirmation => "foobar" }
         users = User.all
         users.each do |user|
           user.destroy
         end
+        user = Factory(:user)
+        session[:user_id] = user.id
       end
 
       it "should create a user" do
@@ -107,6 +120,8 @@ describe UsersController do
   describe "GET 'show'" do
     before(:each) do
       @user = Factory(:user) 
+      user = Factory(:user)
+      session[:user_id] = user.id
     end
 
     it "should be successful" do

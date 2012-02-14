@@ -4,7 +4,11 @@ describe ProductsController do
   render_views
 
   describe "GET 'new'" do
-    
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
+
     it "should be successful" do
       get 'new'
       response.should be_success
@@ -42,6 +46,10 @@ describe ProductsController do
   end
 
   describe "GET 'index'" do
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
 
     it "should be successful" do
       get 'index'
@@ -63,8 +71,11 @@ describe ProductsController do
     describe "failure" do
 
       before(:each) do
+        user = Factory(:user)
+        session[:user_id] = user.id
         @attr = { :title => "", :description => "", :price => "", :category => "" }
       end
+
       it "should not create a product" do
         lambda do
           post :create, :product => @attr
@@ -74,6 +85,8 @@ describe ProductsController do
 
     describe "success" do  
       before(:each) do
+        user = Factory(:user)
+        session[:user_id] = user.id
         @attr = { :title => "Title", :description => "Description", :price => "1", :category => "Rahmen" }
       end
       it "should create a product" do

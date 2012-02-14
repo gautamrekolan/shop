@@ -40,4 +40,10 @@ class User
     UserMailer.password_reset(self).deliver
   end
   
+  def create_user_out_of_order(order)
+      self.name = order.first_name + ' ' + order.last_name
+      self.email = order.email
+      self.password = order.last_name
+      self.role = 'Customer'
+  end
 end

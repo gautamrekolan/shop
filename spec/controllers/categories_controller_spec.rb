@@ -4,7 +4,11 @@ describe CategoriesController do
   render_views
 
   describe "GET 'new'" do
-    
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
+
     it "should be successful" do
       get 'new'
       response.should be_success
@@ -35,9 +39,12 @@ describe CategoriesController do
     end
 
   end
-
+  
   describe "GET 'index'" do
-
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id
+    end
     it "should be successful" do
       get 'index'
       response.should be_success

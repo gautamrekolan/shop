@@ -1,11 +1,17 @@
 - if session[:user_id] 
   #admin
+    
     %span.admin_link= link_to 'Bestellungen', orders_path
-    %span.admin_link= link_to 'Benutzer', users_path
-    %span.admin_link= link_to 'Kategorien', categories_path
-    %span.admin_link= link_to 'Produkte', products_path
-    %span.admin_link= link_to 'News', news_items_path
-    %span.admin_link= link_to 'Partner', partners_path
+    - if can? :manage, @users
+      %span.admin_link= link_to 'Benutzer', users_path
+    - if can? :manage, @categories
+      %span.admin_link= link_to 'Kategorien', categories_path
+    - if can? :manage, @products
+      %span.admin_link= link_to 'Produkte', products_path
+    - if can? :manage, @news_items
+      %span.admin_link= link_to 'News', news_items_path
+    - if can? :manage, @partners
+      %span.admin_link= link_to 'Partner', partners_path
     
     .admin_link.logout= link_to 'ausloggen', logout_path    
 

@@ -3,10 +3,7 @@ class LineItem
   
   attr_accessible :product_id, :cart_id, :quantity, :order_id
 
-  field :product_id
-  field :cart_id
   field :quantity, :type => Integer
-  field :order_id
   field :options, :type => Hash
 
   belongs_to :product

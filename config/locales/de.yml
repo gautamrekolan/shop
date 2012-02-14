@@ -22,3 +22,11 @@ de:
     errors:
       messages:
         document_not_found: "Dokument konnte nicht gefunden werden"
+      models:
+        order:
+          attributes:
+            pay_type:
+              blank: "Keine Bezahlmethode gewählt"
+              inclusion: "Diese Bezahlmethode ist nicht mögliche"
+            zip:
+              too_long: "Postleitzahl ist zu lang"

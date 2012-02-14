@@ -1,5 +1,5 @@
 class PartnersController < ApplicationController
-  # authorize_resource
+  authorize_resource
   # GET /partners
   # GET /partners.json
   def index

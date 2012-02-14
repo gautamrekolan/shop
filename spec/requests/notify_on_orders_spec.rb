@@ -3,8 +3,7 @@ require 'spec_helper'
 describe "NotifyOnOrders" do
   it "emails user after placing an order" do
     product = Factory(:product)
-    visit product_path
-    click_on product.title
+    visit product_path(product)
     click_button 'buy'
     visit new_order_path
     click_button 'place_order' 

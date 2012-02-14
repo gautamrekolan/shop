@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  
+  authorize_resource
+
   # GET /orders
   # GET /orders.json
 
@@ -56,9 +59,11 @@ class OrdersController < ApplicationController
   def create
     @cart = Cart.find(session[:cart_id])
     @order = Order.new(params[:order])
-    
+    user = User.new
+    user.create_user_out_of_order(@order)
+   
     respond_to do |format|
-      if @order.save
+      if @order.save && user.save
         line_items = LineItem.where(cart_id: @cart.id)
         line_items.each do |item|
           item.update_attribute(:order_id, @order.id)
@@ -67,7 +72,7 @@ class OrdersController < ApplicationController
         @cart.destroy
         session[:cart_id] = nil
         UserMailer.order_notifier(@order).deliver
-        format.html { redirect_to(root_url, :notice => "Vielen Dank f&uuml;r Ihre Bestellung!" ) }
+        format.html { redirect_to(root_url, :notice => "Vielen Dank fuer Ihre Bestellung!" ) }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

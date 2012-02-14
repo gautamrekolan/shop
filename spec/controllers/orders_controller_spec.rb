@@ -4,6 +4,11 @@ describe OrdersController do
   render_views
   
   describe "GET 'index'" do
+    
+    before(:each) do
+      user = Factory(:user)
+      session[:user_id] = user.id 
+    end
 
     it "should be successful" do
       get 'index'

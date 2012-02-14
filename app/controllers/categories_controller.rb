@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  # authorize_resource
+  authorize_resource
 
   def index
     @title = "Alle Kategorien"
