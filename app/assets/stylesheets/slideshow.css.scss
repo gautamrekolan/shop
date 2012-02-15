@@ -1,22 +1,22 @@
-.inner{
+.slideshow{
   height: 520px;
+  width: 970px;
+  box-shadow: 0 0 5px #000;
+  background-color: #222;
 }
 .slide {
   z-index: 99;
   .headline {
     margin-top: -420px;
-    margin-left: 60px;
+    margin-left: 40px;
     h1 {
       font-size: 64px;
       background: #fff;
       text-shadow: 0 0 10px #000;
-    }
-  
+    } 
   }
   .content {
     margin-left: 60px;
-    background: #111;
-    z-index: 150;
     p {
       text-shadow: 0 0 10px #000;
     }
