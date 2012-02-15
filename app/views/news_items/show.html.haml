@@ -1,10 +1,5 @@
-#news_item
-  .full_image= image_tag @news_item.image(:full)
-  %p#notice= notice
-  .content_box
-    - if can? :update, @news_item
-      .edit= link_to '=', edit_news_item_path(@news_item)
-    - if can? :destroy, @news_item
-      .destroy= link_to 'X', @news_item, :confirm => 'Bist Du sicher?', :method => :delete
+%section#content
+  #news_item.inner
+    .full_image= image_tag @news_item.image(:full)
     %h1= @news_item.title
     %p= simple_format(@news_item.content)

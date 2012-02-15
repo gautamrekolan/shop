@@ -13,4 +13,21 @@ $ ->
   $('.pop_image').click(
     -> $(this).fadeOut(200)
   )
-  #$('#promo').hide().delay(3000).slideDown(2000)
+
+  $('.slideshow').cycle({
+    fx: 'fade',
+    pause: 1,
+    delay: 4000
+  }) 
+
+  # slides = $('#home .slide')
+  # slides.hide()
+  # next_slide = slides.first()
+      
+  # change_slide = (current_slide) -> 
+  #   next_slide = current_slide.next('.slide')
+  #   current_slide
+  #     .fadeIn(2000)
+
+
+  # change_slide next_slide 

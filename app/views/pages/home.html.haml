@@ -1,2 +1,10 @@
 %section#content
-  Hallo
+  #home.inner.slideshow
+    - @news_items.each do |item|
+      .slide
+        = image_tag item.image(:full)
+        .headline
+          %h1= item.title
+        .content
+          %p= simple_format(item.content)
+  = render 'partials/promo'

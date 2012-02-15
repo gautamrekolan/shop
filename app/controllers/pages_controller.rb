@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def home
   	@title = "Home"
+    @news_items = NewsItem.all
   end
 
   def impressum

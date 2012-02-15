@@ -59,11 +59,9 @@ class OrdersController < ApplicationController
   def create
     @cart = Cart.find(session[:cart_id])
     @order = Order.new(params[:order])
-    user = User.new
-    user.create_user_out_of_order(@order)
-   
+    @order.ticket = SecureRandom.hex(8)
     respond_to do |format|
-      if @order.save && user.save
+      if @order.save
         line_items = LineItem.where(cart_id: @cart.id)
         line_items.each do |item|
           item.update_attribute(:order_id, @order.id)

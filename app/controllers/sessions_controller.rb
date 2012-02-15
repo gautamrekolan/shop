@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     @title = "Login"
-    user = User.where( :name => params[:name] ).first
+    user = User.where( :email => params[:email] ).first
     
     respond_to do |format|
       if user && user.authenticate(params[:password])

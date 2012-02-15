@@ -17,6 +17,7 @@ class Ability
       can :show, Product
       can :manage, Cart
       can :create, Order
+      can :update, Order
       can :show, Category
       can :product_pop_image, Product
     end

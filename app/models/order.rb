@@ -17,6 +17,7 @@ class Order
   field :pay_type
   field :status
   field :accept_conditions, :type => Boolean
+  field :ticket
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

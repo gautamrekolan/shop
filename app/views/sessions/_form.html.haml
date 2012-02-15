@@ -5,8 +5,8 @@
     = form_tag sessions_path do
       %table
         %tr
-          %td= label_tag 'Name'
-          %td= text_field_tag :name, params[:name], :size => "30",:placeholder => "Name", :autofocus => true, :required => true, :id => 'name'
+          %td= label_tag 'Email'
+          %td= text_field_tag :email, params[:email], :size => "30",:placeholder => "Email", :autofocus => true, :required => true, :id => 'email'
         %tr
           %td= label_tag 'Passwort'
           %td= password_field_tag :password, params[:password], :placeholder => "Passwort", :required => true, :id => 'password'

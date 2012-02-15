@@ -1,34 +1,32 @@
 #promo {
   clear: both;
   position: static;
-  margin-left: 22px;
   text-align: left;
   .box {
-    background: #600;
     float: left;
-    width: 240px;
+    padding: 15px;
+    width: 440px;
+    height: 15px;
+    margin-left: 10px;
     text-align: center;
-    padding: 5px;
-    border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    border-right:1px solid #252020;
-    box-shadow: 2px 2px 4px #000;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    z-index: 50;
     a {
       text-decoration: none;
     }
-    &:hover {
-      background: #000;
-    }
-    .mallorca {
-      a:hover {
-        color: orange;
-      }
-    }
-    .team {
-
-      a:hover {
-        color: #c00;
-      }
-    }
   }
+  #mallorca {
+  }
+  #mallorca:hover {
+    height: 20px
+  }
+  #team {
+    margin-left: 10px;
+  }
+  #team:hover { 
+    height: 20px
+  }
+  
 }

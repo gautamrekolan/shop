@@ -27,7 +27,6 @@ class User
 
   validates :role, :inclusion => ROLES
 
-
   def generate_new_password
     new_password = SecureRandom.hex(8)
     self.password = new_password
@@ -38,12 +37,5 @@ class User
     self.password_reset_sent_at = Time.zone.now
     self.save(:validate => false)
     UserMailer.password_reset(self).deliver
-  end
-  
-  def create_user_out_of_order(order)
-      self.name = order.first_name + ' ' + order.last_name
-      self.email = order.email
-      self.password = order.last_name
-      self.role = 'Customer'
   end
 end

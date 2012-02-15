@@ -17,7 +17,7 @@ class NewsItem
 
   validates :title, :length => {:within => 5..50}, :presence => true
   validates :content, :presence => true
-  has_mongoid_attached_file :image, :styles => { :full => "960x540#", :box => "160x92#", :thumb => "130x80#" }
+  has_mongoid_attached_file :image, :styles => { :full => "970x466#", :box => "160x92#", :thumb => "130x80#" }
 
 
 end

@@ -17,7 +17,7 @@ describe SessionsController do
   describe "POST 'create'" do
     describe " invalid signin" do
       before(:each) do
-        @attr = { :name => "User Name", :password => "invalid" }
+        @attr = { :email => "User@Name", :password => "invalid" }
       end
 
       it "should render the home page" do
@@ -30,15 +30,12 @@ describe SessionsController do
       end
     end
     describe "with valid name and password" do
-      before(:each) do
-        @user = Factory(:user) #define user with Factory Girl
-        @attr = { :name => @user.name, :password => @user.password }
-      end
 
-      # it "should sign the user in" do
-      #   post :create, :session => @attr  
-      #   response.should be_success
-      # end
+      it "should sign the user in" do
+        user = Factory(:user)
+        session[:user_id] = user.id
+        response.should be_success
+      end
 
       
 

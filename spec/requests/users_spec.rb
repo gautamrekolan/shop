@@ -34,7 +34,7 @@ describe 'Users' do
       
         lambda do
           visit login_path
-          fill_in "name", :with => @user.name
+          fill_in "email", :with => @user.email
           fill_in "password", :with => @user.password
           click_button "Anmelden"
           visit register_path
