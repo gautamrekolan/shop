@@ -12,6 +12,8 @@
       %span.admin_link= link_to 'News', news_items_path
     - if can? :manage, @partners
       %span.admin_link= link_to 'Partner', partners_path
+    - if can? :manage, @brands
+      %span.admin_link= link_to 'Marken', brands_path  
     
     .admin_link.logout= link_to 'ausloggen', logout_path    
 

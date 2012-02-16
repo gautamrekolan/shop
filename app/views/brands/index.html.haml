@@ -1,0 +1,18 @@
+%section#brands.index
+  %h1.page_title= @title
+
+  %table
+    %tr
+      %th Title
+      %th Image
+      %th
+      %th
+
+    - @brands.each do |brand|
+      %tr
+        %td= brand.title
+        %td= image_tag brand.image(:tile)
+        %td= link_to 'bearbeiten', edit_brand_path(brand)
+        %td= link_to 'löschen', brand, :confirm => 'Sind Sie sicher?', :method => :delete
+  .actions
+    = button_to 'Neue Marke', new_brand_path, :method => :get

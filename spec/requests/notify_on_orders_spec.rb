@@ -20,6 +20,7 @@ describe "NotifyOnOrders" do
     click_button "send_order"
     current_path.should eq(root_path)
     page.should have_content("Vielen Dank")
-    last_email.to.should include("joe@sample.com")        
+    last_email.to.should include("joe@sample.com") 
+           
   end
 end

@@ -5,7 +5,7 @@ class Product
   LIST_ORDER_VALUES = [1,2,3,4,5,6,7,8,9]
 
  # attr_accessible :title, :description, :price, :image, :category, :_id
-
+  field :brand
   field :title
   field :description
   field :price, :type => Integer
@@ -19,7 +19,7 @@ class Product
 
   has_many :line_items
   has_many :orders
-  
+
   embeds_many :options, :cascade_callbacks => true
   accepts_nested_attributes_for :options, :allow_destroy => true
   

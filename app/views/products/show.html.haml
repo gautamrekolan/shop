@@ -12,12 +12,9 @@
               = link_to (image_tag product_image.image(:thumb)), { :action => "product_pop_image", :id => @product, :image_id => product_image.id }, :remote => true
     #product_show_description
       %h1
+        - if @brand != nil
+          = image_tag @brand.image(:tile)
         = @product.title
-      %p
-        - if can? :update, @product
-          = link_to 'bearbeiten', edit_product_path(@product)
-        - if can? :destroy, @product
-          = link_to 'löschen', @product, :confirm => 'Are you sure?', :method => :delete
       %p= simple_format(@product.description)
       = form_for @line_item, :remote => true do |f| 
         = hidden_field_tag "product_id", @product.id
@@ -25,5 +22,7 @@
           .field= select_tag o.name, options_for_select(o.values.split("\r\n")), :selected => params[:pid], :prompt => o.name
         .actions
           = f.submit 'kaufen', id: 'buy'
-      .price= euro_price(@product.price)
+      .price
+        = euro_price(@product.price)
+        %p.vat inkl. 19% MwSt.
   .pop_image

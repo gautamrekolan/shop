@@ -10,6 +10,7 @@ Shop::Application.routes.draw do
   resources :pages
   resources :options
   resources :password_resets
+  resources :brands
 
   resources :categories do
     get 'page/:page', :action => :show, :on => :collection

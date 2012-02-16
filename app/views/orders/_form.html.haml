@@ -9,10 +9,10 @@
     = f.hidden_field :status, :value => Order::STATUS_TYPES[0]
     %table
       %tr
-        %td= f.label :first_name, "Vor-, Nachname"
+        %td= f.label :name, 'Name'
         %td
-          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => "Vorname", :required => true
-          = f.text_field :last_name, :id => "last_name", :placeholder => "Nachname", :required => true
+          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => 'Vorname', :required => true
+          = f.text_field :last_name, :id => "last_name", :placeholder => 'Nachname', :required => true
       %tr
         %td= f.label :street, "Straße, Hausnummer"
         %td
