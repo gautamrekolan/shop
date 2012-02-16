@@ -21,10 +21,7 @@ class NewsItem
     :path           => ':attachment/:id/:style.:extension',
     :storage        => :s3,
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",
-    :s3_credentials => {
-      :access_key_id => 'AKIAIVEBIFJ6FQGLR35Q',
-      :secret_access_key => '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'
-    },
+    :s3_credentials => S3_CREDENTIALS,
     :styles => { 
       :full => "970x520#", 
       :box => "160x92#", 
