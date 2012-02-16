@@ -26,7 +26,7 @@ Factory.define :order do |order|
   order.email "eric@nordmeyer.name"
   order.pay_type "Vorkasse"
   order.accept_conditions true
-  order.status "Steht aus"
+  order.status "noch nicht bearbeitet"
 end  
 
 Factory.define :category do |category|

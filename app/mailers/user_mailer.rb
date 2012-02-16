@@ -15,4 +15,9 @@ class UserMailer < ActionMailer::Base
     @order = order
     mail to: order.email, subject: 'Ihre Bestellung | BERNER-Bikes.com'
   end
+
+  def progress_notifier(order)
+    @order = order
+    mail to: order.email, subject: 'Ihre Bestellung ist ' + order.status + ' | BERNER-Bikes.com'
+  end
 end

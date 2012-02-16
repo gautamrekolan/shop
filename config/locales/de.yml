@@ -30,3 +30,6 @@ de:
               inclusion: "Diese Bezahlmethode ist nicht mögliche"
             zip:
               too_long: "Postleitzahl ist zu lang"
+  user_mailer:
+    password_reset:
+      subject: "Ihr neues Passwort | BERNER-Bikes.com"

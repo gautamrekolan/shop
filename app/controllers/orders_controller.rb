@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def index
     @title = "Alle Bestellungen"
-    @orders = Order.all
+    @orders = Order.all.desc(:created_at)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
         @cart.destroy
         session[:cart_id] = nil
         UserMailer.order_notifier(@order).deliver
-        format.html { redirect_to(root_url, :notice => "Vielen Dank fuer Ihre Bestellung!" ) }
+        format.html { redirect_to root_path, :notice => "Vielen Dank, Ihre Bestellung wird bald bearbeitet!"  }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -83,11 +83,16 @@ class OrdersController < ApplicationController
   # PUT /orders/1.json
   def update
     @order = Order.find(params[:id])
+    old_status = @order.status
     @title = 'Bestellung von ' + @order.first_name + ' ' + @order.last_name + ' bearbeiten'
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to orders_url, notice: 'Order was successfully updated.' }
+        if @order.status != old_status
+          UserMailer.progress_notifier(@order).deliver
+          flash[:notice] = "Kunde wurde von neuen Status informiert"
+        end
+        format.html { redirect_to orders_url, notice: 'Bestellung wurde bearbeitet' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -3,7 +3,7 @@ class Order
   include Mongoid::Timestamps
 
   PAYMENT_TYPES = ["Vorkasse", "Nachnahme"]
-  STATUS_TYPES = ["Steht aus", "In Bearbeitung", "Abgeschlossen"]
+  STATUS_TYPES = ["noch nicht bearbeitet", "in Bearbeitung", "versandt"]
   POSTAGE = 5
   POSTAGE_FREE = 50
 

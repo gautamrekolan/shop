@@ -13,7 +13,7 @@ describe Order do
 	  	:email => "joe@example.com",
 	  	:pay_type => "Vorkasse",
 	  	:accept_conditions => true,
-	  	:status => "Steht aus" }
+	  	:status => "noch nicht bearbeitet" }
 	end
 
 	it "should validate with the appropriate attributes" do
@@ -47,7 +47,7 @@ describe Order do
   it { should validate_length_of(:city).within(2..60) }
   it { should validate_length_of(:country).within(2..60) }
 
-  it { should validate_inclusion_of(:status).to_allow("Steht aus", "In Bearbeitung", "Abgeschlossen") }
+  it { should validate_inclusion_of(:status).to_allow("noch nicht bearbeitet", "in Bearbeitung", "versandt") }
 
   
   # it "should add line_items from cart" do
