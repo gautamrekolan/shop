@@ -10,5 +10,5 @@
           - if product.brand && @brands
             - brands = @brands.where(title: product.brand)
             - brands.each do |brand|
-              = link_to (image_tag brand.image), product
+              = link_to (image_tag brand.image(:tile)), product
   = paginate @products, :title => @category.title
