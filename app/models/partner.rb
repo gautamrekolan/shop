@@ -18,7 +18,7 @@ class Partner
 
   has_mongoid_attached_file :image, 
     :styles => { :tile => "x40" },
-    :path           => ':attachment/:id/:style.:extension',
+    :path           => 'partner/:id/:style.:extension',
     :storage        => :s3,
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",    
     :s3_credentials => S3_CREDENTIALS
