@@ -17,7 +17,7 @@ $ ->
   $('.slideshow').cycle({
     fx: 'fade',
     pause: 1,
-    delay: 4000
+    delay: 0
   }) 
 
   # slides = $('#home .slide')
