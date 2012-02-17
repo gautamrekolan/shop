@@ -26,7 +26,6 @@ class ProductsController < ApplicationController
     @title = @product.title
     @brand = Brand.first(conditions: { title: @product.brand } )    
     
-    #flash[:success] =  "hallo"
     respond_to do |format|
       format.html 
       format.js 

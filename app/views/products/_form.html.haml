@@ -14,9 +14,9 @@
           .field= f.text_field :title, { :size => 32, :required => true }
       %tr
         %td
-          .label= f.label :brand
+          .label= f.label :brand, 'Marken-Logo'
         %td
-          .field= f.select(:brand, Brand.all.collect{ |c| [c.title] } )
+          .field= f.select(:brand, Brand.all.collect{ |c| [c.title] }, {:prompt => 'keine Marke'} )
       %tr
         %td
           .label= f.label :description, 'Beschreibung'

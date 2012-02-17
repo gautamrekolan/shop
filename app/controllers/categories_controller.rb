@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @products = Product.where(:category => @category.title ).page(params[:page]).per(6).asc(:list_order)
     @title = @category.title
-
+    @brands = Brand.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }
