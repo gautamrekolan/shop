@@ -26,6 +26,10 @@ de:
       messages:
         document_not_found: "Dokument konnte nicht gefunden werden"
       models:
+        news_item:
+          attributes:
+            title:
+              too_long: "Titel ist zu lang"
         order:
           attributes:
             pay_type:
