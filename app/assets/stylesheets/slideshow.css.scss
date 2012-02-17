@@ -9,12 +9,13 @@
   .headline {
     position: absolute;
     z-index: 100;
-    background: #000;
+    background: #252020;
     padding: 10px 20px;
     top: 410px;
     left: 40px;
+    height: 52px;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px #000, -2px -2px 10px #fff;
+    box-shadow: 2px 2px 10px #000, -2px -2px 10px #aaa;
     h1 {
       font-size: 48px;
       text-shadow: 0 0 10px #aaa;

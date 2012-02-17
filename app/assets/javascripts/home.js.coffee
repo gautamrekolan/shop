@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('.cart').hide()
+  cart = $('.cart').hide()
   $('.cart_box').hover(
-    -> $('.cart').slideDown(200)
-    -> $('.cart').slideUp(200)
+    -> cart.slideDown(200)
+    -> cart.slideUp(200)
   )
   $('.flash').delay(2000).fadeOut(200)
 
@@ -14,11 +14,11 @@ $ ->
     -> $(this).fadeOut(200)
   )
 
-  $('.slideshow').cycle({
+  $('.slideshow').cycle
     fx: 'fade',
     pause: 1,
     delay: 0
-  }) 
+
 
   # slides = $('#home .slide')
   # slides.hide()
