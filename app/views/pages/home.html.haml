@@ -2,9 +2,8 @@
   .slideshow
     - @news_items.each do |item|
       .slide
-        = image_tag item.image(:full)
+        =link_to (image_tag item.image(:full)), item
         .headline
           %h1= item.title
-        .content
-          %p= simple_format(item.content)
-  /= render 'partials/promo'
+  = render 'partials/promo'
+

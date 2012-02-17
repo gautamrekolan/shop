@@ -1,0 +1,48 @@
+#news_item .inner{
+  height: 520px;
+  width: 970px;
+
+  .image {
+    width: 520px;
+    overflow: hidden;
+    float: left;
+  
+  }
+  .text{
+    color: #000;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #000;
+      border-bottom: solid 2px #ccc;
+    }
+    p {
+      font-family: vollkorn, serif;
+    }
+    z-index: 0;
+    float: left;
+    height: 400px;
+    width: 400px;
+    padding: 95px 85px 130px 95px;
+    margin: -54px -200px -100px -35px;
+    background: url('page_back.png');
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+  .back {
+    a {
+      color: #000;
+      font-size: 12px;
+    }
+    border-top: 2px solid #ccc;
+    background: #eee;
+    position:absolute;
+    bottom: 80px;
+    right: 5px;
+    padding: 5px 10px;
+    width: 370px;
+    text-align: right;
+    border-radius: 0;
+    
+  }
+}

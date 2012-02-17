@@ -19,6 +19,7 @@ de:
   please_fill_this_form: "Bitte geben Sie Ihre Daten ein"
   buy: "kaufen"
   incl_vat: "inkl. 19% MwSt."
+  back: "zurück"
 
   mongoid:
     errors:

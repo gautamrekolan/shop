@@ -5,18 +5,20 @@
   background-color: #222;
 }
 .slide {
-  z-index: 99;
   .headline {
+    display: block;
+    z-index: 100;
+    background: #999;
     margin-top: -480px;
     margin-left: 40px;
     h1 {
       font-size: 64px;
-      background: #fff;
       text-shadow: 0 0 10px #000;
     } 
   }
   .content {
     margin-left: 60px;
+    background: white;
     p {
       text-shadow: 0 0 10px #000;
     }

@@ -23,7 +23,8 @@ class NewsItem
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",
     :s3_credentials => S3_CREDENTIALS,
     :styles => { 
-      :full => "970x520#", 
+      :full => "970x520#",
+      :page => "520x520#", 
       :box => "160x92#", 
       :thumb => "130x80#" 
     }

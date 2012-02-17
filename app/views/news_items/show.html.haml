@@ -1,5 +1,9 @@
 %section#content
-  #news_item.inner
-    .full_image= image_tag @news_item.image(:full)
-    %h1= @news_item.title
-    %p= simple_format(@news_item.content)
+  #news_item
+    .inner
+      .image= image_tag @news_item.image(:page)
+      .text
+        %h1= @news_item.title
+        %p= simple_format(@news_item.content)
+      .back
+        = link_to (t(:back)), root_path    
