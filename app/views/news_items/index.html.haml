@@ -19,7 +19,7 @@
             Nein
         %td= news_item.content
         %td= image_tag news_item.image(:thumb)
-        %td= link_to 'bearbeiten', edit_news_item_path(news_item)
-        %td= link_to 'löschen', news_item, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to t(:edit), edit_news_item_path(news_item)
+        %td= link_to t(:delete), news_item, :confirm => t(:are_you_sure?), :method => :delete
   .actions
-    = button_to 'neue Nachricht', new_news_item_path, :method => :get
+    = button_to t(:new_news_item), new_news_item_path, :method => :get

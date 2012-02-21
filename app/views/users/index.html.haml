@@ -12,9 +12,9 @@
       %tr
         %td= link_to user.name, user
         %td= user.role
-        %td= link_to 'bearbeiten', edit_user_path(user)
-        %td= link_to 'löschen', user, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to t(:edit), edit_user_path(user)
+        %td= link_to t(:delete), user, :confirm => t(:are_you_sure?), :method => :delete
   .actions
-    = button_to 'neuer Benutzer', new_user_path, :method => :get
+    = button_to t(:new_user), new_user_path, :method => :get
 
 

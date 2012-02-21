@@ -13,7 +13,7 @@
       %tr
         %td= partner.title
         %td= image_tag partner.image
-        %td= link_to 'bearbeiten', edit_partner_path(partner)
-        %td= link_to 'löschen', partner, :confirm => 'Sind Sie sicher?', :method => :delete
+        %td= link_to t(:edit), edit_partner_path(partner)
+        %td= link_to t(:delete), partner, :confirm => t(:are_you_sure?), :method => :delete
   .actions
-    = button_to 'Neuer Partner', new_partner_path, :method => :get
+    = button_to t(:new_partner), new_partner_path, :method => :get

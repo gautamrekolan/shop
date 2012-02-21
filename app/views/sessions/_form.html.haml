@@ -1,21 +1,21 @@
 .login_form
   - if (session[:user_id])
-    %li= link_to 'abmelden', logout_url
+    %li= link_to t(:logout), logout_url
   - else
     = form_tag sessions_path do
       %table
         %tr
-          %td= label_tag 'Email'
-          %td= text_field_tag :email, params[:email], :size => "30",:placeholder => "Email", :autofocus => true, :required => true, :id => 'email'
+          %td= label_tag t(:email)
+          %td= text_field_tag :email, params[:email], :size => "30",:placeholder => t(:email), :autofocus => true, :required => true, :id => 'email'
         %tr
-          %td= label_tag 'Passwort'
-          %td= password_field_tag :password, params[:password], :placeholder => "Passwort", :required => true, :id => 'password'
+          %td= label_tag t(:password)
+          %td= password_field_tag :password, params[:password], :placeholder => t(:password), :required => true, :id => 'password'
         %tr
           %td
           %td
             .actions
-              = submit_tag "Anmelden", id: 'login' 
+              = submit_tag t(:login), id: 'login' 
         %tr
           %td
           %td       
-            = link_to "Passwort vergessen?",new_password_reset_path, :remote => true
+            = link_to t(:forgot_password?),new_password_reset_path, :remote => true

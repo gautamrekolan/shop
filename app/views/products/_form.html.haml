@@ -9,38 +9,38 @@
     %table
       %tr
         %td
-          .label= f.label :title, 'Name'
+          .label= f.label :title, t(:name)
         %td
           .field= f.text_field :title, { :size => 32, :required => true }
       %tr
         %td
-          .label= f.label :brand, 'Marken-Logo'
+          .label= f.label :brand, t(:brand_logo)
         %td
           .field= f.select(:brand, Brand.all.collect{ |c| [c.title] }, {:prompt => 'keine Marke'} )
       %tr
         %td
-          .label= f.label :description, 'Beschreibung'
+          .label= f.label :description, t(:description)
         %td
           .field= f.text_area :description, {:rows => 10, :cols => 80, :required => true }
       %tr
         %td
-          .label= f.label :category, 'Kategorie'
+          .label= f.label :category, t(:category)
         %td
           .field= f.select(:category, Category.all.collect{ |c| [c.title]})
       %tr
         %td
-          .label= f.label :list_order, 'Reihenfolge'
+          .label= f.label :list_order, t(:order_of_items)
         %td
           .field= f.select :list_order, Product::LIST_ORDER_VALUES
       %tr
         %td{ :colspan => '2' }
-          Optionen
+          =t(:options)
           = f.fields_for :options do |builder|
             = render 'option_fields', :f => builder
-          .css_button=link_to_add_fields "neue Option", f, :options
+          .css_button=link_to_add_fields t(:new_option), f, :options
       %tr
         %td{ :colspan => '2' }      
-          Bilder
+          = t(:images)
           .product_images
             - @product.product_images.each_with_index do |image, i|
               .form_image
@@ -50,13 +50,13 @@
                   .title_image Titelbild
           = f.fields_for :product_images do |builder|
             = render 'product_image_fields', :f => builder
-          .css_button=link_to_add_fields "neues Bild", f, :product_images  
+          .css_button=link_to_add_fields t(:new_image), f, :product_images  
       %tr 
         %td
-          .label= f.label :price, 'Preis'
+          .label= f.label :price, t(:price)
         %td
           .field
             = f.text_field :price, { :size => 6, :required => true }
             €
     .actions
-      = f.submit 'Speichern', id: 'save'
+      = f.submit t(:save), id: 'save'

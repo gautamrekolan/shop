@@ -7,5 +7,5 @@
       %td{:colspan => '2'}= t(:total)
       %td.total_price= euro_price(cart.total_price)
         
-  = button_to t(:empty_cart), cart, :method => :delete, :confirm => "are you sure?"
+  = button_to t(:empty_cart), cart, :method => :delete, :confirm => t(:are_you_sure?)
   = button_to t(:place_order), new_order_path, :id => "place_order", :method => :get

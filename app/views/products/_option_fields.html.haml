@@ -2,12 +2,12 @@
   %table
     %tr{ :style => 'background: none'}
       %td
-        .label= f.label :name, "Option"
+        .label= f.label :name, t(:option)
       %td
         .field= f.text_field :name
       %td
-        .label= f.label :values, "mögliche Werte"
+        .label= f.label :values, t(:possible_values)
       %td
         .field= f.text_area :values, {:rows => 5, :cols => 25 }
       %td
-        .css_button= link_to_remove_fields "löschen", f
+        .css_button= link_to_remove_fields t(:delete), f

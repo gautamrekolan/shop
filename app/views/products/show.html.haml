@@ -16,16 +16,19 @@
           = image_tag @brand.image(:tile)
         = @product.title
       %p= simple_format(@product.description)
-      - if @product.options.count > 2
-        hallo
+      / Für Produkte mit mehr optionen
+
+      /- if @product.options.count > 2
+      /  do something
+        
       = form_for @line_item, :remote => true do |f| 
         = hidden_field_tag "product_id", @product.id
         
         - @product.options.each do |o|
           .field= select_tag o.name, options_for_select(o.values.split("\r\n")), :selected => params[:pid], :prompt => o.name
         .actions
-          = f.submit 'kaufen', id: 'buy'
+          = f.submit t(:buy), id: 'buy'
       .price
         = euro_price(@product.price)
-        %p.vat inkl. 19% MwSt.
+        %p.vat= t(:incl_vat) 
   .pop_image

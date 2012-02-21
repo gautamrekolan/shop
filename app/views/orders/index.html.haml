@@ -3,14 +3,14 @@
 
   %table
     %tr
-      %th Datum
-      %th Name
-      %th Adresse
+      %th= t(:date)
+      %th= t(:name)
+      %th= t(:address)
 
-      %th Email
-      %th Pay type
-      %th Artikel
-      %th Status
+      %th= t(:email)
+      %th= t(:payment_type)
+      %th= t(:products)
+      %th= t(:status)
       %th
       %th
       %th
@@ -38,6 +38,6 @@
         %td 
           = form_for order do |f|
             = f.select :status, Order::STATUS_TYPES, {}, {:onChange => 'this.form.submit();' }
-        %td= link_to 'Bearbeiten', edit_order_path(order)
-        %td= link_to 'Löschen', order, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to t(:edit), edit_order_path(order)
+        %td= link_to t(:delete), order, :confirm => t(:are_you_sure?), :method => :delete
   .actions

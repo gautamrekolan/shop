@@ -2,16 +2,16 @@
   %h1.page_title= @title
   .sub_header_links
     Anzeigen:
-    = link_to "Alle Kategorien", products_path
+    = link_to t(:all_categories), products_path
     - @categories.each do |category|
       = link_to category.title, :view => category.title
   %table
     %tr
-      %th Name
-      %th Kategorie
-      %th Preis
-      %th Bild
-      %th Reihenfolge
+      %th= t(:name)
+      %th= t(:category)
+      %th= t(:price)
+      %th= t(:image)
+      %th= t(:order_of_items)
       %th 
       %th
     - @products.each do |product|
@@ -30,9 +30,9 @@
             = f.select :list_order, Product::LIST_ORDER_VALUES, {}, {:onChange => 'this.form.submit();' }
         %td
           - if can? :update, product
-            = link_to 'bearbeiten', edit_product_path(product)
+            = link_to t(:edit), edit_product_path(product)
         %td
           - if can? :destroy, product
-            = link_to 'löschen', product, :confirm => 'Sicher?', :method => :delete
+            = link_to t(:delete), product, :confirm => t(:are_you_sure?), :method => :delete
   .actions
-    = button_to 'neues Produkt', new_product_path, :method => :get
+    = button_to t(:new_product), new_product_path, :method => :get

@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+
+
+
   cart = $('.cart').hide()
   $('.cart_box').hover(
     -> cart.slideDown(200)

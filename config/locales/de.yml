@@ -1,7 +1,45 @@
 de:
+  delete: "löschen"
+  edit: "bearbeiten"
+  back: "zurück"
+  save: "Speichern"
+  
   quantity: 'Anzahl'
-  product: "Produkt"
+  
+  user: "Benutzer"
+  users: "Benutzer"
+  new_user: "neuer Benutzer"
+
+  product: "Artikel"
+  products: "Artikel"
+  new_product: "neuer Artikel"
+  description: "Beschreibung"
+  
+  category: "Kategorie"
+  categories: "Kategorien"
+  new_category: "neue Kategorie"
+  
   options: "Optionen"
+  option: "Option"
+  new_option: "neue Option"
+  
+  order: "Bestellung"
+  orders: "Bestellungen"
+  
+  partner: "Partner"
+  partners: "Partner"
+  new_partner: "neuer Partner"
+  
+  news_item: "Meldung"
+  news_items: "Meldungen"
+  new_news_item: "neue Meldung"
+
+  brand: "Marke"
+  brands: "Marken"
+  new_brand: "neue Marke"
+  brand_logo: "Marken Logo"
+
+  possible_values: "mögliche Werte"
   item_price: "Einzelpreis"
   total_item_price: "Gesamt"
   postage: "PORTO/VERPACKUNG"
@@ -11,15 +49,35 @@ de:
   empty_cart: "Warenkorb leeren"
   place_order: "Zur Kasse"
   customer_data: "Kundendaten"
+  date: "Datum"
   name: "Name"
   address: "Adresse"
   email: "Email"
-  payment_type: "Bezahlung per"
+  payment_type: "Bezahlart"
+  status: "Status"
   change_status: "Status aktualisieren"
   please_fill_this_form: "Bitte geben Sie Ihre Daten ein"
   buy: "kaufen"
   incl_vat: "inkl. 19% MwSt."
-  back: "zurück"
+
+  order_of_items: "Reihenfolge"
+  
+  new_image: "neues Bild"
+  images: "Bilder"
+  image: "Bild"
+  title_image?: "Titelbild?" 
+  
+  price: "Preis"
+  incl_vat: "inkl. 19% MwSt."
+  
+
+  all_categories: "Alle Kategorien"
+
+  are_you_sure?: "Sind Sie sicher?"
+  logout: "Abmelden"
+  login: "Anmelden"
+  password: "Passwort"
+  forgot_password?: "Passwort vergessen?"
 
   mongoid:
     errors:

@@ -8,14 +8,14 @@
             %li= msg
     %table
       %tr 
-        %td= f.label :title, 'Name'
+        %td= f.label :title, t(:name)
         %td= f.text_field :title
       %tr
-        %td= f.label :image, 'Bild'
+        %td= f.label :image, t(:image)
         %td= f.file_field :image
       %tr
-        %td= f.label :link, 'Link'
+        %td= f.label :link, t(:link)
         %td= f.text_field :link
 
     .actions
-      = f.submit 'Speichern'
+      = f.submit t(:save)
