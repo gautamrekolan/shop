@@ -17,7 +17,8 @@ class Partner
   key :title
 
   has_mongoid_attached_file :image, 
-    :styles => { :tile => "x40" },
+    :styles => { :tile_gray => "x40", :tile => "x40" },
+    :convert_options => { :tile_gray => "-colorspace Gray" },
     :path           => 'partner/:id/:style.:extension',
     :storage        => :s3,
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",    
