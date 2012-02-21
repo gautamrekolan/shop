@@ -28,6 +28,8 @@
     background: url('page_back2.png');
     background-repeat: no-repeat;
     opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=10);
   }
   .back {
     a {

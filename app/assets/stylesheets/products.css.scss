@@ -79,7 +79,9 @@
 		margin: -32px -200px 0 -35px;
 		background: url('page_back2.png');
 		background-repeat: no-repeat;
-		opacity: 1;
+		opacity:1.0;
+		-moz-opacity:1.0;
+		filter:alpha(opacity=10);
 
 		.field {
 			padding: 10px 0;
@@ -108,6 +110,8 @@
 	  margin: 0;
 	  border-radius: 0;
 	  border-top: 2px solid #ccc;
-	  opacity: 1;
+	  opacity:1.0;
+	  -moz-opacity:1.0;
+	  filter:alpha(opacity=10);
 	  background: #eee;
 }

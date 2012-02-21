@@ -23,7 +23,9 @@
 
   .actions {
     background: none;
-    opacity: 1;
+    opacity:1.0;
+    -moz-opacity:1.0;
+    filter:alpha(opacity=10);
     width: 300px;
     margin: 0;
     padding: 0;
