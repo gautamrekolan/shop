@@ -1,9 +1,9 @@
 #category.category
-  %h1.page_title Alle Kategorien
+  %h1.page_title= @title
   %table
     %tr
-      %th Titel
-      %th Beschreibung
+      %th= t(:title)
+      %th= t(:description)
       %th
       %th
     - @categories.each do |category|

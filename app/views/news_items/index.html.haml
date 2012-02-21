@@ -1,11 +1,11 @@
 %section#news_items.index
-  %h1.page_title Alle Nachrichten
+  %h1.page_title= @title
   %table
     %tr
-      %th Title
-      %th veröfftl.
-      %th Content
-      %th Image
+      %th= t(:title)
+      %th= t(:published?)
+      %th= t(:content)
+      %th= t(:image)
       %th
       %th
 

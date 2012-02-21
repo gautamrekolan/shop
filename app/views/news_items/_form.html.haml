@@ -9,17 +9,17 @@
             
     %table
       %tr
-        %td= f.label :title, 'Überschrift'
+        %td= f.label :title, t(:title)
         %td= f.text_field :title, :size => 80
       %tr
-        %td= f.label :content, 'Inhalt'
+        %td= f.label :content, t(:content)
         %td= f.text_area :content, :rows => 6, :cols => 60 
       %tr
-        %td= f.label :published, 'veröffentlichen?'
+        %td= f.label :published, t(:published?)
         %td= f.check_box :published
       %tr
-        %td= f.label :image, 'Bild'
+        %td= f.label :image, t(:image)
         %td= f.file_field :image
       
     .actions
-      = f.submit 'Speichern'
+      = f.submit t(:save)

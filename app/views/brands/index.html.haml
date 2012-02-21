@@ -12,7 +12,7 @@
       %tr
         %td= brand.title
         %td= image_tag brand.image(:tile)
-        %td= link_to 'bearbeiten', edit_brand_path(brand)
-        %td= link_to 'löschen', brand, :confirm => 'Sind Sie sicher?', :method => :delete
+        %td= link_to t(:edit), edit_brand_path(brand)
+        %td= link_to t(:delete), brand, :confirm => t(:are_you_sure?), :method => :delete
   .actions
-    = button_to 'Neue Marke', new_brand_path, :method => :get
+    = button_to t(:new_brand), new_brand_path, :method => :get

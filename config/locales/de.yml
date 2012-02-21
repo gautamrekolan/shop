@@ -3,6 +3,9 @@ de:
   edit: "bearbeiten"
   back: "zurück"
   save: "Speichern"
+
+  title: "Titel"
+  content: "Inhalt"
   
   quantity: 'Anzahl'
   
@@ -33,6 +36,7 @@ de:
   news_item: "Meldung"
   news_items: "Meldungen"
   new_news_item: "neue Meldung"
+  published?: "veröffentlicht?"
 
   brand: "Marke"
   brands: "Marken"
@@ -50,10 +54,18 @@ de:
   place_order: "Zur Kasse"
   customer_data: "Kundendaten"
   date: "Datum"
+  
   name: "Name"
+  street_and_number: "Straße & Hausnummer"
+  city: "Stadt"
+  zip: "PLZ"
+  country: "Land"
+
   address: "Adresse"
   email: "Email"
   payment_type: "Bezahlart"
+  tos: "AGB"
+  
   status: "Status"
   change_status: "Status aktualisieren"
   please_fill_this_form: "Bitte geben Sie Ihre Daten ein"
@@ -66,6 +78,7 @@ de:
   images: "Bilder"
   image: "Bild"
   title_image?: "Titelbild?" 
+  send_order: "Bestellung absenden"
   
   price: "Preis"
   incl_vat: "inkl. 19% MwSt."

@@ -9,30 +9,30 @@
     = f.hidden_field :status, :value => Order::STATUS_TYPES[0]
     %table
       %tr
-        %td= f.label :name, 'Name'
+        %td= f.label :name, t(:name)
         %td
-          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => 'Vorname', :required => true
-          = f.text_field :last_name, :id => "last_name", :placeholder => 'Nachname', :required => true
+          = f.text_field :first_name, :id => "first_name", :size => 20, :placeholder => "Karl", :required => true
+          = f.text_field :last_name, :id => "last_name", :placeholder => "Hempel", :required => true
       %tr
-        %td= f.label :street, "Straße, Hausnummer"
+        %td= f.label :street, t(:street_and_number)
         %td
-          = f.text_field :street, :id => "street", :placeholder => "Straße, Hausnummer", :required => true
+          = f.text_field :street, :id => "street", :placeholder => "Wegstrasse 12", :required => true
       %tr
-        %td= f.label :city, "PLZ, Stadt"
+        %td= f.label :city, t(:zip) + ' ' + t(:city)
         %td
-          = f.text_field :zip, :id => "zip", :size => 5, :placeholder => "PLZ", :required => true
-          = f.text_field :city, :id => "city", :placeholder => "Stadt", :required => true
+          = f.text_field :zip, :id => "zip", :size => 5, :placeholder => "66666", :required => true
+          = f.text_field :city, :id => "city", :placeholder => "Hinterhausen", :required => true
       %tr
-        %td= f.label :country, "Land "
-        %td= f.text_field :country, :id => "country", :placeholder => "Land", :required => true
+        %td= f.label :country, t(:country)
+        %td= f.text_field :country, :id => "country", :placeholder => "Takatukaland", :required => true
       %tr
-        %td= f.label :email, "Email "
+        %td= f.label :email, t(:email)
         %td= f.text_field :email, :id => "email", :placeholder => "Max@Mustermann.de", :required => true
       %tr
-        %td= f.label :pay_type, "Bezahlung per "
+        %td= f.label :pay_type, t(:payment_type)
         %td= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => "Wähle gewünschte Bezahlmethode", :id => "pay_type", :required => true
       %tr
-        %td= f.label :accept_conditions, "AGB"
+        %td= f.label :accept_conditions, t(:tos)
         %td= f.check_box :accept_conditions, :id => "accept_conditions", :required => true
     .actions
-      = f.submit 'Bestellung absenden', :id => "send_order"
+      = f.submit t(:send_order), :id => "send_order"
