@@ -4,7 +4,6 @@
       .slide
         =link_to (image_tag item.image(:full)), item
         .headline
-          .logo= image_tag ('logo_32x32_white.png')
-          %h1= preview(item.title, count = 30)
+          %h1= preview(item.title, count = 50)
   = render 'partials/promo'
 
