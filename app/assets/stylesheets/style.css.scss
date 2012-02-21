@@ -13,6 +13,7 @@ p {
 
 a {
 	color: #bbb;
+	text-decoration: none;
 }
 a:hover {
 	color: #fff;
@@ -49,8 +50,14 @@ h1.page_title {
 }
 h1.half_title {
   color: #666;
-	font-size: 36px;
+	font-size: 20px;
 	margin-top:20px;
+	a {
+		color: #666;
+	}
+	a:hover {
+		color: #ccc;
+	}
 }
 #quicklinks h1 {
 	color: #666;
@@ -69,6 +76,7 @@ h1.half_title {
     a {
 	  font-weight: normal;
 	  font-size: 14px;
+	  color: #252020;
 	}
 	a:hover {
     	color: #ccc;

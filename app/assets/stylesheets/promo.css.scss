@@ -1,26 +1,26 @@
 #promo {
-  position: absolute;
-  right: 15px;
-  bottom: -13px;
+  margin-top: 20px;
   text-align: left;
-  margin-top: -15px;
-  .box {
-    float: right;
-    padding: 8px 15px;
-    width: 200px;
-    text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    z-index: 50;
-    background: #2d2828;
-
+  ul{
+    margin-top: 10px;
     a {
-      text-decoration: none;
+      color: #666;
+    }
+    a:hover {
+      color: #ccc;
     }
   }
+  li{
+    margin-left: 10px;
+    line-height: 20px; 
+    font-size: 14px;   
+  }
+  .box {
+    float: left;
+    .left {
+      padding-right: 20px;
+    }
 
-  #team {
-    border-right: 1px solid #222;
   }
   
 }

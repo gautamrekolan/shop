@@ -1,5 +1,6 @@
 %section#partners
-  - if ($partners != nil)  
+  - if ($partners != nil)
+    %h1.page_title= t(:partners)
     - $partners.each do |partner|
       .partner
         = link_to (image_tag partner.image(:tile)), partner_link(partner)
