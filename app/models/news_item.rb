@@ -29,7 +29,9 @@ class NewsItem
       :thumb => "130x80#" 
     }
 
-
+  def team_news
+    "hallo"
+  end
 
 
 end

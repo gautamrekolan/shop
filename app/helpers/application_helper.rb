@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module ApplicationHelper
   
   def your_cart
@@ -40,5 +42,21 @@ module ApplicationHelper
   def euro_price(price)
     number_to_currency(price, :unit => "&euro;", :separator => ",", :delimiter => "", :format => "%n %u", :strip_insignificant_zeros => true)
   end
-  
+
+  def team_news
+    url = "http://team.berner-bikes.com/feed"
+    doc = Nokogiri::HTML(open(url))
+    items = Array.new
+    doc.css('entry').each do |item|
+      title = item.css('title').text
+      link = item.at_css('link')[:href]
+      value = {
+        :title => title,
+        :link => link
+      }
+      items.push(value)
+    end
+    items
+  end
+
 end

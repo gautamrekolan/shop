@@ -27,6 +27,7 @@ gem "aws-s3",            :require => "aws/s3"
 gem "aws-sdk"
 gem "cancan"
 # gem "koala"
+gem "nokogiri"
 gem "kaminari"
 gem "heroku"
 

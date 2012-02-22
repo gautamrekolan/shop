@@ -13,9 +13,9 @@
       %h1.half_title
         = link_to 'Team.BERNER-Bikes.com', "http://team.berner-bikes.com"
       %ul
-        %li=link_to 'Deutsche Radcross Meisterschaft 2012 / Teil 2 - Sonntag', 'http://team.berner-bikes.com/posts/Deutsche-Radcross-Meisterschaft-2012-Teil-2-Sonntag'
-        %li=link_to 'Deutsche Radcross Meisterschaft 2012 / Teil 1 - Samstag', 'http://team.berner-bikes.com/posts/deutsche-radcross-meisterschaft-2012-in-kleinmachnow--fwdslsh--teil-1---samstag'
-        %li=link_to 'Finale des SKS-Deutschland-Cup in Herford', 'http://team.berner-bikes.com/posts/finale-des-sks-deutschland-cup-in-herford'
-        %li=link_to '12. Lauf des SKS-Deutschland-Cup in Vechta', 'http://team.berner-bikes.com/posts/12-period--lauf-des-sks-deutschland-cup-in-vechta'
+        - team_news.take(5).each do |item|
+          %li= link_to item[:title], item[:link]
+
+
 
 

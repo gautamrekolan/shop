@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   $partners = Partner.all
   $news_items = NewsItem.published.order_by([:created_at, :desc]).limit(6)
   
+
+
   private
 
     def current_cart
