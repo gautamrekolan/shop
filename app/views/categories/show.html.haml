@@ -2,13 +2,12 @@
   #category.inner
     - @products.each do |product|
       .tile
-        - product.product_images.take(1).each do |product_image|
+        - product.product_images.title.take(1).each do |product_image|
           = link_to (image_tag product_image.image(:tile)), product
         .title
           = link_to product.title, product
         .logo
           - if product.brand && @brands
-            - brands = @brands.where(title: product.brand)
-            - brands.each do |brand|
+            - @brands.selected(product.brand).each do |brand|
               = link_to (image_tag brand.image(:tile)), product
   = paginate @products, :title => @category.title

@@ -20,4 +20,6 @@ class Brand
     :storage        => :s3,
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",    
     :s3_credentials => S3_CREDENTIALS
+
+  scope :selected, ->(product_brand) { where(title: product_brand)}
 end

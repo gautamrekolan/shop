@@ -22,5 +22,5 @@ class ProductImage
       :tile => "323x233#", 
       :thumb => "120x80#" 
     }
-
+  scope :title, where(title_image: true)
 end

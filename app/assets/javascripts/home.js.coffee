@@ -2,9 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$ ->
-
-
+jQuery ->
 
   cart = $('.cart').hide()
   $('.cart_box').hover(
@@ -21,16 +19,3 @@ $ ->
     fx: 'fade',
     pause: 1,
     delay: 0
-
-
-  # slides = $('#home .slide')
-  # slides.hide()
-  # next_slide = slides.first()
-      
-  # change_slide = (current_slide) -> 
-  #   next_slide = current_slide.next('.slide')
-  #   current_slide
-  #     .fadeIn(2000)
-
-
-  # change_slide next_slide 
