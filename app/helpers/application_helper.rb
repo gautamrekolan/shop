@@ -47,6 +47,7 @@ module ApplicationHelper
     url = "http://team.berner-bikes.com/feed"
     doc = Nokogiri::HTML(open(url))
     items = Array.new
+    
     doc.css('entry').each do |item|
       title = item.css('title').text
       link = item.at_css('link')[:href]

@@ -3,13 +3,13 @@
   height: 520px;
   width: 970px;
   background-color: #222;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    -moz-border-radius: 3px;
+     -webkit-border-radius: 3px;
+     border-radius: 3px;
   }
 }
 .slide {
