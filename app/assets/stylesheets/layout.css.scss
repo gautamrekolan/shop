@@ -5,6 +5,7 @@
 
 
 #wrap {
+	position: relative;
 	width: 1000px;
 	margin: 10px auto 10px;
 }
@@ -42,31 +43,14 @@
 }
 
 /**** Menu ****/
-
-.menu {
-	position: relative;
-	height: 36px;
-	width: 1000px;
-	z-index: 100px;
-	.logo {
-		margin-top: 8px;
-		display: inline;
+.logo {
+	  position:absolute;
+	  top: -10px;
+	  left: -65px;
+	  z-index: 101;
 		padding: 0px 15px 0 15px;
-		img {
-			vertical-align: middle;
-		}
 	}
-	.menu_items {
-		display: inline;
-	}
-	.menu_item {
-		display: inline;
-		vertical-align:middle;
-		padding: 8px 10px 5px;
-	}
-
-
-	.cart_box {
+.cart_box {
 		position: absolute;
 		top: 0px;
 		right: 5px;
@@ -92,7 +76,26 @@
 		.cart {
 			text-align: left;
 		}
+}
+.menu {
+	position: relative;
+	height: 46px;
+	width: 920px;
+	margin: 0px 0 0 80px;
+	z-index: 100px;
+	line-height:36px;
+
+	.menu_items {
+		display: inline;
 	}
+	.menu_item {
+		display: inline;
+		vertical-align:middle;
+		padding: 8px 10px 5px;
+	}
+
+
+	
 }
 
 /**** Content ****/
@@ -130,7 +133,7 @@ h1.half_title {
 #content {
 	position: relative;
 	clear: both;
-	margin: 15px 0 40px;
+	margin: 0px 0 40px;
 	
 	.tile {
 		position: relative;
