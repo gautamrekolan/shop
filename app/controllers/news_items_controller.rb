@@ -66,7 +66,7 @@ class NewsItemsController < ApplicationController
 
     respond_to do |format|
       if @news_item.update_attributes(params[:news_item])
-        format.html { redirect_to @news_item, notice: 'News item was successfully updated.' }
+        format.html { redirect_to news_items_url, notice: 'News item was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -5,5 +5,9 @@
         =link_to (image_tag item.image(:full)), item
         .headline
           %h1= preview(item.title, count = 50)
-  /= render 'partials/promo'
-
+  .boxes
+    - @little_news.each do |item|
+      .box
+        = image_tag item.image(:box)
+        .headline
+          %p= item.title

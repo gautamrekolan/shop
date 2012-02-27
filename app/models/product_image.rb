@@ -18,7 +18,7 @@ class ProductImage
     :s3_credentials => S3_CREDENTIALS,
     :styles => { 
       :full => "740x550#", 
-      :product => "520x520#", 
+      :product => "600x520#", 
       :tile => "323x233#", 
       :thumb => "120x80#" 
     }

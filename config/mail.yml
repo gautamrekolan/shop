@@ -1,0 +1,7 @@
+password: pink:kids
+address: smtp.googlemail.com
+port: 587
+domain: berner-bikes.com
+authentification: ssl
+user_name: nordmeyereric@googlemail.com
+enable_starttls_auto: true

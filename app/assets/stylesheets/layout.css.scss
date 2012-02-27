@@ -130,50 +130,27 @@ h1.half_title {
 #content {
 	position: relative;
 	clear: both;
-	margin: 5px 0 0;
-	padding: 15px;
-	border-radius: 5px;
-	border: 1px solid #000;
-	box-shadow: INSET 0 0 10px #000;
-	height: 520px;	
-	width: 970px;
-	.inner {
-		height: 466px;
-		width: 970px;
-		//box-shadow: 0 0 5px #000;
-		background-color: #222;
-	}
-
+	margin: 15px 0 40px;
+	
 	.tile {
 		position: relative;
 		float: left;
 		width: 323px;
-		height: 233px;
-		//border: solid 1px #222;
-		margin: 0;
+		height: 260px;
+		margin: 0 10px 10px 0;
 		overflow: hidden;
-		background: #111;
-		box-shadow: INSET 0 0 25px #000;
-
+		box-shadow: 0 0 10px #000;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
 		a {
 			color: #ddd;
 			font-size: 14px;
 		}
 		.title {
-			position:absolute;
-			bottom: 10px;
-			right: 10px;
-			min-width: 100px;
-			background: #252020;
-			opacity: 0.9;
-			-moz-opacity: 0.9;
-			filter:alpha(opacity=9);
-			border-radius: 5px;
-			box-shadow: 
-				1px 1px 1px #000,
-				-1px -1px 1px #666;
-			padding: 3px 15px 4px;
 			text-align: center;
+			background-color: #252020;
+			padding: 5px;
+
 		}
 		.logo {
 			position: absolute;

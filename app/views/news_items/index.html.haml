@@ -3,7 +3,8 @@
   %table
     %tr
       %th= t(:title)
-      %th= t(:published?)
+      %th= t(:slideshow)
+      %th= t(:little_news)
       %th= t(:content)
       %th= t(:image)
       %th
@@ -12,11 +13,8 @@
     - @news_items.each do |news_item|
       %tr
         %td= link_to news_item.title, news_item
-        %td
-          - if (news_item.published) 
-            Ja
-          - else 
-            Nein
+        %td= (news_item.slideshow) ? 'Ja' : 'Nein'
+        %td= (news_item.little_news) ? 'Ja' : 'Nein'
         %td= news_item.content
         %td= image_tag news_item.image(:thumb)
         %td= link_to t(:edit), edit_news_item_path(news_item)

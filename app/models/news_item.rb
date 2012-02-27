@@ -4,12 +4,13 @@ class NewsItem
   include Mongoid::Paperclip
   include Mongoid::MultiParameterAttributes
 
-  attr_accessible :title, :content, :image, :published
+  attr_accessible :title, :content, :image, :slideshow, :little_news
   
   field :title
   field :content
   field :image
-  field :published, :type => Boolean
+  field :slideshow, :type => Boolean
+  field :little_news, :type => Boolean
   
   key :title
 
@@ -23,9 +24,9 @@ class NewsItem
     :bucket         => Rails.env.production? ? "berner-images" : "#{Rails.env}-berner-images",
     :s3_credentials => S3_CREDENTIALS,
     :styles => { 
-      :full => "970x520#",
+      :full => "1000x520#",
       :page => "520x520#", 
-      :box => "160x92#", 
+      :box => "130x100#", 
       :thumb => "130x80#" 
     }
 

@@ -15,8 +15,11 @@
         %td= f.label :content, t(:content)
         %td= f.text_area :content, :rows => 6, :cols => 60 
       %tr
-        %td= f.label :published, t(:published?)
-        %td= f.check_box :published
+        %td= f.label :slideshow, t(:slideshow?)
+        %td= f.check_box :slideshow
+      %tr
+        %td= f.label :little_news, t(:little_news?)
+        %td= f.check_box :little_news
       %tr
         %td= f.label :image, t(:image)
         %td= f.file_field :image
