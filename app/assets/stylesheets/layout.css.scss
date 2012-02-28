@@ -1,6 +1,4 @@
-/**** Mixins ****/
-
-
+@import "mixins.css.scss";
 /**** CSS ****/
 
 
@@ -142,7 +140,7 @@ h1.half_title {
 		height: 260px;
 		margin: 0 10px 10px 0;
 		overflow: hidden;
-		background-color: #252020;
+		@include gradient;
 		box-shadow: 0 0 10px #000;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
@@ -158,8 +156,8 @@ h1.half_title {
 		}
 		.logo {
 			position: absolute;
-			top:10px;
-			left: 10px;
+			top:5px;
+			left: 5px;
 		}
 	}
 }

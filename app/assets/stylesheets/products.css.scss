@@ -1,3 +1,5 @@
+@import "mixins.css.scss";
+
 #product {
 	clear: both;
 	height: 552px;
@@ -15,7 +17,7 @@
 		width: 600px;
 		box-shadow: 3px 0 10px #000;
 		background-color: #222;
-
+    @include gradient;
 		.thumbs {
 
 			position: absolute;
@@ -42,6 +44,7 @@
 	z-index: 102;
 	display: none;
 	background-color: #ddc;
+	@include gradient;
   color: #111;
   border-radius: 3px;
   .label {
