@@ -13,20 +13,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# gem "therubyracer"
 
 gem 'haml-rails'
 gem 'rake'
 gem 'jquery-rails'
 gem 'rmagick'
-# gem 'capistrano'
 gem "mongoid", "~> 2.3"
 gem "bson_ext", "~> 1.4"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem "aws-s3",            :require => "aws/s3"
 gem "aws-sdk"
 gem "cancan"
-# gem "koala"
 gem "nokogiri"
 gem "kaminari"
 gem "heroku"
@@ -47,7 +44,7 @@ group :test do
   gem 'guard-spork'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
-  gem 'factory_girl_rails'
+  gem 'factory_girl'
   gem 'turn', :require => false  
 end
 
